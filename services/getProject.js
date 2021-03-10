@@ -1,15 +1,19 @@
 const db = require('../firebase/db')
 
-const getProject = async (projectID) => {
-	// TODO: need to explicitly add id to a doc for workaround with collectionGroup querying https://stackoverflow.com/questions/56188250/how-to-perform-collection-group-query-using-document-id-in-cloud-firestore
-	const docRef = db.collectionGroup('projects').where('id', '==', projectID)
+const getProject = async (userID, projectID) => {
+	const cardsRef = db
+		.collection('users')
+		.doc(userID)
+		.collection('projects')
+		.doc(projectID)
+		.collection('cards')
 
-	return docRef.get().then((snapshot) => {
-		// TODO: do map and return just the required fields
-		snapshot.forEach((doc) => {
-			console.log(doc.data())
-		})
-	})
+	const snapshot = await cardsRef.get()
+	if (snapshot.empty) {
+		throw new Error('No matching documents.')
+	}
+	// TODO: specify exactly what properties to return
+	return snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
 }
 
 module.exports = getProject
