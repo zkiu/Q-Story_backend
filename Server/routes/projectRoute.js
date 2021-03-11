@@ -15,6 +15,7 @@ projectRoute.get('/:userid', (req, res) => {
 		})
 	} catch (error) {
 		console.error(error)
+		res.status(400).json({error})
 	}
 })
 
@@ -27,6 +28,7 @@ projectRoute.get('/:userid/:projid', (req, res) => {
 		})
 	} catch (error) {
 		console.error(error)
+		res.status(400).json({error})
 	}
 })
 
@@ -39,6 +41,7 @@ projectRoute.delete('/:userid/:projid', (req, res) => {
 		})
 	} catch (error) {
 		console.error(error)
+		res.status(400).json({error})
 	}
 })
 
@@ -51,6 +54,7 @@ projectRoute.post('/:userid/', (req, res) => {
 		})
 	} catch (error) {
 		console.error(error)
+		res.status(400).json({error})
 	}
 })
 
@@ -64,6 +68,7 @@ projectRoute.put('/:userid/:projid', (req, res) => {
 		})
 	} catch (error) {
 		console.error(error)
+		res.status(400).json({error})
 	}
 })
 

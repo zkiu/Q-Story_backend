@@ -23,6 +23,7 @@ imageRoute.get('/:count', (req, res) => {
 		})
 		.catch((err) => {
 			console.error('An error occurred while requesting an image: ', err)
+			res.status(400).json({error})
 		})
 })
 
