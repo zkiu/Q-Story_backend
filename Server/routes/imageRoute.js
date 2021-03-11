@@ -1,7 +1,7 @@
 const express = require('express')
 const imageRoute = express.Router()
 
-const getImage = require('../services/getImage')
+const getImage = require('../services/apiExternal/getImage')
 
 imageRoute.get('/', (req, res) => {
 	getImage()

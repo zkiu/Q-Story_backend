@@ -1,4 +1,4 @@
-const db = require('../firebase/db')
+const db = require('../../firebase/db')
 
 const createProject = require('./createProject')
 const saveCards = require('./saveCards')

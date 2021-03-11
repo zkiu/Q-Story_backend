@@ -1,4 +1,4 @@
-const db = require('../firebase/db')
+const db = require('../../firebase/db')
 
 const getProject = async (userID, projectID) => {
 	const cardsRef = db

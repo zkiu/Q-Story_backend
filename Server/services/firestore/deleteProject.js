@@ -1,4 +1,4 @@
-const db = require('../firebase/db')
+const db = require('../../firebase/db')
 
 const deleteCollection = require('./deleteCollection')
 

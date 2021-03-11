@@ -1,4 +1,4 @@
-const db = require('../firebase/db')
+const db = require('../../firebase/db')
 
 const getProjectList = async (userID, projectID) => {
 	const projectsRef = db.collection('users').doc(userID).collection('projects')

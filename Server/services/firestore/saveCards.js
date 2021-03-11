@@ -1,4 +1,4 @@
-const db = require('../firebase/db')
+const db = require('../../firebase/db')
 const batch = db.batch()
 
 const saveCards = async (userID, projectID, reqData) => {

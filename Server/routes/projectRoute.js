@@ -1,11 +1,11 @@
 const express = require('express')
 const projectRoute = express.Router()
 
-const getProjectList = require('../services/getProjectList')
-const getProject = require('../services/getProject')
-const deleteProject = require('../services/deleteProject')
-const saveProject = require('../services/saveProject')
-const updateProject = require('../services/updateProject')
+const getProjectList = require('../services/firestore/getProjectList')
+const getProject = require('../services/firestore/getProject')
+const deleteProject = require('../services/firestore/deleteProject')
+const saveProject = require('../services/firestore/saveProject')
+const updateProject = require('../services/firestore/updateProject')
 
 projectRoute.get('/:userid', (req, res) => {
 	const userID = req.params.userid
