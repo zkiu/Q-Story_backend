@@ -55,16 +55,16 @@ projectRoute.post('/:userid/', (req, res) => {
 })
 
 // -- update EXISTING project
-// projectRoute.put('/:userid/:projid', (req, res) => {
-// 	const projectID = req.params.projid
-// 	const userID = req.params.userid
-// 	try {
-// 		updateProject(userID, projectID, req.body).then((response) => {
-// 			res.json(response)
-// 		})
-// 	} catch (error) {
-// 		console.error(error)
-// 	}
-// })
+projectRoute.put('/:userid/:projid', (req, res) => {
+	const projectID = req.params.projid
+	const userID = req.params.userid
+	try {
+		updateProject(userID, projectID, req.body).then((response) => {
+			res.json({message: 'project updated'})
+		})
+	} catch (error) {
+		console.error(error)
+	}
+})
 
 module.exports = projectRoute
