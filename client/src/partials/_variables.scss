@@ -1,0 +1,8 @@
+// breakpoints
+$tablet-breakpoint: 550px;
+$tablet-l-breakpoint: 768px;
+// will assume the desktop view is viewed without the vertical scrollbar (emulation mode), which is an additional +20px of width
+$desktop-breakpoint: 1440px;
+
+// fonts
+$primary-font: Roboto;
