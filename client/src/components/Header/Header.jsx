@@ -24,7 +24,7 @@ export default function Header() {
 		// 			Accept: "application/json",
 		// 			"Content-Type": "application/json",
 		// 			Authorization:
-		// 				"563492ad6f917000010000012b8de3d55d21428ea615e911741ea96e",
+		// 				"",
 		// 		},
 		// 	})
 		// 	// .get("https://pokeapi.co/api/v2/")
