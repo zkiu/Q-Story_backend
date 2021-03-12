@@ -17,6 +17,15 @@ app.use('/image', imageRoute)
 app.use('/project', projectRoute)
 app.use('/register', registerRoute)
 
+/*******************************************************************/
+// ! for testing
+const checkUserAuth = require('./services/auth/checkUserAuth')
+app.get('/who', (req, res) => {
+	req
+	res.send('me')
+})
+/*******************************************************************/
+
 app.use(function (req, res, next) {
 	res.status(404).send('Invalid API access')
 })
