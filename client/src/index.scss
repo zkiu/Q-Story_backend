@@ -1,9 +1,10 @@
 // NOTE variables and mixins need to loaded 1st
-@import "./partials/variables";
-@import "./partials/mixins";
-@import "./partials/fonts";
-@import "./partials/general";
+@import './partials/variables';
+@import './partials/mixins';
+@import './partials/fonts';
+@import './partials/general';
+@import './partials/modal';
 
 // Component Specifics
-@import "./components/App.scss";
-@import "./components/Header/Header";
+@import './components/App.scss';
+@import './components/Header/Header';
