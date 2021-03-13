@@ -63,7 +63,7 @@ export default function LoginModal() {
 								<input
 									type="email"
 									className="form-control"
-									id="floatingInput"
+									id="floatingLoginEmail"
 									placeholder="name@example.com"
 									required
 									autoComplete="true"
@@ -72,13 +72,13 @@ export default function LoginModal() {
 									value={loginUser.email}
 									onChange={handleChange}
 								/>
-								<label htmlFor="floatingInput">Email address</label>
+								<label htmlFor="floatingLoginEmail">Email address</label>
 							</div>
 							<div className="form-floating">
 								<input
 									type="password"
 									className="form-control"
-									id="floatingPassword"
+									id="floatingLoginPassword"
 									placeholder="Password"
 									required
 									autoComplete="true"
@@ -86,7 +86,7 @@ export default function LoginModal() {
 									value={loginUser.password}
 									onChange={handleChange}
 								/>
-								<label htmlFor="floatingPassword">Password</label>
+								<label htmlFor="floatingLoginPassword">Password</label>
 							</div>
 							<div className="modal-footer ">
 								<button
