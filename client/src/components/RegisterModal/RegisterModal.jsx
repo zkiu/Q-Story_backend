@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
-// import {signIn} from '../../services/auth/signIn'
+import {registerUser} from '../../services/auth/registerUser'
 
+// -- No confidential info is kept, so the registration process is simple.
+// TODO: hash and salt the password before sending
 export default function RegisterModal() {
 	const [regData, setRegData] = useState({
 		displayName: '',
@@ -24,7 +26,17 @@ export default function RegisterModal() {
 			password: regData.password,
 		}
 
-		console.log(regData)
+		// console.log(regData)
+		registerUser(registrationInfo)
+			.then((message) => {
+				// TODO: use toast
+				alert(message.message)
+				document.getElementById('registerModal-close').click()
+			})
+			.catch((error) => {
+				// TODO: use toast
+				alert(error)
+			})
 	}
 
 	return (
@@ -50,10 +62,10 @@ export default function RegisterModal() {
 					<div className="modal-content">
 						<div className="modal-header">
 							<h5 className="modal-title" id="exampleModalLabel">
-								LOG - into your creativity
+								REGISTER - to treasure your work
 							</h5>
 							<button
-								id="loginModal-close"
+								id="registerModal-close"
 								type="button"
 								className="btn-close"
 								data-bs-dismiss="modal"
