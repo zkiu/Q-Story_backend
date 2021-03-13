@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {signIn} from '../../services/auth/signIn'
 
-export default function LoginComp() {
+export default function LoginModal() {
 	const [loginUser, setLoginUser] = useState({
 		email: '',
 		password: '',
