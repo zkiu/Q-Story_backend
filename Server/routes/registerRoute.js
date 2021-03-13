@@ -3,6 +3,7 @@ const registerRoute = express.Router()
 
 const createUserAuth = require('../services/auth/createUserAuth')
 
+// ! current this endpoint is not used in the app. This is handled on the client side
 registerRoute.post('/', (req, res) => {
 	createUserAuth(req.body)
 		.then((userID) => {
