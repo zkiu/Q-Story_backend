@@ -1,6 +1,6 @@
 import {fb} from '../../firebase/firebase'
 
-//updates the user's firebase auth profile by adding the displayName
+// -- updates the user's firebase auth profile by adding the displayName https://firebase.google.com/docs/auth/web/manage-users?authuser=1#update_a_users_profile
 // ! this service is specific to firebase when registering with just password and email
 export const updateUser = async (displayName) => {
 	const user = fb.auth().currentUser

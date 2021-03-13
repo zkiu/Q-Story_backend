@@ -1,5 +1,6 @@
 import {fb} from '../../firebase/firebase'
 
+// -- https://firebase.google.com/docs/auth/web/manage-users?authuser=1#get_a_users_profile
 export const getUserInfo = () => {
 	const user = fb.auth().currentUser
 
