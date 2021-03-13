@@ -1,23 +1,12 @@
-import { Component } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {Component} from 'react'
 
-import Header from "./Header/Header";
-// import HomePage from './HomePage/HomePage'
-// import ErrorPage from './ErrorPage/ErrorPage'
+import Header from './Header/Header'
+// import CreatePage from './CreatePage/CreatePage'
 
 class App extends Component {
 	render() {
-		return (
-			<Router>
-				<Header />
-				<Switch>
-					{/* <Route exact path="/" component={HomePage} />
-					<Route exact path="/video/:id" component={HomePage} /> */}
-					{/* <Route path="*" component={ErrorPage} /> */}
-				</Switch>
-			</Router>
-		);
+		return <Header />
 	}
 }
 
-export default App;
+export default App
