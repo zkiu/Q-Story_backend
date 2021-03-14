@@ -6,7 +6,7 @@ export default function CurrentUserComp() {
 	return (
 		<>
 			<span className="welcome-message">
-				Good to see you {user && user.displayName},
+				Good to see you {user && user.displayName}
 			</span>
 		</>
 	)
