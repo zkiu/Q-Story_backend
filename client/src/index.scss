@@ -6,8 +6,12 @@
 
 // Component Specifics
 @import './components/App.scss';
+// header
 @import './components/Header/Header';
 @import './components/LoginModal/LoginModal';
 @import './components/RegisterModal/RegisterModal';
 @import './components/SignOutBtn/SignOutBtn';
 @import './components/CurrentUserComp/CurrentUserComp';
+// landing page
+@import './components/CreatePage/CreatePage';
+@import './components/DNDComp/DNDComp';
