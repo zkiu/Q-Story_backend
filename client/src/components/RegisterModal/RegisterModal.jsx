@@ -31,7 +31,8 @@ export default function RegisterModal() {
 			.then((message) => {
 				// TODO: use toast
 				alert(message.message)
-				document.getElementById('registerModal-close').click()
+				// -- this remove() is required since bootstrap creates this div but this component is removed in the virtual dom once the user is signed in WITHOUT removing the modal-backdrop div created by Bootstrap
+				document.querySelector('.modal-backdrop').remove()
 			})
 			.catch((error) => {
 				// TODO: use toast

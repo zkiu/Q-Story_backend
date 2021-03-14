@@ -15,14 +15,12 @@ export default function LoginModal() {
 		e.preventDefault()
 		signIn(loginUser.email, loginUser.password)
 			.then((userID) => {
-				// if (userID) {
-				console.info(userID)
-				document.getElementById('loginModal-close').click()
-				// }
+				// console.info(userID)
+				// -- this remove() is required since bootstrap creates this div but this component is removed in the virtual dom once the user is signed in WITHOUT removing the modal-backdrop div created by Bootstrap
+				document.querySelector('.modal-backdrop').remove()
 			})
 			.catch((error) => {
-				''
-				console.error('error in login modal')
+				// console.error('error in login modal')
 				alert(error)
 			})
 	}
