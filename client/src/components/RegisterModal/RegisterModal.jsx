@@ -61,7 +61,7 @@ export default function RegisterModal() {
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h5 className="modal-title" id="exampleModalLabel">
+							<h5 className="modal-title" id="registerModalLabel">
 								REGISTER - to treasure your work
 							</h5>
 							<button
@@ -78,7 +78,7 @@ export default function RegisterModal() {
 								<input
 									type="text"
 									className="form-control"
-									id="floatingName"
+									id="floatingRegName"
 									placeholder="Display Name"
 									required
 									autoComplete="true"
@@ -87,7 +87,7 @@ export default function RegisterModal() {
 									value={regData.displayName}
 									onChange={handleChange}
 								/>
-								<label htmlFor="floatingName">Display Name</label>
+								<label htmlFor="floatingRegName">Display Name</label>
 							</div>
 							<div className="form-floating mb-3">
 								<input
@@ -107,7 +107,7 @@ export default function RegisterModal() {
 								<input
 									type="password"
 									className="form-control"
-									id="floatingPassword"
+									id="floatingRegPassword"
 									placeholder="Password"
 									required
 									autoComplete="true"
@@ -115,7 +115,7 @@ export default function RegisterModal() {
 									value={regData.password}
 									onChange={handleChange}
 								/>
-								<label htmlFor="floatingPassword">Password</label>
+								<label htmlFor="floatingRegPassword">Password</label>
 							</div>
 							<div className="modal-footer ">
 								<button

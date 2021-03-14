@@ -15,11 +15,14 @@ export default function LoginModal() {
 		e.preventDefault()
 		signIn(loginUser.email, loginUser.password)
 			.then((userID) => {
-				if (userID) {
-					document.getElementById('loginModal-close').click()
-				}
+				// if (userID) {
+				console.info(userID)
+				document.getElementById('loginModal-close').click()
+				// }
 			})
 			.catch((error) => {
+				''
+				console.error('error in login modal')
 				alert(error)
 			})
 	}
@@ -46,7 +49,7 @@ export default function LoginModal() {
 				<div className="modal-dialog">
 					<div className="modal-content">
 						<div className="modal-header">
-							<h5 className="modal-title" id="exampleModalLabel">
+							<h5 className="modal-title" id="loginModalLabel">
 								LOG - into your creativity
 							</h5>
 							<button
