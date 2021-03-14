@@ -1,9 +1,10 @@
 import {fb} from '../../firebase/firebase'
 
 // -- https://firebase.google.com/docs/auth/web/manage-users?authuser=1#get_a_users_profile
+// ! Note: currentUser might also be null because the auth object has not finished initializing. If you use an observer to keep track of the user's sign-in status, you don't need to handle this case.
 export const getUserInfo = () => {
 	const user = fb.auth().currentUser
-
+	debugger
 	if (user != null) {
 		// console.log(`Output for -> user`, user)
 		// user.providerData.forEach(function (profile) {
@@ -20,7 +21,8 @@ export const getUserInfo = () => {
 			email: user.email,
 			photoURL: user.photoURL,
 		}
-	} else {
-		alert('No user is signed in')
 	}
+	// else {
+	// 	alert('No user is signed in')
+	// }
 }

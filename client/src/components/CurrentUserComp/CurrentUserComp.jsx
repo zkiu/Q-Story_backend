@@ -1,9 +1,10 @@
 import {getUserInfo} from '../../services/auth/getUserInfo'
 
-export default function SignOutBtn() {
+export default function CurrentUserComp() {
 	function handleClick(e) {
 		e.preventDefault()
-		alert(getUserInfo().displayName)
+		const displayName = getUserInfo()?.displayName
+		alert(displayName)
 	}
 
 	return (
