@@ -1,6 +1,6 @@
 import {Droppable} from 'react-beautiful-dnd'
 
-import DnDCard from '../DnDCard/DnDCard'
+import DnDCardContainer from '../DnDCardContainer/DnDCardContainer'
 
 export default function DnDCardList({cards}) {
 	return (
@@ -16,7 +16,7 @@ export default function DnDCardList({cards}) {
 				>
 					{cards.map((card, index) => (
 						// TODO: replace key with the card uid in firestore
-						<DnDCard card={card} index={index} key={card.id} />
+						<DnDCardContainer card={card} index={index} key={card.id} />
 					))}
 					{provided.placeholder}
 				</ul>

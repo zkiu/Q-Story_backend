@@ -1,0 +1,13 @@
+$grid: 0.8rem;
+
+.DnDCard {
+	width: 200px;
+	border: 1px solid grey;
+	margin-bottom: $grid;
+	background-color: lightblue;
+	padding: $grid;
+}
+.isDragged {
+	background-color: red;
+	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19);
+}

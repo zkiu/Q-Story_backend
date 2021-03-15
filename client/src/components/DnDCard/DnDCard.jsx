@@ -1,18 +1,8 @@
-import {Draggable} from 'react-beautiful-dnd'
-
-export default function DnDCard({card, index}) {
+export default function DnDCard({card}) {
 	return (
-		<Draggable draggableId={card.id} index={index}>
-			{(provided, snapshot) => (
-				<li
-					className={snapshot.isDragging ? 'DnDCard isDragged' : 'DnDCard'}
-					ref={provided.innerRef}
-					{...provided.draggableProps}
-					{...provided.dragHandleProps}
-				>
-					{card.content}
-				</li>
-			)}
-		</Draggable>
+		<>
+			<h1>Hello</h1>
+			<h1>{card.content}</h1>
+		</>
 	)
 }
