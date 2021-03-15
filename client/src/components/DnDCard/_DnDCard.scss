@@ -1,5 +1,3 @@
-// $tablet-breakpoint: 550px;
-
 $grid: 0.8rem;
 
 .DnDCard {
@@ -8,10 +6,6 @@ $grid: 0.8rem;
 	margin-bottom: $grid;
 	background-color: lightblue;
 	padding: $grid;
-
-	// &:active {
-	// 	background-color: red;
-	// }
 }
 .isDragged {
 	background-color: red;

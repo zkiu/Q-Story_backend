@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
-import {DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
+import {DragDropContext} from 'react-beautiful-dnd'
 
-import {DnDCardList} from '../DnDCardList/DnDCardList'
+import DnDCardList from '../DnDCardList/DnDCardList'
 
 // -- adapted from https://github.com/atlassian/react-beautiful-dnd/blob/master/docs/about/examples.md#basic-samples --> https://codesandbox.io/s/zqwz5n5p9x?file=/src/index.js:0-2144
 
@@ -47,20 +47,7 @@ export default function DnDComp() {
 
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
-			<Droppable droppableId="list">
-				{(provided, snapshot) => (
-					<div
-						className={
-							snapshot.isDraggingOver ? 'DnDArea isDraggingOver' : 'DnDArea'
-						}
-						ref={provided.innerRef}
-						{...provided.droppableProps}
-					>
-						<DnDCardList cards={state.cards} />
-						{provided.placeholder}
-					</div>
-				)}
-			</Droppable>
+			<DnDCardList cards={state.cards} />
 		</DragDropContext>
 	)
 }
