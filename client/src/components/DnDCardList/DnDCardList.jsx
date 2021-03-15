@@ -5,7 +5,7 @@ import DnDCard from '../DnDCard/DnDCard'
 export default function DnDCardList({cards}) {
 	return (
 		// TODO: instead of cardlist for id, couled use uid of project
-		<Droppable droppableId="cardlist">
+		<Droppable droppableId="cardlist" direction="horizontal">
 			{(provided, snapshot) => (
 				<ul
 					className={
