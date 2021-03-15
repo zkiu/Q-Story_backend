@@ -4,6 +4,7 @@ import {fb} from '../../firebase/firebase'
 export default async function createUserDoc(id, displayName, email) {
 	const db = fb.firestore()
 
+	// TODO: Add createdDate for when account created
 	db.collection('users')
 		.doc(id)
 		.set({displayName, email})
