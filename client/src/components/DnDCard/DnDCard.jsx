@@ -5,10 +5,10 @@ export default function DnDCard({card}) {
 	}
 	return (
 		<div onClick={handleClick}>
-			<h1>Hello</h1>
+			{/* <h1>Hello</h1> */}
+			<img src={card.imgSmall} alt="" />
 			<p>{card.paragraph}</p>
 			<p>card# {card.position}</p>
-			<img src={card.imgSmall} alt="" />
 		</div>
 	)
 }
