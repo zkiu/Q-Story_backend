@@ -6,6 +6,7 @@ const getProject = require('../services/firestore/getProject')
 const deleteProject = require('../services/firestore/deleteProject')
 const saveProject = require('../services/firestore/saveProject')
 const updateProject = require('../services/firestore/updateProject')
+const checkUserAuth = require('../services/auth/checkUserAuth')
 
 projectRoute.get('/:userid', (req, res) => {
 	const userID = req.params.userid
@@ -46,8 +47,8 @@ projectRoute.delete('/:userid/:projid', (req, res) => {
 })
 
 // -- save a NEW project
-projectRoute.post('/:userid/', (req, res) => {
-	const userID = req.params.userid
+projectRoute.post('/', async (req, res) => {
+	const userID = await checkUserAuth(req)
 	try {
 		saveProject(userID, req.body).then((response) => {
 			res.json({message: 'project saved'})
