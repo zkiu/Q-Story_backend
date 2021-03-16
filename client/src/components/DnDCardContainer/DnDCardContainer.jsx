@@ -4,7 +4,7 @@ import DnDCard from '../DnDCard/DnDCard'
 
 export default function DnDCardContainer({card, index}) {
 	return (
-		<Draggable draggableId={card.id} index={index}>
+		<Draggable draggableId={'' + card.imageID} index={index}>
 			{(provided, snapshot) => (
 				<li
 					className={snapshot.isDragging ? 'DnDCard isDragged' : 'DnDCard'}

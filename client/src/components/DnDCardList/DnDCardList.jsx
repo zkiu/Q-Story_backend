@@ -15,8 +15,12 @@ export default function DnDCardList({cards}) {
 					{...provided.droppableProps}
 				>
 					{cards.map((card, index) => (
-						// TODO: replace key with the card uid in firestore
-						<DnDCardContainer card={card} index={index} key={card.id} />
+						// TODO: maybe replace key with the card uid in firestore
+						<DnDCardContainer
+							card={card}
+							index={index}
+							key={'' + card.imageID}
+						/>
 					))}
 					{provided.placeholder}
 				</ul>

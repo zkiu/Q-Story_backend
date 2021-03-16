@@ -9,9 +9,7 @@ export default function CreatePage() {
 	// -- loading 5 new cards when 1st mounted
 	useEffect(() => {
 		axios.get('http://localhost:8080/image/5').then((response) => {
-			const newCards = response.data.map((item, index) => {
-				item.id = '' + index
-				item.position = index
+			const newCards = response.data.map((item) => {
 				item.paragraph = 'Your story here.'
 				return item
 			})
