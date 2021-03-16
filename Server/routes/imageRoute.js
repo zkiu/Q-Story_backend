@@ -17,9 +17,14 @@ imageRoute.get('/', (req, res) => {
 
 imageRoute.get('/:count', (req, res) => {
 	const {count} = req.params
+	/*******************************************************************/
+	// Promise.all(Array(count).fill(getImage())).then((response) => {
+	// 	res.send(response)
+	// })
+	/*******************************************************************/
 	getImage(count)
 		.then((response) => {
-			// save respond in firestore, then return a copy
+			// TODO:  save respond in firestore?? maybe.
 			res.send(response)
 		})
 		.catch((err) => {
