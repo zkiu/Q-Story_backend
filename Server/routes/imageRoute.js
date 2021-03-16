@@ -6,7 +6,6 @@ const getImage = require('../services/apiExternal/getImage')
 imageRoute.get('/', (req, res) => {
 	getImage()
 		.then((response) => {
-			// save respond in firestore, then return a copy
 			res.send(response[0])
 		})
 		.catch((err) => {
@@ -17,19 +16,17 @@ imageRoute.get('/', (req, res) => {
 
 imageRoute.get('/:count', (req, res) => {
 	const {count} = req.params
-	/*******************************************************************/
-	// Promise.all(Array(count).fill(getImage())).then((response) => {
-	// 	res.send(response)
-	// })
-	/*******************************************************************/
-	getImage(count)
-		.then((response) => {
-			// TODO:  save respond in firestore?? maybe.
-			res.send(response)
+	let arr = Array(+count)
+		.fill(null)
+		.map(() => {
+			return getImage()
 		})
-		.catch((err) => {
-			console.error('An error occurred while requesting an image: ', err)
-			res.status(400).json({error})
+	Promise.all(arr)
+		.then((results) => {
+			return results.map((result) => result[0])
+		})
+		.then((responses) => {
+			res.send(responses)
 		})
 })
 
