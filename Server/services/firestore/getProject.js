@@ -1,19 +1,19 @@
 const db = require('../../firebase/db')
 
+// TODO: need to test this now that cards collection schema is removed
 const getProject = async (userID, projectID) => {
-	const cardsRef = db
+	const docRef = db
 		.collection('users')
 		.doc(userID)
 		.collection('projects')
 		.doc(projectID)
-		.collection('cards')
 
-	const snapshot = await cardsRef.get()
-	if (snapshot.empty) {
+	const doc = await docRef.get()
+	if (!doc.exists) {
 		throw new Error('No matching documents.')
 	}
-	// TODO: specify exactly what properties to return
-	return snapshot.docs.map((doc) => ({id: doc.id, ...doc.data()}))
+	// TODO: specify exactly what properties from doc.data() to return
+	return doc.data()
 }
 
 module.exports = getProject

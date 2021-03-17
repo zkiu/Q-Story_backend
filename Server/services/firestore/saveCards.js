@@ -1,4 +1,4 @@
-// -- go with a simpler solution to save cards array directly in a project doc property
+// ! went with a simpler solution to save cards array directly in a project doc property
 
 // const db = require('../../firebase/db')
 
