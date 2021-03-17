@@ -3,15 +3,21 @@
 
 	.optionsContainer {
 		// position: fixed;
-		bottom: 0;
-		left: 0;
+		// bottom: 0;
+		// left: 0;
 		padding: 2rem;
 		background-color: lightblue;
 		width: fit-content;
 	}
+	.toolContainer {
+		display: flex;
+		flex-direction: column;
+		// justify-content: space-between;
+	}
 
 	.guideContainer {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		// justify-content: space-between;
 	}
 }

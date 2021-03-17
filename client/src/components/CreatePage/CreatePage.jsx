@@ -10,6 +10,8 @@ import NewBtn from '../NewBtn/NewBtn'
 import AboutBtn from '../AboutBtn/AboutBtn'
 import ListModal from '../ListModal/ListModal'
 import TitleInput from '../TitleInput/TitleInput'
+import AddCardBtn from '../AddCardBtn/AddCardBtn'
+import ResetBtn from '../ResetBtn/ResetBtn'
 
 export default function CreatePage() {
 	const [cards, setCards] = useState([])
@@ -58,6 +60,10 @@ export default function CreatePage() {
 			{cards && <DnDComp cards={cards} setCards={setCards} />}
 			{/* <CardEditComp cards={cards} setCards={setCards} /> */}
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
+			<div className="toolContainer">
+				<AddCardBtn cards={cards} setCards={setCards} />
+				<ResetBtn />
+			</div>
 			<div className="guideContainer">
 				<span>Start</span>
 				<span>End</span>

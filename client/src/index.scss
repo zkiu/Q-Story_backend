@@ -3,6 +3,7 @@
 @import './partials/mixins';
 @import './partials/fonts';
 @import './partials/general';
+@import './partials/icon';
 
 // Component Specifics
 @import './components/App.scss';
@@ -20,3 +21,5 @@
 @import './components/DnDCard/DnDCard';
 @import './components/ListModal/ListModal';
 @import './components/TitleInput/TitleInput';
+// @import './components/AddCardBtn/AddCardBtn';
+// @import './components/ResetBtn/ResetBtn';
