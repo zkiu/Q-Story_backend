@@ -3,23 +3,23 @@ import axios from 'axios'
 
 import {fb} from '../../firebase/firebase'
 
+import {useLoginStatus} from '../../services/auth/useLoginStatus'
 import DnDComp from '../DnDComp/DnDComp'
 import SaveBtn from '../SaveBtn/SaveBtn'
 import NewBtn from '../NewBtn/NewBtn'
 import AboutBtn from '../AboutBtn/AboutBtn'
 import ListModal from '../ListModal/ListModal'
-import {useLoginStatus} from '../../services/auth/useLoginStatus'
+import TitleInput from '../TitleInput/TitleInput'
 
 export default function CreatePage() {
 	const [cards, setCards] = useState([])
-	const [title, setTitle] = useState('Your Title')
+	const [title, setTitle] = useState('')
 	const [projectID, setProjectID] = useState('')
 	// const [projectID, setProjectID] = useState('66oc5xB7qEJxQS3ddf59')
 
 	const user = useLoginStatus()
 
 	useEffect(() => {
-		// TODO: may be other conditions not accounted for in this useEffect
 		if (projectID.length === 0) {
 			axios.get('http://localhost:8080/image/5').then((response) => {
 				const newCards = response.data.map((item) => {
@@ -53,7 +53,8 @@ export default function CreatePage() {
 
 	return (
 		<section className="CreatePage">
-			<span></span>
+			<TitleInput title={title} setTitle={setTitle} />
+			<h5>Photos provided by Pexels</h5>
 			{cards && <DnDComp cards={cards} setCards={setCards} />}
 			{/* <CardEditComp cards={cards} setCards={setCards} /> */}
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
