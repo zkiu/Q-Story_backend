@@ -5,25 +5,26 @@ const getProjectList = require('../services/firestore/getProjectList')
 const getProject = require('../services/firestore/getProject')
 const deleteProject = require('../services/firestore/deleteProject')
 const saveProject = require('../services/firestore/saveProject')
-const updateProject = require('../services/firestore/updateProject')
+// const updateProject = require('../services/firestore/updateProject')
 const checkUserAuth = require('../services/auth/checkUserAuth')
 
-projectRoute.get('/:userid', (req, res) => {
-	const userID = req.params.userid
-	try {
-		getProjectList(userID).then((response) => {
-			res.json(response)
-		})
-	} catch (error) {
-		console.error(error)
-		res.status(400).json({error})
-	}
-})
+// projectRoute.get('/projectlist', async (req, res) => {
+// 	// get userID --->
+// 	try {
+// 		getProjectList(userID).then((response) => {
+// 			res.json(response)
+// 		})
+// 	} catch (error) {
+// 		console.error(error)
+// 		res.status(400).json({error})
+// 	}
+// })
 
-projectRoute.get('/:userid/:projid', (req, res) => {
+// -- get project doc
+projectRoute.get('/:projid', async (req, res) => {
 	const projectID = req.params.projid
-	const userID = req.params.userid
 	try {
+		const userID = await checkUserAuth(req)
 		getProject(userID, projectID).then((response) => {
 			res.json(response)
 		})
@@ -59,13 +60,13 @@ projectRoute.post('/', async (req, res) => {
 	}
 })
 
-// -- update EXISTING project
-projectRoute.put('/:userid/:projid', (req, res) => {
+// -- update a project
+projectRoute.post('/:projid', async (req, res) => {
 	const projectID = req.params.projid
-	const userID = req.params.userid
 	try {
-		updateProject(userID, projectID, req.body).then((response) => {
-			res.json({message: 'project updated'})
+		const userID = await checkUserAuth(req)
+		saveProject(userID, projectID, req.body).then((response) => {
+			res.json({message: 'project saved'})
 		})
 	} catch (error) {
 		console.error(error)

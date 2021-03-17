@@ -12,7 +12,8 @@ const getProject = async (userID, projectID) => {
 	if (!doc.exists) {
 		throw new Error('No matching documents.')
 	}
-	// TODO: specify exactly what properties from doc.data() to return
+	console.log(doc.data())
+	// TODO: specify exactly what properties from doc.data() to return to easy migration to another non-firebase service
 	return doc.data()
 }
 
