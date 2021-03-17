@@ -61,7 +61,7 @@ export default function CreatePage() {
 				<p>You are login as {user?.displayName}</p>
 				<SaveBtn cards={cards} title={title} projectID={projectID} />
 				{/* <ListBtn user={user} /> */}
-				{/* <NewBtn /> */}
+				<NewBtn setProjectID={setProjectID} setCards={setCards} />
 				<AboutBtn />
 			</div>
 		</section>
