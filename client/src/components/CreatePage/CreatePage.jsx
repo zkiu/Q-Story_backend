@@ -58,6 +58,10 @@ export default function CreatePage() {
 			{cards && <DnDComp cards={cards} setCards={setCards} />}
 			{/* <CardEditComp cards={cards} setCards={setCards} /> */}
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
+			<div className="guideContainer">
+				<span>Start</span>
+				<span>End</span>
+			</div>
 			<div className="optionsContainer">
 				<p>You are login as {user?.displayName}</p>
 				{user && <ListModal setProjectID={setProjectID} user={user} />}
