@@ -12,19 +12,25 @@ export default function SaveBtn({title, cards}) {
 			cards,
 		}
 
-		fb.auth()
-			.currentUser.getIdToken()
-			.then((token) => {
-				return axios.post('http://localhost:8080/project/', data, {
-					headers: {token},
+		if (fb.auth().currentUser) {
+			fb.auth()
+				.currentUser.getIdToken()
+				.then((token) => {
+					return axios.post('http://localhost:8080/project/', data, {
+						headers: {token},
+					})
 				})
-			})
-			.then((result) => {
-				console.log(result)
-			})
-			.catch((err) => {
-				console.error(err)
-			})
+				.then((result) => {
+					// console.log(result)
+					alert(result.data.message)
+				})
+				.catch((err) => {
+					console.error(err)
+					alert('An error has occured. You are likely not logged in.')
+				})
+		} else {
+			alert('unable to confirm your log-in status')
+		}
 	}
 
 	return (
