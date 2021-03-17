@@ -26,3 +26,7 @@ yarn-error.log*
 # firebase
 firebase-adminsdk-key*
 firebaseConfig*
+
+# sample and mockup files
+trash.jsx
+trash.js
