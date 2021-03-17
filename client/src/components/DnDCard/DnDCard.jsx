@@ -7,8 +7,9 @@ export default function DnDCard({card}) {
 		<div onClick={handleClick}>
 			{/* <h1>Hello</h1> */}
 			<img src={card.imgSmall} alt="" />
+			<p>{card.imageID}</p>
 			<p>{card.paragraph}</p>
-			<p>card# {card.position}</p>
+			{/* <p>card# {card.position}</p> */}
 		</div>
 	)
 }
