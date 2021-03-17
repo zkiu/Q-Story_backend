@@ -6,9 +6,11 @@ export default function SaveBtn({title, cards, projectID}) {
 	function handleClick(e) {
 		e.preventDefault()
 
+		const tempTitle = title || '<Untitled Project>'
+
 		let data = {
 			dateCreated: Date.now(),
-			title,
+			title: tempTitle,
 			cards,
 		}
 
