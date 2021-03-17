@@ -48,9 +48,9 @@ projectRoute.delete('/:userid/:projid', (req, res) => {
 
 // -- save a NEW project
 projectRoute.post('/', async (req, res) => {
-	const userID = await checkUserAuth(req)
 	try {
-		saveProject(userID, req.body).then((response) => {
+		const userID = await checkUserAuth(req)
+		saveProject(userID, null, req.body).then((response) => {
 			res.json({message: 'project saved'})
 		})
 	} catch (error) {

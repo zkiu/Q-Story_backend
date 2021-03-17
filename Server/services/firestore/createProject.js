@@ -1,19 +1,21 @@
-const db = require('../../firebase/db')
+// ! this is absorbed by saveProject.js
 
-const createProject = async (userID, reqData) => {
-	const {dateCreated, title} = reqData
+// const db = require('../../firebase/db')
 
-	try {
-		// -- returns a project document's id
-		const docRef = await db
-			.collection('users')
-			.doc(userID)
-			.collection('projects')
-			.add({dateCreated, title})
-		return docRef.id
-	} catch (error) {
-		throw error
-	}
-}
+// const createProject = async (userID, reqData) => {
+// 	const {dateCreated, title} = reqData
 
-module.exports = createProject
+// 	try {
+// 		// -- returns a project document's id
+// 		const docRef = await db
+// 			.collection('users')
+// 			.doc(userID)
+// 			.collection('projects')
+// 			.add({dateCreated, title})
+// 		return docRef.id
+// 	} catch (error) {
+// 		throw error
+// 	}
+// }
+
+// module.exports = createProject
