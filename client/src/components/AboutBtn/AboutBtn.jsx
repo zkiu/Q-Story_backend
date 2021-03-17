@@ -1,6 +1,6 @@
 import {useHistory} from 'react-router-dom'
 
-export default function AboutBtn({title, cards, projectID}) {
+export default function AboutBtn() {
 	let history = useHistory()
 
 	const handleClick = (e) => {

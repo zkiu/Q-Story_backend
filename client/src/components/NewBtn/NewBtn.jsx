@@ -1,5 +1,3 @@
-import {fb} from '../../firebase/firebase'
-
 import axios from 'axios'
 
 export default function NewBtn({setProjectID, setCards}) {
