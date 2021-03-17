@@ -1,6 +1,6 @@
 const db = require('../../firebase/db')
 
-const getProjectList = async (userID, projectID) => {
+const getProjectList = async (userID) => {
 	const projectsRef = db.collection('users').doc(userID).collection('projects')
 
 	const snapshot = await projectsRef.get()

@@ -8,17 +8,18 @@ const saveProject = require('../services/firestore/saveProject')
 // const updateProject = require('../services/firestore/updateProject')
 const checkUserAuth = require('../services/auth/checkUserAuth')
 
-// projectRoute.get('/projectlist', async (req, res) => {
-// 	// get userID --->
-// 	try {
-// 		getProjectList(userID).then((response) => {
-// 			res.json(response)
-// 		})
-// 	} catch (error) {
-// 		console.error(error)
-// 		res.status(400).json({error})
-// 	}
-// })
+// -- get project list
+projectRoute.get('/projectlist', async (req, res) => {
+	try {
+		const userID = await checkUserAuth(req)
+		getProjectList(userID).then((response) => {
+			res.json(response)
+		})
+	} catch (error) {
+		console.error(error)
+		res.status(400).json({error})
+	}
+})
 
 // -- get project doc
 projectRoute.get('/:projid', async (req, res) => {
