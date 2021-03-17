@@ -1,5 +1,6 @@
 require('dotenv').config()
-const port = process.env.PORT
+// TODO: Need to make distinction for dev or prod for the PORT number, since heroku is dynamic port number
+const PORT = process.env.PORT || 8080
 
 const imageRoute = require('./routes/imageRoute')
 const projectRoute = require('./routes/projectRoute')
@@ -17,19 +18,10 @@ app.use('/image', imageRoute)
 app.use('/project', projectRoute)
 app.use('/register', registerRoute)
 
-/*******************************************************************/
-// ! for testing
-const checkUserAuth = require('./services/auth/checkUserAuth')
-app.get('/who', (req, res) => {
-	req
-	res.send('me')
-})
-/*******************************************************************/
-
 app.use(function (req, res, next) {
 	res.status(404).send('Invalid API access')
 })
 
-app.listen(port, () => {
-	console.log(`Kiu's server connection is open at http://localhost:${port}`)
+app.listen(PORT, () => {
+	console.log(`Kiu's server connection is open at http://localhost:${PORT}`)
 })
