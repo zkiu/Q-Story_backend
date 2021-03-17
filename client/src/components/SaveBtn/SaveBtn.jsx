@@ -2,7 +2,7 @@ import {fb} from '../../firebase/firebase'
 
 import axios from 'axios'
 
-export default function SaveBtn({title, cards}) {
+export default function SaveBtn({title, cards, projectID}) {
 	function handleClick(e) {
 		e.preventDefault()
 
@@ -16,9 +16,21 @@ export default function SaveBtn({title, cards}) {
 			fb.auth()
 				.currentUser.getIdToken()
 				.then((token) => {
-					return axios.post('http://localhost:8080/project/', data, {
-						headers: {token},
-					})
+					// if a project id is provided, overwrite the existing document
+					if (projectID.length !== 0) {
+						return axios.post(
+							`http://localhost:8080/project/${projectID}`,
+							data,
+							{
+								headers: {token},
+							}
+						)
+					} else {
+						// else created a new project document
+						return axios.post('http://localhost:8080/project/', data, {
+							headers: {token},
+						})
+					}
 				})
 				.then((result) => {
 					// console.log(result)
@@ -36,7 +48,7 @@ export default function SaveBtn({title, cards}) {
 	return (
 		<>
 			<button type="button" className="btn btn-primary" onClick={handleClick}>
-				Save your Project
+				{projectID.length !== 0 ? 'Update Project' : 'Save Project'}
 			</button>
 		</>
 	)
