@@ -7,7 +7,7 @@ import DnDComp from '../DnDComp/DnDComp'
 import SaveBtn from '../SaveBtn/SaveBtn'
 import NewBtn from '../NewBtn/NewBtn'
 import AboutBtn from '../AboutBtn/AboutBtn'
-import ListBtn from '../ListBtn/ListBtn'
+import ListModal from '../ListModal/ListModal'
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
 
 export default function CreatePage() {
@@ -59,8 +59,8 @@ export default function CreatePage() {
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
 			<div className="optionsContainer">
 				<p>You are login as {user?.displayName}</p>
+				{user && <ListModal setProjectID={setProjectID} user={user} />}
 				<SaveBtn cards={cards} title={title} projectID={projectID} />
-				{/* <ListBtn user={user} /> */}
 				<NewBtn setProjectID={setProjectID} setCards={setCards} />
 				<AboutBtn />
 			</div>
