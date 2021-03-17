@@ -29,5 +29,11 @@ imageRoute.get('/:count', (req, res) => {
 			res.send(responses)
 		})
 })
+// imageRoute.get('/:count', (req, res) => {
+// 	const {count} = req.params
+// 	getImage(count).then((responses) => {
+// 		res.send(responses)
+// 	})
+// })
 
 module.exports = imageRoute
