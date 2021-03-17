@@ -9,15 +9,14 @@ import {useLoginStatus} from '../../services/auth/useLoginStatus'
 export default function CreatePage() {
 	const [cards, setCards] = useState([])
 	const [title, setTitle] = useState('Your Title')
-	const [projectID, setProjectID] = useState('66oc5xB7qEJxQS3ddf59')
+	const [projectID, setProjectID] = useState('')
+	// const [projectID, setProjectID] = useState('66oc5xB7qEJxQS3ddf59')
 
 	const user = useLoginStatus()
 
-	// -- loading 5 new cards when 1st mounted
 	useEffect(() => {
 		// TODO: may be other conditions not accounted for in this useEffect
 		if (projectID.length === 0) {
-			console.log('here false')
 			axios.get('http://localhost:8080/image/5').then((response) => {
 				const newCards = response.data.map((item) => {
 					item.paragraph = 'Your story here.'
@@ -26,7 +25,8 @@ export default function CreatePage() {
 				setCards(newCards)
 			})
 		} else {
-			if (fb.auth().currentUser && projectID.length !== 0) {
+			// ! if projectID.length !== 0, then user is not null by inference (currently i can't this of a case outside of this situation)
+			if (projectID.length !== 0) {
 				fb.auth()
 					.currentUser.getIdToken()
 					.then((token) => {
@@ -45,7 +45,7 @@ export default function CreatePage() {
 					})
 			}
 		}
-	}, [projectID, user])
+	}, [projectID])
 
 	return (
 		<section className="CreatePage">
@@ -62,4 +62,3 @@ export default function CreatePage() {
 }
 
 // TODO: check no imageID duplicate when loading a new picture from API
-// TODO: used userid for the backend access by sending token in header or body
