@@ -62,7 +62,7 @@ export default function CreatePage() {
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
 			<div className="toolContainer">
 				<AddCardBtn cards={cards} setCards={setCards} />
-				<ResetBtn />
+				<ResetBtn setCards={setCards} />
 			</div>
 			<div className="guideContainer">
 				<span>Start</span>
