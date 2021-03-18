@@ -5,9 +5,7 @@ import axios from 'axios'
 export default function SaveBtn({title, cards, projectID, setProjectID}) {
 	function handleClick(e) {
 		e.preventDefault()
-
 		const tempTitle = title || '<Untitled Project>'
-
 		let data = {
 			dateCreated: Date.now(),
 			title: tempTitle,
@@ -35,8 +33,6 @@ export default function SaveBtn({title, cards, projectID, setProjectID}) {
 					}
 				})
 				.then(({data}) => {
-					console.log(`Output for -> data.projectID`, data.projectID)
-
 					setProjectID(data.projectID)
 					alert(data.message)
 				})
