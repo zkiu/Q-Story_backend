@@ -1,9 +1,10 @@
 import axios from 'axios'
 
-export default function NewBtn({setProjectID, setCards}) {
+export default function NewBtn({setProjectID, setCards, setTitle}) {
 	function handleClick(e) {
 		e.preventDefault()
 		setProjectID('')
+		setTitle('')
 		axios.get('http://localhost:8080/image/5').then((response) => {
 			const newCards = response.data.map((item) => {
 				item.paragraph = 'Your story here.'

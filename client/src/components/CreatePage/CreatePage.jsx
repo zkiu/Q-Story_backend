@@ -71,8 +71,17 @@ export default function CreatePage() {
 			<div className="optionsContainer">
 				<p>You are login as {user?.displayName}</p>
 				{user && <ListModal setProjectID={setProjectID} user={user} />}
-				<SaveBtn cards={cards} title={title} projectID={projectID} />
-				<NewBtn setProjectID={setProjectID} setCards={setCards} />
+				<SaveBtn
+					cards={cards}
+					title={title}
+					projectID={projectID}
+					setProjectID={setProjectID}
+				/>
+				<NewBtn
+					setProjectID={setProjectID}
+					setCards={setCards}
+					setTitle={setTitle}
+				/>
 				<AboutBtn />
 			</div>
 		</section>
