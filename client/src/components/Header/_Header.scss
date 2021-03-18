@@ -3,6 +3,10 @@ header {
 	align-items: center;
 	justify-content: space-between;
 
+	.appLogo {
+		font-size: 3.2rem;
+		font-weight: bold;
+	}
 	.authContainer {
 		display: flex;
 		align-items: center;

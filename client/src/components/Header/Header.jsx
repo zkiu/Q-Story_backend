@@ -1,8 +1,9 @@
+import {Link} from 'react-router-dom'
+
 import LoginModal from '../LoginModal/LoginModal'
 import RegisterModal from '../RegisterModal/RegisterModal'
 import SignOutBtn from '../SignOutBtn/SignOutBtn'
 import CurrentUserComp from '../CurrentUserComp/CurrentUserComp'
-
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
 
 export default function Header() {
@@ -10,7 +11,9 @@ export default function Header() {
 
 	return (
 		<header>
-			<h1>Q-Story</h1>
+			<Link to="/" className="appLogo">
+				Q-Story
+			</Link>
 			{user ? (
 				<div className="authContainer">
 					<CurrentUserComp />
