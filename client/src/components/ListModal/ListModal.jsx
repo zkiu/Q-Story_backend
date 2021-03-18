@@ -10,7 +10,8 @@ export default function LoginModal({setProjectID, user}) {
 		setProjectID(projectID)
 	}
 
-	useEffect(() => {
+	const handleLoad = (e) => {
+		e.preventDefault()
 		fb.auth()
 			.currentUser.getIdToken()
 			.then((token) => {
@@ -19,18 +20,13 @@ export default function LoginModal({setProjectID, user}) {
 				})
 			})
 			.then(({data}) => {
-				// const newCards = response.data.map((item) => {
-				// 	item.paragraph = 'Your story here.'
-				// 	return item
-				// })
 				setProjects(data)
-				// console.log(data)
 			})
 			.catch((err) => {
 				console.error(err)
 				alert('An error occured while retrieving the project list')
 			})
-	}, [])
+	}
 
 	const arr = projects.map((project) => {
 		return (
@@ -55,8 +51,9 @@ export default function LoginModal({setProjectID, user}) {
 				className="btn btn-primary"
 				data-bs-toggle="modal"
 				data-bs-target="#listModal"
+				onClick={handleLoad}
 			>
-				Project List
+				Load Project
 			</button>
 			{/* <!-- Modal --> */}
 			<div
