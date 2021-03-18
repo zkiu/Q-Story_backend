@@ -1,12 +1,33 @@
 .theater {
+	// position: relative;
 	background-color: lightgray;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
 
-	.curtain {
-		// position: absolute;
-		// top: 0;
-		// bottom: 0;
-		width: 100vw;
-		height: 100vh;
+	.curtains {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		width: 110vw;
+		// height: 100vh;
+		fill: rgb(110, 3, 110);
+		opacity: 0.8;
 		// how to stretch svg to viewport-fit: ;
+	}
+
+	.footer {
+		width: 100vw;
+		height: 10rem;
+		position: fixed;
+		bottom: 0;
+		display: grid;
+		place-items: center;
+		// background-color: black;
+	}
+	.exitBtn {
+		font-size: 6rem;
+		width: fit-content;
+		// display: block;
 	}
 }
