@@ -19,7 +19,8 @@ export default function HomePage() {
 	const [cards, setCards] = useState([])
 	const [title, setTitle] = useState('')
 	const [projectID, setProjectID] = useState('')
-	// const [projectID, setProjectID] = useState('66oc5xB7qEJxQS3ddf59')
+	const [imageIndex, setImageIndex] = useState(null)
+
 	let history = useHistory()
 	let {projectid} = useParams()
 	const user = useLoginStatus()
@@ -29,6 +30,7 @@ export default function HomePage() {
 		if (projectid && user) {
 			// console.log('1st effect: with param and user')
 			setProjectID(projectid)
+			setImageIndex(null)
 		}
 	}, [projectid, user])
 
@@ -46,8 +48,8 @@ export default function HomePage() {
 				.then(({data}) => {
 					setCards(data.cards)
 					setTitle(data.title)
+					setImageIndex(null)
 				})
-
 				.catch((err) => {
 					console.error(err)
 					alert('An error has occured. You are likely not logged in.')
@@ -66,6 +68,7 @@ export default function HomePage() {
 						return item
 					})
 					setCards(newCards)
+					setImageIndex(null)
 				})
 				.catch((err) => {
 					alert(
@@ -94,7 +97,7 @@ export default function HomePage() {
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
 			<div className="toolContainer">
 				<AddCardBtn cards={cards} setCards={setCards} />
-				<ResetBtn setCards={setCards} />
+				<ResetBtn setCards={setCards} setImageIndex={setImageIndex} />
 			</div>
 			<div className="guideContainer">
 				<span>Start</span>
@@ -113,10 +116,11 @@ export default function HomePage() {
 					setProjectID={setProjectID}
 					setCards={setCards}
 					setTitle={setTitle}
+					setImageIndex={setImageIndex}
 				/>
 				<AboutBtn />
 			</div>
-			<EditCardComp />
+			<EditCardComp cards={cards} setCards={setCards} imageIndex={imageIndex} />
 			<div className="theaterContainer">
 				<div className="btn btn-primary" onClick={handleTheaterMode}>
 					<span>Theater Mode</span>

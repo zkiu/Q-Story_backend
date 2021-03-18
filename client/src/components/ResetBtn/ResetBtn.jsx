@@ -1,7 +1,7 @@
 import {BiReset} from 'react-icons/bi'
 import axios from 'axios'
 
-export default function ResetBtn({setCards}) {
+export default function ResetBtn({setCards, setImageIndex}) {
 	const handleClick = (e) => {
 		e.preventDefault()
 		axios
@@ -12,6 +12,7 @@ export default function ResetBtn({setCards}) {
 					return item
 				})
 				setCards(newCards)
+				setImageIndex(null)
 			})
 			.catch((err) => {
 				alert(
