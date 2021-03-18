@@ -18,6 +18,10 @@ class App extends Component {
 						<Header />
 						<CreatePage />
 					</Route>
+					<Route exact path="/project/:projectid">
+						<Header />
+						<CreatePage />
+					</Route>
 					<Route exact path="/about">
 						<Header />
 						<AboutPage />

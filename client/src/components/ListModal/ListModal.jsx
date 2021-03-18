@@ -1,13 +1,16 @@
 import axios from 'axios'
 import React, {useState, useEffect} from 'react'
 import {fb} from '../../firebase/firebase'
+import {useHistory} from 'react-router-dom'
 
 export default function LoginModal({setProjectID, user}) {
 	const [projects, setProjects] = useState([])
+	let history = useHistory()
 
 	function handleClick(e, projectID) {
 		e.preventDefault()
-		setProjectID(projectID)
+		// setProjectID(projectID)
+		history.push(`/project/${projectID}`)
 	}
 
 	const handleLoad = (e) => {
