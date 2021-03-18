@@ -84,6 +84,7 @@ export default function CreatePage() {
 				/>
 				<AboutBtn />
 			</div>
+			<div className="theaterContainer"></div>
 		</section>
 	)
 }
