@@ -94,6 +94,13 @@ export default function LoginModal({setProjectID, user}) {
 							>
 								Close
 							</button>
+							<button
+								type="button"
+								className="btn btn-primary"
+								data-bs-dismiss="modal"
+							>
+								Okay
+							</button>
 						</div>
 					</div>
 				</div>
