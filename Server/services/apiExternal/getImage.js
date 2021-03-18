@@ -3,7 +3,6 @@ const apiKey_pexels = process.env.PEXELS_API_KEY
 const apiKey_pixabay = process.env.PIXABAY_API_KEY
 
 const axios = require('axios')
-
 // ! API for PIXABAY
 // const getImage = async (count = 1) => {
 // 	// ramdomize page number
@@ -37,6 +36,9 @@ const axios = require('axios')
 // 		.then((array) => {
 // 			return array.slice(0, hits)
 // 		})
+// .catch((err) => {
+// 	throw err
+// })
 // }
 
 //api.pexels.com/v1/search?query=people"
@@ -70,6 +72,9 @@ const getImage = async (count = 1) => {
 					height: photo.height,
 				}
 			})
+		})
+		.catch((err) => {
+			throw err
 		})
 }
 
