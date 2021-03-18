@@ -1,10 +1,14 @@
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
 export default function NewBtn({setProjectID, setCards, setTitle}) {
+	let history = useHistory()
+
 	function handleClick(e) {
 		e.preventDefault()
 		setProjectID('')
 		setTitle('')
+		history.push('/')
 		axios
 			.get('http://localhost:8080/image/5')
 			.then((response) => {
