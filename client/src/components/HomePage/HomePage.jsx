@@ -88,7 +88,7 @@ export default function HomePage() {
 	return (
 		<section className="HomePage">
 			<TitleInput title={title} setTitle={setTitle} />
-			<h5>Photos provided by Pixabay.com</h5>
+			<h5>Photos provided by Pexel</h5>
 			{cards && <DnDComp cards={cards} setCards={setCards} />}
 			{/* <CardEditComp cards={cards} setCards={setCards} /> */}
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
