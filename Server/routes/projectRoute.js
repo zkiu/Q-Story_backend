@@ -53,7 +53,8 @@ projectRoute.post('/', async (req, res) => {
 	try {
 		const userID = await checkUserAuth(req)
 		saveProject(userID, null, req.body).then((response) => {
-			res.json({message: 'project saved'})
+			// the response is in the form of {projectID: , message: }
+			res.json(response)
 		})
 	} catch (error) {
 		console.error(error)

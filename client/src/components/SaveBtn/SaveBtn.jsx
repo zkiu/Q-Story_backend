@@ -2,7 +2,7 @@ import {fb} from '../../firebase/firebase'
 
 import axios from 'axios'
 
-export default function SaveBtn({title, cards, projectID}) {
+export default function SaveBtn({title, cards, projectID, setProjectID}) {
 	function handleClick(e) {
 		e.preventDefault()
 
@@ -34,9 +34,11 @@ export default function SaveBtn({title, cards, projectID}) {
 						})
 					}
 				})
-				.then((result) => {
-					// console.log(result)
-					alert(result.data.message)
+				.then(({data}) => {
+					console.log(`Output for -> data.projectID`, data.projectID)
+
+					setProjectID(data.projectID)
+					alert(data.message)
 				})
 				.catch((err) => {
 					console.error(err)
