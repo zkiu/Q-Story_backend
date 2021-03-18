@@ -10,16 +10,17 @@ export default function Header() {
 
 	return (
 		<header>
+			<h1>Q-Story</h1>
 			{user ? (
-				<>
+				<div className="authContainer">
 					<CurrentUserComp />
 					<SignOutBtn />
-				</>
+				</div>
 			) : (
-				<>
+				<div className="authContainer">
 					<LoginModal />
 					<RegisterModal />
-				</>
+				</div>
 			)}
 		</header>
 	)
