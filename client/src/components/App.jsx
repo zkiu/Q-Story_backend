@@ -2,7 +2,7 @@ import {Component} from 'react'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 
 import Header from './Header/Header'
-import CreatePage from './CreatePage/CreatePage'
+import HomePage from './HomePage/HomePage'
 import AboutPage from './AboutPage/AboutPage'
 import TheaterPage from './TheaterPage/TheaterPage'
 
@@ -11,16 +11,16 @@ class App extends Component {
 		return (
 			<Router>
 				<Switch>
-					{/* <Route exact path="/" component={CreatePage} /> */}
+					{/* <Route exact path="/" component={HomePage} /> */}
 					{/* <Route exact path="/theater/:id" component={TheaterPage} />
 					<Route exact path="/about" component={AboutPage} /> */}
 					<Route exact path="/">
 						<Header />
-						<CreatePage />
+						<HomePage />
 					</Route>
 					<Route exact path="/project/:projectid">
 						<Header />
-						<CreatePage />
+						<HomePage />
 					</Route>
 					<Route exact path="/about">
 						<Header />

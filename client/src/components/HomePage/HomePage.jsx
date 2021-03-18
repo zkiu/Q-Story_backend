@@ -13,8 +13,9 @@ import ListModal from '../ListModal/ListModal'
 import TitleInput from '../TitleInput/TitleInput'
 import AddCardBtn from '../AddCardBtn/AddCardBtn'
 import ResetBtn from '../ResetBtn/ResetBtn'
+import EditCardComp from '../EditCardComp/EditCardComp'
 
-export default function CreatePage() {
+export default function HomePage() {
 	const [cards, setCards] = useState([])
 	const [title, setTitle] = useState('')
 	const [projectID, setProjectID] = useState('')
@@ -85,7 +86,7 @@ export default function CreatePage() {
 	}
 
 	return (
-		<section className="CreatePage">
+		<section className="HomePage">
 			<TitleInput title={title} setTitle={setTitle} />
 			<h5>Photos provided by Pexels</h5>
 			{cards && <DnDComp cards={cards} setCards={setCards} />}
@@ -115,6 +116,7 @@ export default function CreatePage() {
 				/>
 				<AboutBtn />
 			</div>
+
 			<div className="theaterContainer">
 				<div className="btn btn-primary" onClick={handleTheaterMode}>
 					<span>Theater Mode</span>
