@@ -26,15 +26,14 @@ export default function CreatePage() {
 	useEffect(() => {
 		// console.log(projectid)
 		if (projectid && user) {
-			console.log('1st effect: with param and user')
+			// console.log('1st effect: with param and user')
 			setProjectID(projectid)
 		}
 	}, [projectid, user])
 
 	useEffect(() => {
-		// ! if projectID.length !== 0, then user is not null by inference (currently i can't this of a case outside of this situation)
 		if (projectID.length !== 0 && user) {
-			console.log('2nd effect with projectID and user ')
+			// console.log('2nd effect with projectID and user ')
 
 			fb.auth()
 				.currentUser?.getIdToken()
@@ -57,7 +56,7 @@ export default function CreatePage() {
 
 	useEffect(() => {
 		if (projectID.length === 0) {
-			console.log('3rd effect: no project id')
+			// console.log('3rd effect: no project id')
 			axios.get('http://localhost:8080/image/5').then((response) => {
 				const newCards = response.data.map((item) => {
 					item.paragraph = 'Your story here.'
