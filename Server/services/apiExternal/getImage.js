@@ -38,13 +38,19 @@ const axios = require('axios')
 // 			return array.slice(0, hits)
 // 		})
 // }
+
+//api.pexels.com/v1/search?query=people"
 // ! API for PEXEL
 const getImage = async (count = 1) => {
+	let safeSearchTopic = 'illustrations'
 	return axios
 		.get(
-			`https://api.pexels.com/v1/curated?page=${Math.floor(
+			`https://api.pexels.com/v1/search?query=${safeSearchTopic}&page=${Math.floor(
 				1000 * Math.random()
 			)}&per_page=${count}`,
+			// `https://api.pexels.com/v1?page=${Math.floor(
+			// 	1000 * Math.random()
+			// )}&per_page=${count}`,
 			{
 				headers: {
 					Accept: 'application/json',
