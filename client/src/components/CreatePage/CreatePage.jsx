@@ -57,13 +57,21 @@ export default function CreatePage() {
 	useEffect(() => {
 		if (projectID.length === 0) {
 			// console.log('3rd effect: no project id')
-			axios.get('http://localhost:8080/image/5').then((response) => {
-				const newCards = response.data.map((item) => {
-					item.paragraph = 'Your story here.'
-					return item
+			axios
+				.get('http://localhost:8080/image/5')
+				.then((response) => {
+					const newCards = response.data.map((item) => {
+						item.paragraph = 'Your story here.'
+						return item
+					})
+					setCards(newCards)
 				})
-				setCards(newCards)
-			})
+				.catch((err) => {
+					alert(
+						'An error occurred while requesting an image. Please check the console'
+					)
+					console.error('An error occurred while requesting an image: ', err)
+				})
 		}
 	}, [projectID])
 
