@@ -10,12 +10,10 @@
 	.curtains {
 		position: fixed;
 		top: 0;
-		bottom: 0;
+		left: -1%;
 		width: 110vw;
-		// height: 100vh;
 		fill: rgb(110, 3, 110);
 		opacity: 0.8;
-		// how to stretch svg to viewport-fit: ;
 	}
 
 	.footer {
