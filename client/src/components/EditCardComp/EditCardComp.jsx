@@ -1,7 +1,75 @@
-export default function EditCardComp() {
-	return (
-		<section>
-			<h1>Edit Card Here!</h1>
+import React, {useState, useEffect} from 'react'
+
+export default function EditCardComp({
+	cards,
+	setCards,
+	imageIndex,
+	setImageIndex,
+}) {
+	const [card, setCard] = useState({
+		imageID: '',
+		imgSmall: '',
+		imgMed: '',
+		imgLag: '',
+		width: '',
+		height: '',
+		paragraph: '',
+	})
+
+	useEffect(() => {
+		if (imageIndex !== null) {
+			let info = cards[imageIndex]
+			setCard(info)
+		}
+	}, [imageIndex, cards])
+
+	/*******************************************************************/
+	function handleChange(e) {
+		setCard({
+			...card,
+			[e.target.name]: e.target.value,
+		})
+	}
+
+	function handleSubmit(e) {
+		e.preventDefault()
+		const temp = [...cards]
+		temp.splice(imageIndex, 1, card)
+		setCards(temp)
+		// TODO: trigger toast to say things are saved
+		// console.log(regData)
+	}
+	/*******************************************************************/
+
+	// const info
+	const cardForm = (
+		<section className="editcard">
+			Card info here {imageIndex}
+			{/* /************************************************************* */}
+			<form className="form-card" onSubmit={handleSubmit}>
+				<img src={card.imgMed} alt="" />
+
+				<div className="form-floating">
+					<textarea
+						className="form-control"
+						placeholder="Descripbe your imagination"
+						id="floatingCardParagraph"
+						name="paragraph"
+						value={card.paragraph}
+						onChange={handleChange}
+					></textarea>
+					<label htmlFor="floatingCardParagraph">Story Text</label>
+				</div>
+
+				<div className="footer">
+					<button type="submit" className="btn btn-primary">
+						Update Card
+					</button>
+				</div>
+			</form>
+			{/* /*****************************************************************/}
 		</section>
 	)
+	// return imageIndex || cardForm
+	return cardForm
 }

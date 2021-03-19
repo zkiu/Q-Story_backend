@@ -14,7 +14,7 @@ const reorder = (list, startIndex, endIndex) => {
 }
 
 // -- prop cards contain card object with properties: id, content, position
-export default function DnDComp({cards, setCards}) {
+export default function DnDComp({cards, setCards, setImageIndex}) {
 	function onDragEnd(result) {
 		if (!result.destination) {
 			return
@@ -35,7 +35,7 @@ export default function DnDComp({cards, setCards}) {
 
 	return (
 		<DragDropContext onDragEnd={onDragEnd}>
-			<DnDCardList cards={cards} />
+			<DnDCardList cards={cards} setImageIndex={setImageIndex} />
 		</DragDropContext>
 	)
 }

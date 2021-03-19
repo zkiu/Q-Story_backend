@@ -92,7 +92,13 @@ export default function HomePage() {
 		<section className="HomePage">
 			<TitleInput title={title} setTitle={setTitle} />
 			<h5>Photos provided by Pexel</h5>
-			{cards && <DnDComp cards={cards} setCards={setCards} />}
+			{cards && (
+				<DnDComp
+					cards={cards}
+					setCards={setCards}
+					setImageIndex={setImageIndex}
+				/>
+			)}
 			{/* <CardEditComp cards={cards} setCards={setCards} /> */}
 			{/* <ProjectOptions cards={cards} setCards={setCards} /> */}
 			<div className="toolContainer">
@@ -120,7 +126,12 @@ export default function HomePage() {
 				/>
 				<AboutBtn />
 			</div>
-			<EditCardComp cards={cards} setCards={setCards} imageIndex={imageIndex} />
+			<EditCardComp
+				cards={cards}
+				setCards={setCards}
+				imageIndex={imageIndex}
+				setImageIndex={setImageIndex}
+			/>
 			<div className="theaterContainer">
 				<div className="btn btn-primary" onClick={handleTheaterMode}>
 					<span>Theater Mode</span>

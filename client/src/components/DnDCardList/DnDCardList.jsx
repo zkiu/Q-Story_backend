@@ -2,7 +2,7 @@ import {Droppable} from 'react-beautiful-dnd'
 
 import DnDCardContainer from '../DnDCardContainer/DnDCardContainer'
 
-export default function DnDCardList({cards}) {
+export default function DnDCardList({cards, setImageIndex}) {
 	return (
 		// TODO: instead of cardlist for id, couled use uid of project
 		<Droppable droppableId="cardlist" direction="horizontal">
@@ -20,6 +20,7 @@ export default function DnDCardList({cards}) {
 							card={card}
 							index={index}
 							key={'' + card.imageID}
+							setImageIndex={setImageIndex}
 						/>
 					))}
 					{provided.placeholder}
