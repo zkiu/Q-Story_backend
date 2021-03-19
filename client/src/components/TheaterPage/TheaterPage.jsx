@@ -1,12 +1,40 @@
+import React, {useState, useEffect} from 'react'
 import {useParams, Link} from 'react-router-dom'
+import axios from 'axios'
+import {fb} from '../../firebase/firebase'
+
+import {useLoginStatus} from '../../services/auth/useLoginStatus'
+import CarouselComp from '../CarouselComp/CarouselComp'
 
 export default function TheaterPage() {
+	const [cards, setCards] = useState([])
+
 	let {projectid} = useParams()
+	const user = useLoginStatus()
+
+	useEffect(() => {
+		if (projectid !== 0 && user) {
+			fb.auth()
+				.currentUser?.getIdToken()
+				.then((token) => {
+					return axios.get(`http://localhost:8080/project/${projectid}`, {
+						headers: {token},
+					})
+				})
+				.then(({data}) => {
+					setCards(data.cards)
+				})
+				.catch((err) => {
+					console.error(err)
+					alert('An error has occurred. Check the console for specifics.')
+				})
+		}
+	}, [projectid, user])
+
 	return (
 		<section className="theater">
-			{/* <GiTheaterCurtains width="100" height="100" className="curtains" /> */}
-			<p>For the project {projectid}</p>
-			{/* // todo implement collection group to search for projectID via a share api endpoint /share/:projectID */}
+			{/* // todo implement collection group to search for projectID via a share api endpoint /share/:projectID -> this will byspass required userID and allow the stories to be sharable*/}
+			{cards.length !== 0 && <CarouselComp cards={cards} />}
 			<svg
 				className="curtains"
 				stroke="currentColor"
