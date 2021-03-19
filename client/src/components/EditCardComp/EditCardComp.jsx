@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import DeleteCardBtn from '../DeleteCardBtn/DeleteCardBtn'
+import SwitchImageBtn from '../SwitchImageBtn/SwitchImageBtn'
 
 export default function EditCardComp({
 	cards,
@@ -60,6 +61,12 @@ export default function EditCardComp({
 				</div>
 
 				<DeleteCardBtn
+					cards={cards}
+					setCards={setCards}
+					imageIndex={imageIndex}
+					setImageIndex={setImageIndex}
+				/>
+				<SwitchImageBtn
 					cards={cards}
 					setCards={setCards}
 					imageIndex={imageIndex}
