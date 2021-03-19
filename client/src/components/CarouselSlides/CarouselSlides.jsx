@@ -13,6 +13,9 @@ export default function CarouselSlides({cards}) {
 						}
 						alt=""
 					/>
+					<div className="textContainer">
+						<p>{card.paragraph}</p>
+					</div>
 				</div>
 			</div>
 		)
