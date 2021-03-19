@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import {fb} from '../../firebase/firebase'
 import {useHistory} from 'react-router-dom'
 
-export default function LoginModal({setProjectID, user}) {
+export default function LoginModal() {
 	const [projects, setProjects] = useState([])
 	let history = useHistory()
 
@@ -15,6 +15,7 @@ export default function LoginModal({setProjectID, user}) {
 
 	const handleLoad = (e) => {
 		e.preventDefault()
+		// ! no need to test if user is logged in -> because can only reach this component when logged-in
 		fb.auth()
 			.currentUser.getIdToken()
 			.then((token) => {
