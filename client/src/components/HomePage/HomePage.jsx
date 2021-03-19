@@ -23,7 +23,7 @@ export default function HomePage() {
 
 	let history = useHistory()
 	let {projectid} = useParams()
-	const user = useLoginStatus()
+	const {isLoading, userInfo} = useLoginStatus()
 
 	useEffect(() => {
 		// console.log(projectid)

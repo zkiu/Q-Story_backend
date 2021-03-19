@@ -7,14 +7,14 @@ import CurrentUserComp from '../CurrentUserComp/CurrentUserComp'
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
 
 export default function Header() {
-	const user = useLoginStatus()
+	const {isLoading, userInfo} = useLoginStatus()
 
 	return (
 		<header>
 			<Link to="/" className="appLogo">
 				Q-Story
 			</Link>
-			{user ? (
+			{!isLoading && userInfo ? (
 				<div className="authContainer">
 					<CurrentUserComp />
 					<SignOutBtn />

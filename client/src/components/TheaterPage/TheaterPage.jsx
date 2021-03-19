@@ -10,10 +10,10 @@ export default function TheaterPage() {
 	const [cards, setCards] = useState([])
 
 	let {projectid} = useParams()
-	const user = useLoginStatus()
+	const {isLoading, userInfo} = useLoginStatus()
 
 	useEffect(() => {
-		if (projectid !== 0 && user) {
+		if (projectid !== 0 && !isLoading && userInfo) {
 			fb.auth()
 				.currentUser?.getIdToken()
 				.then((token) => {
@@ -29,7 +29,7 @@ export default function TheaterPage() {
 					alert('An error has occurred. Check the console for specifics.')
 				})
 		}
-	}, [projectid, user])
+	}, [projectid, isLoading, userInfo])
 
 	return (
 		<section className="theater">
