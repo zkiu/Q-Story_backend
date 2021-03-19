@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {fb} from '../../firebase/firebase'
 import {useHistory} from 'react-router-dom'
 
@@ -27,7 +27,7 @@ export default function LoginModal({setProjectID, user}) {
 			})
 			.catch((err) => {
 				console.error(err)
-				alert('An error occured while retrieving the project list')
+				alert('An error occurred while retrieving the project list')
 			})
 	}
 
