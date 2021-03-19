@@ -14,7 +14,7 @@ export default function CarouselComp({cards}) {
 			>
 				<CarouselSlides cards={cards} />
 				<CarouselIndicator cards={cards} />
-
+				{/* next and previous slides arrow */}
 				<button
 					className="carousel-control-prev"
 					type="button"
