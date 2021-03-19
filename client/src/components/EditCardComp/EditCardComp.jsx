@@ -44,7 +44,7 @@ export default function EditCardComp({
 	// const info
 	const cardForm = (
 		<section className="editcard">
-			Card info here {imageIndex}
+			{/* Card info here {imageIndex} */}
 			<form className="form-card" onSubmit={handleSubmit}>
 				<img src={card.imgMed} alt="" />
 
@@ -74,7 +74,7 @@ export default function EditCardComp({
 				/>
 				<div className="footer">
 					<button type="submit" className="btn btn-primary">
-						Update Card
+						Update Text
 					</button>
 				</div>
 			</form>
