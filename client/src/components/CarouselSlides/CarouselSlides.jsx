@@ -3,22 +3,24 @@ export default function CarouselSlides({cards}) {
 		if (index === 0) {
 			return (
 				<div className="carousel-item active" key={index}>
-					<img src={card.imgLag} className="d-block w-100" alt="" />
-					<div className="carousel-caption">
-						{/* <div className="carousel-caption d-none d-md-block"> */}
-						{/* <h5>First slide label</h5> */}
-						<p>{card.paragraph}</p>
+					<div className="slideCard">
+						<img src={card.imgLag} className="d-block w-100" alt="" />
+						{/* <div className="carousel-caption">
+							<p>{card.paragraph}</p>
+						</div> */}
 					</div>
 				</div>
 			)
 		} else {
 			return (
 				<div className="carousel-item" key={index}>
-					<img src={card.imgLag} className="d-block w-100" alt="" />
-					<div className="carousel-caption">
+					<div className="slideCard">
+						<img src={card.imgLag} className="d-block w-100" alt="" />
+						{/* <div className="carousel-caption"> */}
 						{/* <div className="carousel-caption d-none d-md-block"> */}
 						{/* <h5>Second slide label</h5> */}
-						<p>{card.paragraph}</p>
+						{/* <p>{card.paragraph}</p>
+						</div> */}
 					</div>
 				</div>
 			)
