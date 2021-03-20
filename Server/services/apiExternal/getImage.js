@@ -1,5 +1,6 @@
 require('dotenv').config()
-const apiKey_pexels = process.env.PEXELS_API_KEY
+// const apiKey_pexels = process.env.PEXELS_API_KEY
+const apiKey_pexels = process.env.PEXELS_API_KEY_alternative
 const apiKey_pixabay = process.env.PIXABAY_API_KEY
 
 const axios = require('axios')
