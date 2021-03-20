@@ -9,12 +9,12 @@ export default function LoginModal() {
 
 	function handleClick(e, projectID) {
 		e.preventDefault()
-		// setProjectID(projectID)
 		history.push(`/project/${projectID}`)
 	}
 
 	const handleLoad = (e) => {
 		e.preventDefault()
+		console.log('enter load')
 		// ! no need to test if user is logged in -> because can only reach this component when logged-in
 		fb.auth()
 			.currentUser.getIdToken()
@@ -24,6 +24,7 @@ export default function LoginModal() {
 				})
 			})
 			.then(({data}) => {
+				console.log(`Output for -> data`, data)
 				setProjects(data)
 			})
 			.catch((err) => {
@@ -31,21 +32,6 @@ export default function LoginModal() {
 				alert('An error occurred while retrieving the project list')
 			})
 	}
-
-	const arr = projects.map((project) => {
-		return (
-			<li
-				key={project.id}
-				onClick={(e) => {
-					handleClick(e, project.id)
-				}}
-			>
-				<span>{project.title}</span>
-				<span>Num. of Cards: {project.cards.length}</span>
-				<span>Date Saved: {new Date(project.dateCreated).toDateString()}</span>
-			</li>
-		)
-	})
 
 	return (
 		<>
@@ -82,13 +68,27 @@ export default function LoginModal() {
 							></button>
 						</div>
 						<ul className="modal-body">
-							{/* modal body */}
-							{/* <li className="listheadings">
-								<span>Title</span>
-								<span>Number of Cards</span>
-								<span>Date saved</span>
-							</li> */}
-							{arr}
+							{projects.length === 0 ? (
+								<span>You do not have any saved project</span>
+							) : (
+								projects.map((project) => {
+									return (
+										<li
+											key={project.id}
+											onClick={(e) => {
+												handleClick(e, project.id)
+											}}
+										>
+											<span>{project.title}</span>
+											<span>Num. of Cards: {project.cards.length}</span>
+											<span>
+												Date Saved:{' '}
+												{new Date(project.dateCreated).toDateString()}
+											</span>
+										</li>
+									)
+								})
+							)}
 						</ul>
 						<div className="modal-footer ">
 							<button
