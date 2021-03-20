@@ -40,7 +40,7 @@ export default function SaveBtn({title, cards, projectid}) {
 				})
 				.catch((err) => {
 					console.error(err)
-					alert('An error has occured. You are likely not logged in.')
+					alert(err)
 				})
 		} else {
 			alert('unable to confirm your log-in status')
