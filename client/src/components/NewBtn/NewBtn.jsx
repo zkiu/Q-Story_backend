@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
+import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
 
 export default function NewBtn({setCards, setTitle, setImageIndex}) {
 	let history = useHistory()
@@ -12,12 +13,12 @@ export default function NewBtn({setCards, setTitle, setImageIndex}) {
 		axios
 			.get('http://localhost:8080/image/5')
 			.then((response) => {
-				const newCards = response.data.map((item) => {
+				const {newCards} = checkDuplicateImageId(response.data)
+				const tempCards = newCards.map((item) => {
 					item.paragraph = 'Your story here.'
 					return item
 				})
-				setCards(newCards)
-				history.push('/')
+				setCards(tempCards)
 			})
 			.catch((err) => {
 				if (err.response.status === 429) {

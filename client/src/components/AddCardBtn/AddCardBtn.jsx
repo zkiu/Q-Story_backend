@@ -1,16 +1,32 @@
 import {BsPlusSquare} from 'react-icons/bs'
-import axios from 'axios'
+// import axios from 'axios'
+
+import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
+import {getOneImage} from '../../services/api/getOneImage'
 
 export default function AddCardBtn({cards, setCards}) {
 	const handleClick = (e) => {
 		e.preventDefault()
-		const tempCards = [...cards]
-		axios
-			.get('http://localhost:8080/image')
-			.then(({data}) => {
-				tempCards.push(data)
-				setCards(tempCards)
+		// const tempCards = [...cards]
+		// const targetNumber = cards.length + 1
+
+		getOneImage()
+			.then((card) => {
+				const {duplicateFound, newCards} = checkDuplicateImageId(cards, [card])
+
+				if (duplicateFound) {
+					console.log('duplicate found -> so recursive')
+					handleClick()
+				} else {
+					setCards(newCards)
+				}
 			})
+			// axios
+			// 	.get('http://localhost:8080/image')
+			// 	.then(({data}) => {
+			// 		tempCards.push(data)
+			// 		setCards(tempCards)
+			// 	})
 			.catch((err) => {
 				if (err.response.status === 429) {
 					alert(

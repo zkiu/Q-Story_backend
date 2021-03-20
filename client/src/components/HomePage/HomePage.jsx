@@ -3,7 +3,7 @@ import {useParams, useHistory} from 'react-router-dom'
 import axios from 'axios'
 
 import {fb} from '../../firebase/firebase'
-
+import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
 import DnDComp from '../DnDComp/DnDComp'
 import SaveBtn from '../SaveBtn/SaveBtn'
@@ -28,15 +28,15 @@ export default function HomePage() {
 	useEffect(() => {
 		if (!isLoading && projectid == null) {
 			console.log('1st effect on homepage (regardless of log status)')
-			// console.log('3rd effect: no projectID')
 			axios
 				.get('http://localhost:8080/image/5')
 				.then((response) => {
-					const newCards = response.data.map((item) => {
+					const {newCards} = checkDuplicateImageId(response.data)
+					const tempCards = newCards.map((item) => {
 						item.paragraph = 'Your story here.'
 						return item
 					})
-					setCards(newCards)
+					setCards(tempCards)
 					setTitle('')
 					setImageIndex(null)
 				})

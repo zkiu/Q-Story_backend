@@ -15,7 +15,7 @@ export const checkDuplicateImageId = (cards, secondSet = []) => {
 
 	return {
 		duplicateFound,
-		cards: newSet,
+		newCards: newSet,
 		cardDeficit: combinedSet.length - newSet.length,
 	}
 }

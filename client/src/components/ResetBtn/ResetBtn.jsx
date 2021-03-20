@@ -1,5 +1,6 @@
 import {BiReset} from 'react-icons/bi'
 import axios from 'axios'
+import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
 
 export default function ResetBtn({setCards, setImageIndex}) {
 	const handleClick = (e) => {
@@ -7,11 +8,12 @@ export default function ResetBtn({setCards, setImageIndex}) {
 		axios
 			.get('http://localhost:8080/image/5')
 			.then((response) => {
-				const newCards = response.data.map((item) => {
+				const {newCards} = checkDuplicateImageId(response.data)
+				const tempCards = newCards.map((item) => {
 					item.paragraph = 'Your story here.'
 					return item
 				})
-				setCards(newCards)
+				setCards(tempCards)
 				setImageIndex(null)
 			})
 			.catch((err) => {
