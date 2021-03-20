@@ -1,16 +1,26 @@
 // breakpoints
-@mixin tablet-s {
-	@media screen and (min-width: $tablet-breakpoint) {
-		@content;
-	}
+// @mixin tablet-s {
+// 	@media screen and (min-width: $tablet-breakpoint) {
+// 		@content;
+// 	}
+// }
+// @mixin tablet {
+// 	@media screen and (min-width: $tablet-l-breakpoint) {
+// 		@content;
+// 	}
+// }
+// @mixin desktop {
+// 	@media screen and (min-width: $desktop-breakpoint) {
+// 		@content;
+// 	}
+// }
+
+@mixin font-logo {
+	font-family: 'Sonsie One', cursive;
 }
-@mixin tablet {
-	@media screen and (min-width: $tablet-l-breakpoint) {
-		@content;
-	}
+@mixin font-slides {
+	font-family: 'Aclonica', sans-serif;
 }
-@mixin desktop {
-	@media screen and (min-width: $desktop-breakpoint) {
-		@content;
-	}
+@mixin font-regular {
+	font-family: 'Comfortaa', cursive;
 }

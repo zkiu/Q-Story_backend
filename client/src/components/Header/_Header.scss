@@ -4,8 +4,24 @@ header {
 	justify-content: space-between;
 
 	.appLogo {
-		font-size: 3.2rem;
-		font-weight: bold;
+		@include font-logo;
+		font-size: 5rem;
+
+		text-decoration: underline;
+		background-clip: text;
+		background: -webkit-gradient(
+			linear,
+			left top,
+			right top,
+			from(rgb(255, 255, 255)),
+			to(#4fd6ff)
+		);
+		background: linear-gradient(to right, rgb(255, 255, 255) 0%, #4fd6ff 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		width: -webkit-fit-content;
+		width: fit-content;
+		width: -moz-fit-content;
 	}
 	.authContainer {
 		display: flex;

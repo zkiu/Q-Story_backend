@@ -30,7 +30,8 @@
 		background-color: rgb(26, 25, 25);
 	}
 	p {
-		font-size: 3.2rem;
+		@include font-slides;
+		font-size: 4.5rem;
 		word-wrap: break-word;
 		overflow: hidden;
 		color: white;
