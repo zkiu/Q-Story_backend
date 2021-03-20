@@ -16,10 +16,12 @@ export default function Header() {
 					Q-Story
 				</Link>
 				{!isLoading && userInfo ? (
-					<div className="authContainer">
+					<>
 						<CurrentUserComp userInfo={userInfo} />
-						<SignOutBtn />
-					</div>
+						<div className="authContainer">
+							<SignOutBtn />
+						</div>
+					</>
 				) : (
 					<div className="authContainer">
 						<LoginModal />
