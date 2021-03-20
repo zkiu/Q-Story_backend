@@ -16,7 +16,7 @@ export default function Header() {
 			</Link>
 			{!isLoading && userInfo ? (
 				<div className="authContainer">
-					<CurrentUserComp />
+					<CurrentUserComp userInfo={userInfo} />
 					<SignOutBtn />
 				</div>
 			) : (

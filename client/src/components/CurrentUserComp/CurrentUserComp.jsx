@@ -1,13 +1,12 @@
-import {useLoginStatus} from '../../services/auth/useLoginStatus'
+export default function CurrentUserComp({userInfo}) {
+	// TODO: displayName will be initially null when registering because of the following
+	// -> adding displayName property to userCredentials is a separate process from registering with email
+	// -> and userInfo prop is not triggered by this change
+	// firebase currently doesn't have an observer for this
 
-export default function CurrentUserComp() {
-	const {isLoading, userInfo} = useLoginStatus()
-	// userInfo will be null for a brief moment when login out. this will cause an error. hence ? was place before the displayName property
 	return (
 		<>
-			<span className="welcome-message">
-				Hello {!isLoading && userInfo?.displayName}!
-			</span>
+			<span className="welcome-message">Hello {userInfo.displayName}</span>
 		</>
 	)
 }
