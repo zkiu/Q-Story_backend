@@ -12,7 +12,7 @@ export default function Header() {
 	return (
 		<header>
 			<div className="container">
-				<Link to="/" className="appLogo">
+				<Link to="/" className="appLogo hover">
 					Q-Story
 				</Link>
 				{!isLoading && userInfo ? (

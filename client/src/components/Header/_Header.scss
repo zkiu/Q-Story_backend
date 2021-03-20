@@ -31,6 +31,36 @@ header {
 		width: fit-content;
 		width: -moz-fit-content;
 	}
+	.hover {
+		// for site logo
+		// idea from from codepen https://codepen.io/mxttsco/pen/KgodYm
+		transition: all 0.2s ease-in-out;
+		position: relative;
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			bottom: 1rem;
+			width: 0px;
+			height: 0.75rem;
+			margin: 5rem 0 0;
+			transition: all 0.2s ease-in-out;
+			transition-duration: 0.2s;
+			opacity: 0;
+			background-color: darken($medium, 5%);
+			left: 0;
+		}
+	}
+	&:hover {
+		cursor: pointer;
+		.hover {
+			&:before,
+			&:after {
+				width: 100%;
+				opacity: 0.5;
+			}
+		}
+	}
 	.authContainer {
 		display: flex;
 		align-items: center;
