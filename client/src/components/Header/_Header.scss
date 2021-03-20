@@ -1,22 +1,30 @@
 header {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	background-color: $dark;
+	width: 100%;
+	display: grid;
+	place-items: center;
+	padding: 2rem;
 
+	.container {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		max-width: $width-desk;
+	}
 	.appLogo {
 		@include font-logo;
 		font-size: 5rem;
 
-		text-decoration: underline;
+		// text-decoration: underline;
 		background-clip: text;
 		background: -webkit-gradient(
 			linear,
 			left top,
 			right top,
 			from(rgb(255, 255, 255)),
-			to(#4fd6ff)
+			to($medium)
 		);
-		background: linear-gradient(to right, rgb(255, 255, 255) 0%, #4fd6ff 100%);
+		background: linear-gradient(to right, rgb(255, 255, 255) 0%, $medium 100%);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		width: -webkit-fit-content;

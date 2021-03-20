@@ -11,20 +11,22 @@ export default function Header() {
 
 	return (
 		<header>
-			<Link to="/" className="appLogo">
-				Q-Story
-			</Link>
-			{!isLoading && userInfo ? (
-				<div className="authContainer">
-					<CurrentUserComp userInfo={userInfo} />
-					<SignOutBtn />
-				</div>
-			) : (
-				<div className="authContainer">
-					<LoginModal />
-					<RegisterModal />
-				</div>
-			)}
+			<div className="container">
+				<Link to="/" className="appLogo">
+					Q-Story
+				</Link>
+				{!isLoading && userInfo ? (
+					<div className="authContainer">
+						<CurrentUserComp userInfo={userInfo} />
+						<SignOutBtn />
+					</div>
+				) : (
+					<div className="authContainer">
+						<LoginModal />
+						<RegisterModal />
+					</div>
+				)}
+			</div>
 		</header>
 	)
 }
