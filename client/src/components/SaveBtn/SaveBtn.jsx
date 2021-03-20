@@ -36,7 +36,7 @@ export default function SaveBtn({title, cards, projectid}) {
 				})
 				.then(({data}) => {
 					alert(data.message)
-					history.push(`/project/${projectid}`)
+					history.push(`/project/${data.projectID}`)
 				})
 				.catch((err) => {
 					console.error(err)
