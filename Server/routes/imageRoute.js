@@ -21,24 +21,24 @@ imageRoute.get('/', (req, res) => {
 		})
 })
 
-imageRoute.get('/:count', (req, res) => {
-	const {count} = req.params
-	getImage(count)
-		.then((response) => {
-			res.send(response)
-		})
-		.catch((err) => {
-			if (err.response.status === 429) {
-				res.status(429).json({
-					err: err.response.data,
-					message:
-						'The 3rd party API limit for images have been reached. The developer (Kiu) will need money to subscribed to a paid tier of the API to increase image availability.',
-				})
-			} else {
-				res.json(err)
-			}
-		})
-})
+// imageRoute.get('/:count', (req, res) => {
+// 	const {count} = req.params
+// 	getImage(count)
+// 		.then((response) => {
+// 			res.send(response)
+// 		})
+// 		.catch((err) => {
+// 			if (err.response.status === 429) {
+// 				res.status(429).json({
+// 					err: err.response.data,
+// 					message:
+// 						'The 3rd party API limit for images have been reached. The developer (Kiu) will need money to subscribed to a paid tier of the API to increase image availability.',
+// 				})
+// 			} else {
+// 				res.json(err)
+// 			}
+// 		})
+// })
 
 imageRoute.get('/:count', (req, res) => {
 	const {count} = req.params
