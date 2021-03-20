@@ -119,15 +119,20 @@ export default function HomePage() {
 			</div>
 			{/* ******************************************** */}
 			<div className="optionsContainer">
-				<p>You are login as {userInfo?.displayName}</p>
-				{userInfo && <ListModal />}
-				{/* {userInfo && <ListModal setProjectID={setProjectID} userInfo={userInfo} />} */}
-				<SaveBtn cards={cards} title={title} projectid={projectid} />
-				<NewBtn
-					setCards={setCards}
-					setTitle={setTitle}
-					setImageIndex={setImageIndex}
-				/>
+				{userInfo ? (
+					<>
+						<ListModal />
+						<SaveBtn cards={cards} title={title} projectid={projectid} />
+						<NewBtn
+							setCards={setCards}
+							setTitle={setTitle}
+							setImageIndex={setImageIndex}
+						/>
+					</>
+				) : (
+					<p>Login/Register to save your project.</p>
+				)}
+
 				<AboutBtn />
 			</div>
 			{/* ******************************************** */}
