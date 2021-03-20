@@ -1,8 +1,10 @@
 import {fb} from '../../firebase/firebase'
-
 import axios from 'axios'
+import {useHistory} from 'react-router-dom'
 
-export default function SaveBtn({title, cards, projectID, setProjectID}) {
+export default function SaveBtn({title, cards, projectid}) {
+	let history = useHistory()
+
 	function handleClick(e) {
 		e.preventDefault()
 		const tempTitle = title || '<Untitled Project>'
@@ -17,9 +19,9 @@ export default function SaveBtn({title, cards, projectID, setProjectID}) {
 				.currentUser.getIdToken()
 				.then((token) => {
 					// if a project id is provided, overwrite the existing document
-					if (projectID.length !== 0) {
+					if (projectid != null) {
 						return axios.post(
-							`http://localhost:8080/project/${projectID}`,
+							`http://localhost:8080/project/${projectid}`,
 							data,
 							{
 								headers: {token},
@@ -33,8 +35,8 @@ export default function SaveBtn({title, cards, projectID, setProjectID}) {
 					}
 				})
 				.then(({data}) => {
-					setProjectID(data.projectID)
 					alert(data.message)
+					history.push(`/project/${projectid}`)
 				})
 				.catch((err) => {
 					console.error(err)
@@ -48,7 +50,7 @@ export default function SaveBtn({title, cards, projectID, setProjectID}) {
 	return (
 		<>
 			<button type="button" className="btn btn-primary" onClick={handleClick}>
-				{projectID.length !== 0 ? 'Update Project' : 'Save Project'}
+				{projectid != null ? 'Update Project' : 'Save Project'}
 			</button>
 		</>
 	)

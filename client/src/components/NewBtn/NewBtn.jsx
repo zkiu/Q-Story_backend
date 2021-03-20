@@ -1,17 +1,11 @@
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 
-export default function NewBtn({
-	setProjectID,
-	setCards,
-	setTitle,
-	setImageIndex,
-}) {
+export default function NewBtn({setCards, setTitle, setImageIndex}) {
 	let history = useHistory()
 
 	function handleClick(e) {
 		e.preventDefault()
-		setProjectID('')
 		setTitle('')
 		setImageIndex(null)
 		history.push('/')
@@ -23,6 +17,7 @@ export default function NewBtn({
 					return item
 				})
 				setCards(newCards)
+				history.push('/')
 			})
 			.catch((err) => {
 				alert(
