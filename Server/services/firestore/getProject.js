@@ -1,6 +1,5 @@
 const db = require('../../firebase/db')
 
-// TODO: need to test this now that cards collection schema is removed
 const getProject = async (userID, projectID) => {
 	const docRef = db
 		.collection('users')
@@ -10,10 +9,15 @@ const getProject = async (userID, projectID) => {
 
 	const doc = await docRef.get()
 	if (!doc.exists) {
-		throw new Error('No matching documents.')
+		throw new Error('Project was not found.')
 	}
-	// TODO: specify exactly what properties from doc.data() to return to easy migration to another non-firebase service
-	return doc.data()
+
+	// return doc.data()
+	return {
+		dateCreated: doc.data().dateCreated,
+		title: doc.data().title,
+		cards: doc.data().cards,
+	}
 }
 
 module.exports = getProject
