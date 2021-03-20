@@ -1,7 +1,5 @@
-// .l-main {
-// 	@include desktop {
-// 		margin: 0 auto;
-// 		width: $max-width;
-// 		display: flex;
-// 	}
-// }
+main {
+	height: 100vh;
+	width: 100vw;
+	background-color: $white;
+}
