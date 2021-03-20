@@ -14,7 +14,6 @@ export default function LoginModal() {
 
 	const handleLoad = (e) => {
 		e.preventDefault()
-		console.log('enter load')
 		// ! no need to test if user is logged in -> because can only reach this component when logged-in
 		fb.auth()
 			.currentUser.getIdToken()
@@ -24,7 +23,6 @@ export default function LoginModal() {
 				})
 			})
 			.then(({data}) => {
-				console.log(`Output for -> data`, data)
 				setProjects(data)
 			})
 			.catch((err) => {
