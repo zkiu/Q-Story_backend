@@ -2,8 +2,99 @@ require('dotenv').config()
 // const apiKey_pexels = process.env.PEXELS_API_KEY
 const apiKey_pexels = process.env.PEXELS_API_KEY_alternative
 const apiKey_pixabay = process.env.PIXABAY_API_KEY
-
 const axios = require('axios')
+
+// ! API for PEXEL
+const getImage = async (count = 1) => {
+	let safeSearchTopic = 'illustrations'
+	return (
+		axios
+			.get(
+				`https://api.pexels.com/v1/search?query=${safeSearchTopic}&page=${Math.floor(
+					1000 * Math.random()
+				)}&per_page=${count}`,
+				// `https://api.pexels.com/v1?page=${Math.floor(
+				// 	1000 * Math.random()
+				// )}&per_page=${count}`,
+				{
+					headers: {
+						Accept: 'application/json',
+						'Content-Type': 'application/json',
+						Authorization: apiKey_pexels,
+					},
+				}
+			)
+			.then(({data}) => {
+				return data.photos.map((photo) => {
+					return {
+						imageID: photo.id,
+						imgSmall: photo.src.tiny,
+						imgMed: photo.src.medium,
+						imgLag: photo.src.large,
+						width: photo.width,
+						height: photo.height,
+					}
+				})
+			})
+			// from https://gist.github.com/fgilio/230ccd514e9381fafa51608fcf137253
+			.catch((err) => {
+				// Error 😨
+				if (err.response) {
+					/*
+					 * The request was made and the server responded with a
+					 * status code that falls out of the range of 2xx
+					 */
+					console.log(err.response.data)
+					console.log(err.response.status)
+					console.log(err.response.headers)
+					throw err
+				} else if (err.request) {
+					/*
+					 * The request was made but no response was received, `error.request`
+					 * is an instance of XMLHttpRequest in the browser and an instance
+					 * of http.ClientRequest in Node.js
+					 */
+					console.log(err.request)
+					throw err
+				} else {
+					// Something happened in setting up the request and triggered an Error
+					console.log('Error', err.message)
+					throw err
+				}
+				// console.log(err.config)
+			})
+	)
+}
+
+// ! error catching if using async/await from https://gist.github.com/fgilio/230ccd514e9381fafa51608fcf137253
+// try {
+// 	const response = await axios.get('https://your.site/api/v1/bla/ble/bli')
+// 	// Success 🎉
+// 	console.log(response)
+// } catch (error) {
+// 	// Error 😨
+// 	if (error.response) {
+// 		/*
+// 		 * The request was made and the server responded with a
+// 		 * status code that falls out of the range of 2xx
+// 		 */
+// 		console.log(error.response.data)
+// 		console.log(error.response.status)
+// 		console.log(error.response.headers)
+// 	} else if (error.request) {
+// 		/*
+// 		 * The request was made but no response was received, `error.request`
+// 		 * is an instance of XMLHttpRequest in the browser and an instance
+// 		 * of http.ClientRequest in Node.js
+// 		 */
+// 		console.log(error.request)
+// 	} else {
+// 		// Something happened in setting up the request and triggered an Error
+// 		console.log('Error', error.message)
+// 	}
+// 	console.log(error)
+// }
+
 // ! API for PIXABAY
 // const getImage = async (count = 1) => {
 // 	// ramdomize page number
@@ -37,46 +128,15 @@ const axios = require('axios')
 // 		.then((array) => {
 // 			return array.slice(0, hits)
 // 		})
-// .catch((err) => {
-// 	throw err
+// 		.catch((err) => {
+// 	if (err.response) {
+// 		// client received an error response (5xx, 4xx)
+// 	} else if (err.request) {
+// 		// client never received a response, or request never left
+// 	} else {
+// 		// anything else
+// 	}
 // })
 // }
-
-//api.pexels.com/v1/search?query=people"
-// ! API for PEXEL
-const getImage = async (count = 1) => {
-	let safeSearchTopic = 'illustrations'
-	return axios
-		.get(
-			`https://api.pexels.com/v1/search?query=${safeSearchTopic}&page=${Math.floor(
-				1000 * Math.random()
-			)}&per_page=${count}`,
-			// `https://api.pexels.com/v1?page=${Math.floor(
-			// 	1000 * Math.random()
-			// )}&per_page=${count}`,
-			{
-				headers: {
-					Accept: 'application/json',
-					'Content-Type': 'application/json',
-					Authorization: apiKey_pexels,
-				},
-			}
-		)
-		.then(({data}) => {
-			return data.photos.map((photo) => {
-				return {
-					imageID: photo.id,
-					imgSmall: photo.src.tiny,
-					imgMed: photo.src.medium,
-					imgLag: photo.src.large,
-					width: photo.width,
-					height: photo.height,
-				}
-			})
-		})
-		.catch((err) => {
-			throw err
-		})
-}
 
 module.exports = getImage
