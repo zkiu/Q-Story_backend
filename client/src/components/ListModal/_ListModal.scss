@@ -1,4 +1,22 @@
 .list-modal {
+	// width: 50vw;
+
+	.modal-title {
+		font-size: 3.2rem;
+	}
+	li {
+		cursor: pointer;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		&:hover,
+		&:active {
+			background-color: $light;
+		}
+	}
+
+	span {
+		font-size: 2.4rem;
+	}
 	.modal-footer {
 		// padding-left: 0;
 		// padding-right: 0;

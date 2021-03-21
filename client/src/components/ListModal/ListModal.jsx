@@ -51,7 +51,7 @@ export default function LoginModal() {
 				aria-labelledby="listModalLabel"
 				aria-hidden="true"
 			>
-				<div className="modal-dialog modal-dialog-centered">
+				<div className="modal-dialog modal-dialog-centered modal-xl">
 					<div className="modal-content">
 						<div className="modal-header">
 							<h5 className="modal-title" id="listModalLabel">
@@ -65,13 +65,14 @@ export default function LoginModal() {
 								aria-label="Close"
 							></button>
 						</div>
-						<ul className="modal-body">
+						<ul className="modal-body list-group list-group-flush">
 							{projects.length === 0 ? (
 								<span>You do not have any saved project</span>
 							) : (
 								projects.map((project) => {
 									return (
 										<li
+											className="list-group-item"
 											key={project.id}
 											onClick={(e) => {
 												handleClick(e, project.id)
@@ -89,18 +90,10 @@ export default function LoginModal() {
 							)}
 						</ul>
 						<div className="modal-footer ">
-							<button
-								type="button"
-								className="btn btn-secondary"
-								data-bs-dismiss="modal"
-							>
+							<button type="button" className="mybtn" data-bs-dismiss="modal">
 								Close
 							</button>
-							<button
-								type="button"
-								className="btn btn-primary"
-								data-bs-dismiss="modal"
-							>
+							<button type="button" className="mybtn" data-bs-dismiss="modal">
 								Okay
 							</button>
 						</div>
