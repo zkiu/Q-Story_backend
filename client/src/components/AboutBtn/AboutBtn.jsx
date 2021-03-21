@@ -29,13 +29,15 @@ export default function AboutBtn() {
 	}
 
 	return (
-		<div className="mybtn__round" onClick={handleClick}>
-			<IconContext.Provider value={{className: 'mybtn__round--icon'}}>
+		<div className="mybtn__round mybtn__round--small" onClick={handleClick}>
+			<IconContext.Provider
+				value={{className: 'mybtn__round--icon mybtn__round--small--icon'}}
+			>
 				<div>
 					<TiInfoLarge />
 				</div>
 			</IconContext.Provider>
-			<span className="mybtn__round--text">
+			<span className="mybtn__round--text mybtn__round--small--text">
 				{/* <br /> */}
 				About
 				<br />

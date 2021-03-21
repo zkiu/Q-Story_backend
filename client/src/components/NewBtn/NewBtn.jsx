@@ -34,7 +34,11 @@ export default function NewBtn({setCards, setTitle, setImageIndex}) {
 
 	return (
 		<>
-			<button type="button" className="mybtn" onClick={handleClick}>
+			<button
+				type="button"
+				className="mybtn mybtn--bottom"
+				onClick={handleClick}
+			>
 				New Project
 			</button>
 		</>

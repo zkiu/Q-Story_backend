@@ -130,7 +130,7 @@ export default function HomePage() {
 			</div>
 			{/* ******************************************** */}
 			<div className="majorEditContainer">
-				<div className="optionsContainer">
+				{/* <div className="optionsContainer">
 					{userInfo ? (
 						<>
 							<SaveBtn cards={cards} title={title} projectid={projectid} />
@@ -145,8 +145,8 @@ export default function HomePage() {
 						<p className="message">Login/ Register to save your project.</p>
 					)}
 
-					{/* <AboutBtn /> */}
-				</div>
+					<AboutBtn />
+				</div> */}
 				{/* ******************************************** */}
 				<section className="editCardContainer">
 					<EditCardComp
@@ -158,7 +158,24 @@ export default function HomePage() {
 				</section>
 
 				{/* ******************************************** */}
-				<div className="pageBtnContainer">
+				<div className="btnContainer">
+					<div className="optionsContainer">
+						{userInfo ? (
+							<>
+								<SaveBtn cards={cards} title={title} projectid={projectid} />
+								<ListModal />
+								<NewBtn
+									setCards={setCards}
+									setTitle={setTitle}
+									setImageIndex={setImageIndex}
+								/>
+							</>
+						) : (
+							<p className="message">Login/ Register to save your project.</p>
+						)}
+
+						{/* <AboutBtn /> */}
+					</div>
 					<AboutBtn />
 					<TheaterBtn projectid={projectid} />
 				</div>
