@@ -67,8 +67,8 @@ export default function LoginModal() {
 						</div>
 						<ul className="modal-body list-group list-group-flush">
 							{projects.length === 0 ? (
-								<span className="message">
-									You do not have any saved project
+								<span className="listMessage">
+									You do not have any saved projects.
 								</span>
 							) : (
 								projects.map((project) => {
