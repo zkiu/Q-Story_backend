@@ -8,7 +8,11 @@ export default function AboutBtn() {
 	}
 	return (
 		<>
-			<button type="button" className="btn btn-primary" onClick={handleClick}>
+			<button
+				type="button"
+				className="mybtn mybtn--bottom"
+				onClick={handleClick}
+			>
 				About Page
 			</button>
 		</>

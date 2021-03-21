@@ -53,17 +53,19 @@
 		grid-template-columns: 1fr 6fr 1fr;
 		padding: 5rem 0 8rem;
 	}
+	.message {
+		font-size: 1.8rem;
+		color: $heavy;
+		text-align: center;
+	}
 	.optionsContainer {
 		display: flex;
 		flex-flow: column;
-		justify-content: flex-end;
-		padding: 2rem;
-
-		// width: fit-content;
-		background-color: red;
+		justify-content: space-between;
+		padding: 0 2rem;
 	}
 
 	.theaterContainer {
-		background-color: red;
+		// background-color: red;
 	}
 }

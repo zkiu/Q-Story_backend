@@ -73,7 +73,7 @@ export default function EditCardComp({
 					setImageIndex={setImageIndex}
 				/>
 				<div className="footer">
-					<button type="submit" className="btn btn-primary">
+					<button type="submit" className="mybtn">
 						Update Text
 					</button>
 				</div>

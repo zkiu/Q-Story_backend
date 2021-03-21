@@ -30,7 +30,7 @@ export default function LoginModal() {
 			{/* <!-- Modal Trigger --> */}
 			<button
 				type="button"
-				className="btn btn-primary"
+				className="mybtn mybtn--spaceRight"
 				data-bs-toggle="modal"
 				data-bs-target="#loginModal"
 			>

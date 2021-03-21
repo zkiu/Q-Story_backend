@@ -45,7 +45,7 @@ export default function RegisterModal() {
 			{/* <!-- Modal Trigger --> */}
 			<button
 				type="button"
-				className="btn btn-primary"
+				className="mybtn"
 				data-bs-toggle="modal"
 				data-bs-target="#registerModal"
 			>

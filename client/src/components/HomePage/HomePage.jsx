@@ -132,8 +132,8 @@ export default function HomePage() {
 				<div className="optionsContainer">
 					{userInfo ? (
 						<>
-							<ListModal />
 							<SaveBtn cards={cards} title={title} projectid={projectid} />
+							<ListModal />
 							<NewBtn
 								setCards={setCards}
 								setTitle={setTitle}
@@ -141,7 +141,7 @@ export default function HomePage() {
 							/>
 						</>
 					) : (
-						<p>Login/Register to save your project.</p>
+						<p className="message">Login/ Register to save your project.</p>
 					)}
 
 					<AboutBtn />
