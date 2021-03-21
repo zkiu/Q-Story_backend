@@ -15,6 +15,38 @@
 		text-align: right;
 	}
 
+	.DnDContainer {
+		// display: grid;
+		// grid-template-columns: calc($width-desk - 60px) 60px;
+		// height: 10rem;
+		background-color: red;
+	}
+	.guideContainer {
+		display: flex;
+		justify-content: space-between;
+		padding: 0 1rem;
+	}
+	.guideLabel {
+		font-size: 2.4rem;
+		color: $heavy;
+		width: 25%;
+
+		&--end {
+			text-align: right;
+		}
+	}
+	.toolContainer {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		// background-color: $light;
+		border: 2px dotted $medium;
+		border-radius: 1rem;
+		padding: 1rem;
+		width: 15rem;
+		// text-shadow: 2px 2px 4px $medium;
+	}
+
 	.optionsContainer {
 		// position: fixed;
 		// bottom: 0;
@@ -22,16 +54,5 @@
 		padding: 2rem;
 		background-color: lightblue;
 		width: fit-content;
-	}
-	.toolContainer {
-		display: flex;
-		flex-direction: column;
-		// justify-content: space-between;
-	}
-
-	.guideContainer {
-		display: flex;
-		flex-direction: column;
-		// justify-content: space-between;
 	}
 }

@@ -1,4 +1,10 @@
 .icon {
 	width: 5rem;
 	height: 5rem;
+
+	&:hover,
+	&:active {
+		color: $medium;
+		cursor: pointer;
+	}
 }

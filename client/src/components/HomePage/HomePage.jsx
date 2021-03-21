@@ -107,7 +107,8 @@ export default function HomePage() {
 				<TitleInput title={title} setTitle={setTitle} />
 			</div>
 			<h5 className="apiheading">Photos provided by Pexels.com</h5>
-
+			{/* ******************************************** */}
+			{/* <div className="DnDContainer"> */}
 			{cards && (
 				<DnDComp
 					cards={cards}
@@ -115,14 +116,16 @@ export default function HomePage() {
 					setImageIndex={setImageIndex}
 				/>
 			)}
-			<div className="toolContainer">
-				<AddCardBtn cards={cards} setCards={setCards} />
-				<ResetBtn setCards={setCards} setImageIndex={setImageIndex} />
-			</div>
+			{/* </div> */}
+
 			{/* ******************************************** */}
 			<div className="guideContainer">
-				<span>Start</span>
-				<span>End</span>
+				<span className="guideLabel">Start . . . </span>
+				<div className="toolContainer">
+					<AddCardBtn cards={cards} setCards={setCards} />
+					<ResetBtn setCards={setCards} setImageIndex={setImageIndex} />
+				</div>
+				<span className="guideLabel guideLabel--end">. . . End</span>
 			</div>
 			{/* ******************************************** */}
 			<div className="optionsContainer">
