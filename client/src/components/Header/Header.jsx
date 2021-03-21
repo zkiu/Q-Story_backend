@@ -18,7 +18,7 @@ export default function Header() {
 		<header>
 			<div className="container">
 				<div className="logoContainer">
-					<Link to="/" className="appLogo hover">
+					<Link to="/" className="logo hover">
 						Q-Story
 					</Link>
 				</div>

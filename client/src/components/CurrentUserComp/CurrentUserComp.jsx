@@ -5,10 +5,8 @@ export default function CurrentUserComp({userInfo, regDisplayName}) {
 	// firebase currently doesn't have an observer for this
 
 	return (
-		<>
-			<span className="welcome-message">
-				Hello {userInfo.displayName || regDisplayName}
-			</span>
-		</>
+		<div className="welcome-message">
+			<span>Hello {userInfo.displayName || regDisplayName}</span>
+		</div>
 	)
 }

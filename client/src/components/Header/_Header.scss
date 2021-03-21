@@ -4,6 +4,7 @@ header {
 	display: grid;
 	place-items: center;
 	padding: 2rem;
+	position: relative;
 
 	.container {
 		display: flex;
@@ -11,9 +12,11 @@ header {
 		justify-content: space-between;
 		max-width: $width-desk;
 	}
-	.appLogo {
+	.logo {
 		@include font-logo;
 		font-size: 3.2rem;
+		width: 9rem;
+		z-index: 999;
 
 		// text-decoration: underline;
 		background-clip: text;
@@ -64,5 +67,6 @@ header {
 	.authContainer {
 		display: flex;
 		align-items: center;
+		z-index: 999;
 	}
 }
