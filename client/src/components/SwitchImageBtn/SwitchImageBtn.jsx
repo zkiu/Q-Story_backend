@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 import {FcSwitchCamera} from 'react-icons/fc'
 
 import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
@@ -16,7 +16,7 @@ export default function SwitchImageBtn({
 
 		getOneImage()
 			.then((card) => {
-				const {duplicateFound, newCards} = checkDuplicateImageId(cards, [card])
+				const {duplicateFound} = checkDuplicateImageId(cards, [card])
 
 				if (duplicateFound) {
 					console.log('duplicate found -> so recursive')
