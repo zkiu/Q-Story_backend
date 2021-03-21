@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom'
 export default function TheaterBtn({projectid}) {
 	let history = useHistory()
 
-	const handleTheaterMode = (e) => {
+	const handleClick = (e) => {
 		e.preventDefault()
 		if (projectid == null) {
 			alert('You must save the project first.')
@@ -14,13 +14,13 @@ export default function TheaterBtn({projectid}) {
 		}
 	}
 	return (
-		<div className="theaterbtn" onClick={handleTheaterMode}>
-			<IconContext.Provider value={{className: 'theaterbtn--icon'}}>
+		<div className="mybtn__round" onClick={handleClick}>
+			<IconContext.Provider value={{className: 'mybtn__round--icon'}}>
 				<div>
 					<MdTheaters />
 				</div>
 			</IconContext.Provider>
-			<span className="theaterbtn--text">
+			<span className="mybtn__round--text">
 				{/* <br /> */}
 				Theater
 				<br />

@@ -145,7 +145,7 @@ export default function HomePage() {
 						<p className="message">Login/ Register to save your project.</p>
 					)}
 
-					<AboutBtn />
+					{/* <AboutBtn /> */}
 				</div>
 				{/* ******************************************** */}
 				<section className="editCardContainer">
@@ -158,11 +158,9 @@ export default function HomePage() {
 				</section>
 
 				{/* ******************************************** */}
-				<div className="theaterContainer">
-					{/* <div className="theaterbtn" onClick={handleTheaterMode}> */}
-					{/* <span>Theater Mode</span> */}
+				<div className="pageBtnContainer">
+					<AboutBtn />
 					<TheaterBtn projectid={projectid} />
-					{/* </div> */}
 				</div>
 			</div>
 		</section>
