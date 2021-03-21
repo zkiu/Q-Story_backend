@@ -1,4 +1,4 @@
-export default function CurrentUserComp({userInfo}) {
+export default function CurrentUserComp({userInfo, regDisplayName}) {
 	// TODO: displayName will be initially null when registering because of the following
 	// -> adding displayName property to userCredentials is a separate process from registering with email
 	// -> and userInfo prop is not triggered by this change
@@ -6,7 +6,9 @@ export default function CurrentUserComp({userInfo}) {
 
 	return (
 		<>
-			<span className="welcome-message">Hello {userInfo.displayName}</span>
+			<span className="welcome-message">
+				Hello {regDisplayName || userInfo.displayName}
+			</span>
 		</>
 	)
 }

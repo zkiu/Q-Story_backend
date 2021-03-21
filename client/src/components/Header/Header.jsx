@@ -1,3 +1,5 @@
+import React, {useState} from 'react'
+
 import {Link} from 'react-router-dom'
 
 import LoginModal from '../LoginModal/LoginModal'
@@ -7,6 +9,9 @@ import CurrentUserComp from '../CurrentUserComp/CurrentUserComp'
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
 
 export default function Header() {
+	// ! this is a hack to overcome the realtime limits of Firebase updateProfile() with displayName
+	const [regDisplayName, setRegDisplayName] = useState('')
+
 	const {isLoading, userInfo} = useLoginStatus()
 
 	return (
@@ -20,7 +25,10 @@ export default function Header() {
 
 				{!isLoading && userInfo ? (
 					<>
-						<CurrentUserComp userInfo={userInfo} />
+						<CurrentUserComp
+							userInfo={userInfo}
+							regDisplayName={regDisplayName}
+						/>
 						<div className="authContainer">
 							<SignOutBtn />
 						</div>
@@ -28,7 +36,7 @@ export default function Header() {
 				) : (
 					<div className="authContainer">
 						<LoginModal />
-						<RegisterModal />
+						<RegisterModal setRegDisplayName={setRegDisplayName} />
 					</div>
 				)}
 			</div>

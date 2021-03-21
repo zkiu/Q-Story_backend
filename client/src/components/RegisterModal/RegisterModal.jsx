@@ -3,7 +3,7 @@ import {registerUser} from '../../services/auth/registerUser'
 
 // -- No confidential info is kept, so the registration process is simple.
 // TODO: hash and salt the password before sending
-export default function RegisterModal() {
+export default function RegisterModal({setRegDisplayName}) {
 	const [regData, setRegData] = useState({
 		displayName: '',
 		email: '',
@@ -15,7 +15,13 @@ export default function RegisterModal() {
 			...regData,
 			[e.target.name]: e.target.value,
 		})
+
+		if (e.target.name === 'displayName') {
+			setRegDisplayName(e.target.value)
+		}
 	}
+
+	// function handleDisplayName(e) {}
 
 	function handleSubmit(e) {
 		e.preventDefault()
@@ -101,6 +107,10 @@ export default function RegisterModal() {
 									name="email"
 									value={regData.email}
 									onChange={handleChange}
+									// onChange={(e) => {
+									// 	handleChange(e)
+									// 	handleDisplayName(e)
+									// }}
 								/>
 								<label htmlFor="floatingRegEmail">Email address</label>
 							</div>
