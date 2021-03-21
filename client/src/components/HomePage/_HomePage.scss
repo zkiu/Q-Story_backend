@@ -67,5 +67,7 @@
 
 	.theaterContainer {
 		// background-color: red;
+		display: grid;
+		place-items: center;
 	}
 }

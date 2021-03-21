@@ -20,6 +20,12 @@ export default function TheaterBtn({projectid}) {
 					<MdTheaters />
 				</div>
 			</IconContext.Provider>
+			<span className="theaterbtn--text">
+				{/* <br /> */}
+				Theater
+				<br />
+				Mode
+			</span>
 		</div>
 	)
 }

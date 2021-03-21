@@ -1,5 +1,11 @@
 .theaterbtn {
-	background-color: $light;
+	background-color: $white;
+	// background-image: radial-gradient(
+	// 	farthest-corner at 40px 40px,
+	// 	$light 10%,
+	// 	$medium 100%
+	// );
+	position: relative;
 	color: $dark;
 	display: grid;
 	place-items: center;
@@ -12,14 +18,40 @@
 		// color: $dark;
 		height: 10rem;
 		width: 10rem;
+		// transition: all 0.3s;
+
+		// &:hover {
+		// 	visibility: hidden;
+		// }
+	}
+	&--text {
+		// @include font-logo;
+		position: absolute;
+		visibility: hidden;
+		font-size: 3rem;
+		font-weight: 900;
+		color: $white;
+		// color: red;
+		text-align: center;
+		// transition: all 0.3s;
+		margin-top: 2rem;
+		// background-color: red;
 	}
 
 	&:hover {
 		background-color: $heavy;
-		color: $light;
+		// background-image: radial-gradient(
+		// 	farthest-corner at 40px 40px,
+		// 	$white 0%,
+		// 	$medium 100%
+		// );
+		// color: $light;
+	}
 
-		// &--icon {
-		// 	color: $white;
-		// }
+	&:hover .theaterbtn--icon {
+		visibility: hidden;
+	}
+	&:hover .theaterbtn--text {
+		visibility: visible;
 	}
 }
