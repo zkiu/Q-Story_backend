@@ -30,7 +30,7 @@ export default function HomePage() {
 		if (!isLoading && projectid == null) {
 			console.log('1st effect on homepage (regardless of log status)')
 			axios
-				.get('http://localhost:8080/image/5')
+				.get('http://localhost:8080/image/6')
 				.then((response) => {
 					const {newCards} = checkDuplicateImageId(response.data)
 					const tempCards = newCards.map((item) => {

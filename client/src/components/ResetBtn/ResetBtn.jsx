@@ -6,7 +6,7 @@ export default function ResetBtn({setCards, setImageIndex}) {
 	const handleClick = (e) => {
 		e.preventDefault()
 		axios
-			.get('http://localhost:8080/image/5')
+			.get('http://localhost:8080/image/6')
 			.then((response) => {
 				const {newCards} = checkDuplicateImageId(response.data)
 				const tempCards = newCards.map((item) => {

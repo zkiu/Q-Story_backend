@@ -11,7 +11,7 @@ export default function NewBtn({setCards, setTitle, setImageIndex}) {
 		setImageIndex(0)
 		history.push('/')
 		axios
-			.get('http://localhost:8080/image/5')
+			.get('http://localhost:8080/image/6')
 			.then((response) => {
 				const {newCards} = checkDuplicateImageId(response.data)
 				const tempCards = newCards.map((item) => {
