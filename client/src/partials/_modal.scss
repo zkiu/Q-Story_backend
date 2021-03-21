@@ -1,0 +1,44 @@
+.modal {
+	// width: 50vw;
+
+	.modal-content {
+		padding: 2rem;
+		background-color: $dark;
+	}
+	.modal-title {
+		font-size: 3.2rem;
+		font-weight: 700;
+		color: $white;
+	}
+	.btn-close {
+		font-size: 2rem;
+		background-color: $white;
+	}
+	li {
+		background-color: $white;
+		cursor: pointer;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		span {
+			font-size: 2.4rem;
+		}
+		&:hover,
+		&:active {
+			background-color: $light;
+		}
+	}
+	.message {
+		color: $white;
+		font-size: 2.4rem;
+	}
+	.inputField {
+		background-color: $white;
+		height: 5rem;
+		font-size: 4rem;
+	}
+	.modal-footer {
+		// padding-left: 0;
+		// padding-right: 0;
+		justify-content: space-between;
+	}
+}

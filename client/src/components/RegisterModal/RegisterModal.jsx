@@ -65,7 +65,7 @@ export default function RegisterModal({setRegDisplayName}) {
 				aria-labelledby="registerModalLabel"
 				aria-hidden="true"
 			>
-				<div className="modal-dialog">
+				<div className="modal-dialog modal-lg">
 					<div className="modal-content">
 						<div className="modal-header">
 							<h5 className="modal-title" id="registerModalLabel">
@@ -129,14 +129,10 @@ export default function RegisterModal({setRegDisplayName}) {
 								<label htmlFor="floatingRegPassword">Password</label>
 							</div>
 							<div className="modal-footer ">
-								<button
-									type="button"
-									className="btn btn-secondary"
-									data-bs-dismiss="modal"
-								>
+								<button type="button" className="mybtn" data-bs-dismiss="modal">
 									Close
 								</button>
-								<button type="submit" className="btn btn-primary">
+								<button type="submit" className="mybtn">
 									Register
 								</button>
 							</div>
