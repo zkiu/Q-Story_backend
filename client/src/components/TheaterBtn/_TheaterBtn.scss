@@ -1,0 +1,25 @@
+.theaterbtn {
+	background-color: $light;
+	color: $dark;
+	display: grid;
+	place-items: center;
+	height: 15rem;
+	width: 15rem;
+	border-radius: 50%;
+	box-shadow: 2px 2px 5px $dark;
+	transition: all 0.3s;
+	&--icon {
+		// color: $dark;
+		height: 10rem;
+		width: 10rem;
+	}
+
+	&:hover {
+		background-color: $heavy;
+		color: $light;
+
+		// &--icon {
+		// 	color: $white;
+		// }
+	}
+}

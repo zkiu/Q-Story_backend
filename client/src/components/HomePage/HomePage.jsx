@@ -14,6 +14,7 @@ import TitleInput from '../TitleInput/TitleInput'
 import AddCardBtn from '../AddCardBtn/AddCardBtn'
 import ResetBtn from '../ResetBtn/ResetBtn'
 import EditCardComp from '../EditCardComp/EditCardComp'
+import TheaterBtn from '../TheaterBtn/TheaterBtn'
 
 export default function HomePage() {
 	const [cards, setCards] = useState([])
@@ -92,14 +93,14 @@ export default function HomePage() {
 		}
 	}, [isLoading, userInfo, projectid])
 
-	const handleTheaterMode = (e) => {
-		e.preventDefault()
-		if (projectid == null) {
-			alert('You must save the project first.')
-		} else {
-			history.push(`/theater/${projectid}`)
-		}
-	}
+	// const handleTheaterMode = (e) => {
+	// 	e.preventDefault()
+	// 	if (projectid == null) {
+	// 		alert('You must save the project first.')
+	// 	} else {
+	// 		history.push(`/theater/${projectid}`)
+	// 	}
+	// }
 
 	return (
 		<section className="HomePage">
@@ -158,9 +159,10 @@ export default function HomePage() {
 
 				{/* ******************************************** */}
 				<div className="theaterContainer">
-					<div className="btn btn-primary" onClick={handleTheaterMode}>
-						<span>Theater Mode</span>
-					</div>
+					{/* <div className="theaterbtn" onClick={handleTheaterMode}> */}
+					{/* <span>Theater Mode</span> */}
+					<TheaterBtn projectid={projectid} />
+					{/* </div> */}
 				</div>
 			</div>
 		</section>
