@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import {signIn} from '../../services/auth/signIn'
 
-export default function LoginModal() {
+export default function LoginModal({setRegDisplayName}) {
 	const [loginUser, setLoginUser] = useState({
 		email: '',
 		password: '',
@@ -13,6 +13,7 @@ export default function LoginModal() {
 
 	function handleSubmit(e) {
 		e.preventDefault()
+		setRegDisplayName('')
 		signIn(loginUser.email, loginUser.password)
 			.then((userID) => {
 				// console.info(userID)

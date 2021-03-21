@@ -7,7 +7,7 @@ export default function CurrentUserComp({userInfo, regDisplayName}) {
 	return (
 		<>
 			<span className="welcome-message">
-				Hello {regDisplayName || userInfo.displayName}
+				Hello {userInfo.displayName || regDisplayName}
 			</span>
 		</>
 	)

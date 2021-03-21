@@ -30,12 +30,12 @@ export default function Header() {
 							regDisplayName={regDisplayName}
 						/>
 						<div className="authContainer">
-							<SignOutBtn />
+							<SignOutBtn setRegDisplayName={setRegDisplayName} />
 						</div>
 					</>
 				) : (
 					<div className="authContainer">
-						<LoginModal />
+						<LoginModal setRegDisplayName={setRegDisplayName} />
 						<RegisterModal setRegDisplayName={setRegDisplayName} />
 					</div>
 				)}
