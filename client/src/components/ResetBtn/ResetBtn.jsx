@@ -14,7 +14,7 @@ export default function ResetBtn({setCards, setImageIndex}) {
 					return item
 				})
 				setCards(tempCards)
-				setImageIndex(null)
+				setImageIndex(0)
 			})
 			.catch((err) => {
 				if (err.response.status === 429) {

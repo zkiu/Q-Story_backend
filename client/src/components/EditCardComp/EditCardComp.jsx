@@ -8,14 +8,20 @@ export default function EditCardComp({
 	imageIndex,
 	setImageIndex,
 }) {
-	const [card, setCard] = useState({
-		imageID: '',
-		imgSmall: '',
-		imgMed: '',
-		imgLag: '',
-		width: '',
-		height: '',
-		paragraph: '',
+	const [card, setCard] = useState(() => {
+		if (imageIndex !== null) {
+			return cards[imageIndex]
+		} else {
+			return {
+				imageID: '',
+				imgSmall: '',
+				imgMed: '',
+				imgLag: '',
+				width: '',
+				height: '',
+				paragraph: '',
+			}
+		}
 	})
 
 	useEffect(() => {
@@ -45,39 +51,41 @@ export default function EditCardComp({
 	const cardForm = (
 		<>
 			{/* Card info here {imageIndex} */}
-			<form className="form-card editcard" onSubmit={handleSubmit}>
-				<img src={card.imgMed} alt="" />
+			{card && (
+				<form className="form-card editcard" onSubmit={handleSubmit}>
+					<img src={card.imgMed} alt="" />
 
-				<div className="form-floating">
-					<textarea
-						className="form-control"
-						placeholder="Descripbe your imagination"
-						id="floatingCardParagraph"
-						name="paragraph"
-						value={card.paragraph}
-						onChange={handleChange}
-					></textarea>
-					<label htmlFor="floatingCardParagraph">Story Text</label>
-				</div>
+					<div className="form-floating">
+						<textarea
+							className="form-control"
+							placeholder="Descripbe your imagination"
+							id="floatingCardParagraph"
+							name="paragraph"
+							value={card.paragraph}
+							onChange={handleChange}
+						></textarea>
+						<label htmlFor="floatingCardParagraph">Story Text</label>
+					</div>
 
-				<DeleteCardBtn
-					cards={cards}
-					setCards={setCards}
-					imageIndex={imageIndex}
-					setImageIndex={setImageIndex}
-				/>
-				<SwitchImageBtn
-					cards={cards}
-					setCards={setCards}
-					imageIndex={imageIndex}
-					setImageIndex={setImageIndex}
-				/>
-				<div className="footer">
-					<button type="submit" className="mybtn">
-						Update Text
-					</button>
-				</div>
-			</form>
+					<DeleteCardBtn
+						cards={cards}
+						setCards={setCards}
+						imageIndex={imageIndex}
+						setImageIndex={setImageIndex}
+					/>
+					<SwitchImageBtn
+						cards={cards}
+						setCards={setCards}
+						imageIndex={imageIndex}
+						setImageIndex={setImageIndex}
+					/>
+					<div className="footer">
+						<button type="submit" className="mybtn">
+							Update Text
+						</button>
+					</div>
+				</form>
+			)}
 		</>
 	)
 	return imageIndex !== null && cardForm

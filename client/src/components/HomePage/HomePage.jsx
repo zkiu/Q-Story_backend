@@ -18,7 +18,7 @@ import EditCardComp from '../EditCardComp/EditCardComp'
 export default function HomePage() {
 	const [cards, setCards] = useState([])
 	const [title, setTitle] = useState('')
-	const [imageIndex, setImageIndex] = useState(null)
+	const [imageIndex, setImageIndex] = useState(0)
 
 	let history = useHistory()
 	let {projectid} = useParams() // either undefined or has projectid param
@@ -38,7 +38,7 @@ export default function HomePage() {
 					})
 					setCards(tempCards)
 					setTitle('')
-					setImageIndex(null)
+					setImageIndex(0)
 				})
 				.catch((err) => {
 					if (err.response.status === 429) {
@@ -62,7 +62,7 @@ export default function HomePage() {
 			// reset everything
 			setCards([])
 			setTitle('')
-			setImageIndex(null)
+			setImageIndex(0)
 			history.push(`/`)
 			alert('please log-in first to access this link')
 		}
@@ -83,7 +83,7 @@ export default function HomePage() {
 				.then(({data}) => {
 					setCards(data.cards)
 					setTitle(data.title)
-					setImageIndex(null)
+					setImageIndex(0)
 				})
 				.catch((err) => {
 					console.error(err)

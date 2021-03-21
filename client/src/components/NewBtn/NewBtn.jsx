@@ -8,7 +8,7 @@ export default function NewBtn({setCards, setTitle, setImageIndex}) {
 	function handleClick(e) {
 		e.preventDefault()
 		setTitle('')
-		setImageIndex(null)
+		setImageIndex(0)
 		history.push('/')
 		axios
 			.get('http://localhost:8080/image/5')
