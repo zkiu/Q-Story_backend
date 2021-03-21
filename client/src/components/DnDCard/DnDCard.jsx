@@ -4,13 +4,13 @@ export default function DnDCard({card}) {
 	// 	// console.log(e.currentTarget)
 	// }
 	return (
-		<div>
+		<div className="DnDCard">
 			{/* <div onClick={handleClick}> */}
 			{/* <h1>Hello</h1> */}
 			<img src={card.imgSmall} alt="" />
-			<p>{card.imageID}</p>
-			<p>{card.paragraph}</p>
-			{/* <p>card# {card.position}</p> */}
+			<div className="textContainer">
+				<p>{card.paragraph}</p>
+			</div>
 		</div>
 	)
 }

@@ -11,7 +11,11 @@ export default function DnDCardContainer({card, index, setImageIndex}) {
 		<Draggable draggableId={'' + card.imageID} index={index}>
 			{(provided, snapshot) => (
 				<li
-					className={snapshot.isDragging ? 'DnDCard isDragged' : 'DnDCard'}
+					className={
+						snapshot.isDragging
+							? 'DnDCardContainer isDragged'
+							: 'DnDCardContainer'
+					}
 					onTouchStart={(e) => {
 						handleSelect(e, index)
 					}}
