@@ -103,8 +103,11 @@ export default function HomePage() {
 
 	return (
 		<section className="HomePage">
-			<TitleInput title={title} setTitle={setTitle} />
-			<h5>Photos provided by Pexel</h5>
+			<div className="headingContainer">
+				<TitleInput title={title} setTitle={setTitle} />
+			</div>
+			<h5 className="apiheading">Photos provided by Pexels.com</h5>
+
 			{cards && (
 				<DnDComp
 					cards={cards}

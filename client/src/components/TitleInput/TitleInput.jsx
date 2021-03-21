@@ -5,15 +5,17 @@ export default function TitleInput({title, setTitle}) {
 	}
 	return (
 		<>
-			<label className="form-control-label sr-only" htmlFor="titleinput">
-				Project Title
+			<label
+				className="form-control-label sr-only titleLabel"
+				htmlFor="titleinput"
+			>
+				Title:
 			</label>
 			<input
-				required
-				autoComplete="true"
-				className="form-control border border-primary"
+				className="projectTitle"
+				// className="form-control border border-primary"
 				type="text"
-				id="titleinput"
+				// id="titleinput"
 				name="title"
 				placeholder="<Enter your project title here>"
 				value={title}
