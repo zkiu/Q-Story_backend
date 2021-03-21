@@ -38,6 +38,7 @@ $alarm: rgb(209, 168, 162);
 $bold: rgb(207, 184, 181);
 
 .mybtn__round {
+	cursor: pointer;
 	background-color: $alarm;
 	position: relative;
 	color: $dark;
