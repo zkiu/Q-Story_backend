@@ -6,6 +6,7 @@ $grid: 0.8rem;
 	margin-bottom: $grid;
 	background-color: lightblue;
 	padding: $grid;
+	border-radius: 5px;
 }
 .isDragged {
 	background-color: rgb(117, 165, 182);

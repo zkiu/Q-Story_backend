@@ -1,9 +1,9 @@
 .DnDArea {
-	background-color: lightgrey;
+	// background-color: lightgrey;
 	padding: 0;
 	display: flex;
 }
 
 .isDraggingOver {
-	background-color: grey;
+	background-color: $light;
 }
