@@ -7,34 +7,31 @@
 .slideCard {
 	height: 60vh;
 	width: 55vw;
-	// width: 100%;
-	// height: 5%;
-	// background-color: red;
-	// display: grid;
-	// place-items: center;
 	display: flex;
 	border-radius: 2rem;
 	overflow: hidden;
-	// flex-direction: column;
-	// .img-horizontal {
-	// }
-	img {
+	.imageContainer {
 		width: 50%;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: contain;
+		// background-size: cover;
 	}
 	.textContainer {
+		position: relative;
 		width: 50%;
-		height: auto;
-		padding: 3rem;
+		// background-color: red;
+		padding: 1rem 0;
+		padding-left: 5rem;
 		display: grid;
 		place-items: center;
-		background-color: rgb(26, 25, 25);
 	}
-	p {
+	.carouselText {
 		@include font-slides;
-		font-size: 4.5rem;
+		font-size: 4rem;
 		word-wrap: break-word;
 		overflow: hidden;
-		color: white;
-		// width: 50%;
+		color: $white;
 	}
 }

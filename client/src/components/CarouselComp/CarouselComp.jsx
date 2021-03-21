@@ -9,7 +9,8 @@ export default function CarouselComp({cards}) {
 		<section className="carousel">
 			<div
 				id="carouselExampleCaptions"
-				className="carousel slide carousel-fade"
+				// className="carousel slide carousel-fade"
+				className="carousel"
 				data-bs-ride="carousel"
 			>
 				<CarouselSlides cards={cards} />

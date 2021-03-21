@@ -28,6 +28,10 @@
 	.exitBtn {
 		font-size: 6rem;
 		width: fit-content;
-		// display: block;
+		color: $white;
+		transition: all 0.3s;
+		&:hover {
+			color: $medium;
+		}
 	}
 }
