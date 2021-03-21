@@ -61,35 +61,35 @@ export default function LoginModal({setRegDisplayName}) {
 						</div>
 						<form className="modal-body" onSubmit={handleSubmit}>
 							{/* modal body */}
-							<div className="form-floating mb-3">
-								<input
-									type="email"
-									className="form-control"
-									id="floatingLoginEmail"
-									placeholder="name@example.com"
-									required
-									autoComplete="true"
-									autoFocus
-									name="email"
-									value={loginUser.email}
-									onChange={handleChange}
-								/>
-								<label htmlFor="floatingLoginEmail">Email address</label>
-							</div>
-							<div className="form-floating">
-								<input
-									type="password"
-									className="form-control"
-									id="floatingLoginPassword"
-									placeholder="Password"
-									required
-									autoComplete="true"
-									name="password"
-									value={loginUser.password}
-									onChange={handleChange}
-								/>
-								<label htmlFor="floatingLoginPassword">Password</label>
-							</div>
+							{/* <div className="form-floating mb-3"> */}
+							<label htmlFor="floatingLoginEmail">Email address</label>
+							<input
+								type="email"
+								className="form-control"
+								id="floatingLoginEmail"
+								placeholder="name@example.com"
+								required
+								autoComplete="true"
+								autoFocus
+								name="email"
+								value={loginUser.email}
+								onChange={handleChange}
+							/>
+							{/* </div> */}
+							{/* <div className="form-floating"> */}
+							<label htmlFor="floatingLoginPassword">Password</label>
+							<input
+								type="password"
+								className="form-control"
+								id="floatingLoginPassword"
+								placeholder="Password"
+								required
+								autoComplete="true"
+								name="password"
+								value={loginUser.password}
+								onChange={handleChange}
+							/>
+							{/* </div> */}
 							<div className="modal-footer ">
 								<button type="button" className="mybtn" data-bs-dismiss="modal">
 									Close

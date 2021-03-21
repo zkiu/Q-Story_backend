@@ -31,14 +31,19 @@
 		color: $white;
 		font-size: 2.4rem;
 	}
-	.inputField {
-		background-color: $white;
-		height: 5rem;
-		font-size: 4rem;
+
+	form {
+		label {
+			font-size: 2.4rem;
+			color: $white;
+		}
+
+		input {
+			background-color: $white;
+			font-size: 3rem;
+		}
 	}
 	.modal-footer {
-		// padding-left: 0;
-		// padding-right: 0;
 		justify-content: space-between;
 	}
 }

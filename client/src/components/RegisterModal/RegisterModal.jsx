@@ -81,53 +81,57 @@ export default function RegisterModal({setRegDisplayName}) {
 						</div>
 						<form className="modal-body" onSubmit={handleSubmit}>
 							{/* modal body */}
-							<div className="form-floating mb-3">
-								<input
-									type="text"
-									className="form-control"
-									id="floatingRegName"
-									placeholder="Display Name"
-									required
-									autoComplete="true"
-									autoFocus
-									name="displayName"
-									value={regData.displayName}
-									onChange={handleChange}
-								/>
-								<label htmlFor="floatingRegName">Display Name</label>
-							</div>
-							<div className="form-floating mb-3">
-								<input
-									type="email"
-									className="form-control"
-									id="floatingRegEmail"
-									placeholder="name@example.com"
-									required
-									autoComplete="true"
-									name="email"
-									value={regData.email}
-									onChange={handleChange}
-									// onChange={(e) => {
-									// 	handleChange(e)
-									// 	handleDisplayName(e)
-									// }}
-								/>
-								<label htmlFor="floatingRegEmail">Email address</label>
-							</div>
-							<div className="form-floating">
-								<input
-									type="password"
-									className="form-control"
-									id="floatingRegPassword"
-									placeholder="Password"
-									required
-									autoComplete="true"
-									name="password"
-									value={regData.password}
-									onChange={handleChange}
-								/>
-								<label htmlFor="floatingRegPassword">Password</label>
-							</div>
+							{/* ********************************************************** */}
+
+							{/* <div className="form-floating mb-3"> */}
+							<label htmlFor="floatingRegName">Display Name:</label>
+							<input
+								type="text"
+								className="form-control"
+								id="floatingRegName"
+								placeholder="Display Name"
+								required
+								autoComplete="true"
+								autoFocus
+								name="displayName"
+								value={regData.displayName}
+								onChange={handleChange}
+							/>
+							{/* </div> */}
+							{/* <div className="form-floating mb-3"> */}
+							<label htmlFor="floatingRegEmail">Email:</label>
+							<input
+								type="email"
+								className="form-control"
+								id="floatingRegEmail"
+								placeholder="name@example.com"
+								required
+								autoComplete="true"
+								name="email"
+								value={regData.email}
+								onChange={handleChange}
+								// onChange={(e) => {
+								// 	handleChange(e)
+								// 	handleDisplayName(e)
+								// }}
+							/>
+							{/* </div> */}
+							{/* <div className="form-floating"> */}
+							<label htmlFor="floatingRegPassword">Password</label>
+							<input
+								type="password"
+								className="form-control"
+								id="floatingRegPassword"
+								placeholder="Password"
+								required
+								autoComplete="true"
+								name="password"
+								value={regData.password}
+								onChange={handleChange}
+							/>
+							{/* </div> */}
+							{/* ********************************************************** */}
+
 							<div className="modal-footer ">
 								<button type="button" className="mybtn" data-bs-dismiss="modal">
 									Close
