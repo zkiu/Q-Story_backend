@@ -34,7 +34,7 @@ export default function HomePage() {
 				.then((response) => {
 					const {newCards} = checkDuplicateImageId(response.data)
 					const tempCards = newCards.map((item) => {
-						item.paragraph = 'Your story here.'
+						item.paragraph = ''
 						return item
 					})
 					setCards(tempCards)
