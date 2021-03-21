@@ -93,15 +93,6 @@ export default function HomePage() {
 		}
 	}, [isLoading, userInfo, projectid])
 
-	// const handleTheaterMode = (e) => {
-	// 	e.preventDefault()
-	// 	if (projectid == null) {
-	// 		alert('You must save the project first.')
-	// 	} else {
-	// 		history.push(`/theater/${projectid}`)
-	// 	}
-	// }
-
 	return (
 		<section className="HomePage">
 			<div className="headingContainer">
@@ -177,7 +168,7 @@ export default function HomePage() {
 						{/* <AboutBtn /> */}
 					</div>
 					<AboutBtn />
-					<TheaterBtn projectid={projectid} />
+					<TheaterBtn cards={cards} title={title} projectid={projectid} />
 				</div>
 			</div>
 		</section>
