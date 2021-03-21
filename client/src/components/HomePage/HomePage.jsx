@@ -28,7 +28,7 @@ export default function HomePage() {
 	// -- on homepage (regardless of log status)
 	useEffect(() => {
 		if (!isLoading && projectid == null) {
-			console.log('1st effect on homepage (regardless of log status)')
+			// console.log('1st effect on homepage (regardless of log status)')
 			axios
 				.get('http://localhost:8080/image/6')
 				.then((response) => {
@@ -59,7 +59,7 @@ export default function HomePage() {
 	useEffect(() => {
 		// -- when loading is complete && user is null (when just opening the app or signing OUT) BUT projectid is true
 		if (!isLoading && !userInfo && projectid) {
-			console.log('2nd effect NOT logged && on projectid')
+			// console.log('2nd effect NOT logged && on projectid')
 			// reset everything
 			setCards([])
 			setTitle('')
@@ -73,7 +73,7 @@ export default function HomePage() {
 	useEffect(() => {
 		// -- when loading is complete && user exist && projectid exist
 		if (!isLoading && userInfo && projectid) {
-			console.log('3rd effect Logged IN && on projectid')
+			// console.log('3rd effect Logged IN && on projectid')
 			fb.auth()
 				.currentUser.getIdToken()
 				.then((token) => {
