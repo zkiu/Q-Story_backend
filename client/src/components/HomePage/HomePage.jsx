@@ -128,34 +128,39 @@ export default function HomePage() {
 				<span className="guideLabel guideLabel--end">. . . End</span>
 			</div>
 			{/* ******************************************** */}
-			<div className="optionsContainer">
-				{userInfo ? (
-					<>
-						<ListModal />
-						<SaveBtn cards={cards} title={title} projectid={projectid} />
-						<NewBtn
-							setCards={setCards}
-							setTitle={setTitle}
-							setImageIndex={setImageIndex}
-						/>
-					</>
-				) : (
-					<p>Login/Register to save your project.</p>
-				)}
+			<div className="majorEditContainer">
+				<div className="optionsContainer">
+					{userInfo ? (
+						<>
+							<ListModal />
+							<SaveBtn cards={cards} title={title} projectid={projectid} />
+							<NewBtn
+								setCards={setCards}
+								setTitle={setTitle}
+								setImageIndex={setImageIndex}
+							/>
+						</>
+					) : (
+						<p>Login/Register to save your project.</p>
+					)}
 
-				<AboutBtn />
-			</div>
-			{/* ******************************************** */}
-			<EditCardComp
-				cards={cards}
-				setCards={setCards}
-				imageIndex={imageIndex}
-				setImageIndex={setImageIndex}
-			/>
-			{/* ******************************************** */}
-			<div className="theaterContainer">
-				<div className="btn btn-primary" onClick={handleTheaterMode}>
-					<span>Theater Mode</span>
+					<AboutBtn />
+				</div>
+				{/* ******************************************** */}
+				<section className="editCardContainer">
+					<EditCardComp
+						cards={cards}
+						setCards={setCards}
+						imageIndex={imageIndex}
+						setImageIndex={setImageIndex}
+					/>
+				</section>
+
+				{/* ******************************************** */}
+				<div className="theaterContainer">
+					<div className="btn btn-primary" onClick={handleTheaterMode}>
+						<span>Theater Mode</span>
+					</div>
 				</div>
 			</div>
 		</section>

@@ -43,9 +43,9 @@ export default function EditCardComp({
 
 	// const info
 	const cardForm = (
-		<section className="editcard">
+		<>
 			{/* Card info here {imageIndex} */}
-			<form className="form-card" onSubmit={handleSubmit}>
+			<form className="form-card editcard" onSubmit={handleSubmit}>
 				<img src={card.imgMed} alt="" />
 
 				<div className="form-floating">
@@ -78,7 +78,7 @@ export default function EditCardComp({
 					</button>
 				</div>
 			</form>
-		</section>
+		</>
 	)
 	return imageIndex !== null && cardForm
 }
