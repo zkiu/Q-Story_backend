@@ -1,7 +1,62 @@
 .editcard {
-	background-color: lightgray;
+	background-color: lightblue;
+	border: 2px solid $heavy;
+	box-shadow: 1px 1px 5px $heavy;
+	overflow: hidden;
+	border-radius: 10px;
+	display: flex;
+	height: 50vh;
 
-	#floatingCardParagraph {
-		height: 10rem;
+	.imageContainer {
+		width: 50%;
+		overflow: hidden;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.editCardContainer {
+		position: relative;
+		width: 50%;
+	}
+	.inputGroup {
+		margin: 2rem;
+	}
+	.cardParagraph--label {
+		font-size: 2.4rem;
+		margin-bottom: 1rem;
+	}
+	.cardParagraph--input {
+		font-size: 3.2rem;
+		padding: 1rem;
+		height: 35rem;
+		resize: none;
+		width: 100%;
+		border-radius: 5px;
+		background-color: $white;
+	}
+
+	.btnContainer {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.cardIcon {
+		width: 5rem;
+		height: 5rem;
+		background-color: $white;
+		display: grid;
+		place-items: center;
+		border-radius: 5px;
+		border: 1px dotted $dark;
+		&:hover {
+			background-color: $dark;
+		}
+		&--switch {
+			position: relative;
+			left: -50px;
+		}
+		&--trash {
+		}
 	}
 }
