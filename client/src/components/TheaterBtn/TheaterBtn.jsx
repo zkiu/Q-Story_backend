@@ -34,36 +34,21 @@ export default function TheaterBtn({title, cards, projectid}) {
 								}
 							)
 						}
-						// else {
-						// 	// else created a new project document
-						// 	return axios.post('http://localhost:8080/project/', data, {
-						// 		headers: {token},
-						// 	})
-						// }
 					})
 					.then(({data}) => {
-						alert(data.message)
+						toast(data.message)
 						// history.push(`/project/${data.projectID}`)
 						history.push(`/theater/${projectid}`)
 					})
 					.catch((err) => {
-						console.error(err)
-						alert(err)
+						toast.error(err)
 					})
 			} else {
-				alert('unable to confirm your log-in status')
+				toast.dark('Unable to confirm your log-in status.')
 			}
 		}
 	}
 
-	// const handleClick = (e) => {
-	// 	e.preventDefault()
-	// 	if (projectid == null) {
-	// 		alert('You must save the project first.')
-	// 	} else {
-	// 		history.push(`/theater/${projectid}`)
-	// 	}
-	// }
 	return (
 		<div className="mybtn__round" onClick={handleClick}>
 			<IconContext.Provider value={{className: 'mybtn__round--icon'}}>

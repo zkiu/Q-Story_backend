@@ -5,6 +5,7 @@ import {fb} from '../../firebase/firebase'
 
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
 import CarouselComp from '../CarouselComp/CarouselComp'
+import {toast} from 'react-toastify'
 
 export default function TheaterPage() {
 	const [cards, setCards] = useState([])
@@ -25,8 +26,7 @@ export default function TheaterPage() {
 					setCards(data.cards)
 				})
 				.catch((err) => {
-					console.error(err)
-					alert('An error has occurred. Check the console for specifics.')
+					toast.error('An error has occurred.')
 				})
 		}
 	}, [projectid, isLoading, userInfo])

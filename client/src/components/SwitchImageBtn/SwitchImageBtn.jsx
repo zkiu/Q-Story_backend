@@ -3,6 +3,7 @@ import {FcSwitchCamera} from 'react-icons/fc'
 
 import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
 import {getOneImage} from '../../services/api/getOneImage'
+import {toast} from 'react-toastify'
 
 export default function SwitchImageBtn({
 	cards,
@@ -57,12 +58,12 @@ export default function SwitchImageBtn({
 			// })
 			.catch((err) => {
 				if (err.response.status === 429) {
-					alert(
+					toast.dark(
 						'The 3rd party API limit for images have been reached. The developer (Kiu) will need money to subscribed to a paid tier of the API to increase image availability.'
 					)
-					console.error(err.response.data)
+					toast.error(err.response.data)
 				} else {
-					console.error('An error occurred while requesting an image: ', err)
+					toast.error('An error occurred while requesting an image: ', err)
 				}
 			})
 	}

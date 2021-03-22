@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useParams, useHistory} from 'react-router-dom'
 import axios from 'axios'
+import {toast} from 'react-toastify'
 
 import {fb} from '../../firebase/firebase'
 import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
@@ -43,12 +44,12 @@ export default function HomePage() {
 				})
 				.catch((err) => {
 					if (err.response.status === 429) {
-						alert(
+						toast.dark(
 							'The 3rd party API limit for images have been reached. The developer (Kiu) will need money to subscribed to a paid tier of the API to increase image availability.'
 						)
-						console.error(err.response.data)
+						toast.error(err.response.data)
 					} else {
-						console.error('An error occurred while requesting an image: ', err)
+						toast.error('An error occurred while requesting an image: ', err)
 					}
 				})
 		}
@@ -65,7 +66,7 @@ export default function HomePage() {
 			setTitle('')
 			setImageIndex(0)
 			history.push(`/`)
-			alert('please log-in first to access this link')
+			toast.dark('please log-in first to access this link')
 		}
 	}, [isLoading, userInfo, projectid, history])
 
@@ -88,7 +89,7 @@ export default function HomePage() {
 				})
 				.catch((err) => {
 					console.error(err)
-					alert(err)
+					toast.error(err)
 				})
 		}
 	}, [isLoading, userInfo, projectid])

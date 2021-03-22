@@ -1,4 +1,5 @@
 import {useHistory} from 'react-router-dom'
+import {toast} from 'react-toastify'
 import {signOut} from '../../services/auth/signOut'
 
 export default function SignOutBtn({setRegDisplayName}) {
@@ -11,10 +12,10 @@ export default function SignOutBtn({setRegDisplayName}) {
 		signOut()
 			.then((result) => {
 				// TODO: add toast
-				alert('You have been signed out')
+				toast.info('You have been signed out')
 			})
 			.catch((error) => {
-				alert(error)
+				toast.error(error)
 			})
 	}
 

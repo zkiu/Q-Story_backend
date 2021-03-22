@@ -1,6 +1,7 @@
 import {fb} from '../../firebase/firebase'
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
+import {toast} from 'react-toastify'
 
 export default function SaveBtn({title, cards, projectid}) {
 	let history = useHistory()
@@ -35,15 +36,14 @@ export default function SaveBtn({title, cards, projectid}) {
 					}
 				})
 				.then(({data}) => {
-					alert(data.message)
+					toast(data.message)
 					history.push(`/project/${data.projectID}`)
 				})
 				.catch((err) => {
-					console.error(err)
-					alert(err)
+					toast.error(err)
 				})
 		} else {
-			alert('unable to confirm your log-in status')
+			toast.error('unable to confirm your log-in status')
 		}
 	}
 

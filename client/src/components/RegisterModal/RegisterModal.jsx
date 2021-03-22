@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {toast} from 'react-toastify'
 import {registerUser} from '../../services/auth/registerUser'
 
 // -- No confidential info is kept, so the registration process is simple.
@@ -36,13 +37,13 @@ export default function RegisterModal({setRegDisplayName}) {
 		registerUser(registrationInfo)
 			.then((message) => {
 				// TODO: use toast
-				alert(message.message)
+				toast(message.message)
 				// -- this remove() is required since bootstrap creates this div but this component is removed in the virtual dom once the user is signed in WITHOUT removing the modal-backdrop div created by Bootstrap
 				document.querySelector('.modal-backdrop').remove()
 			})
 			.catch((error) => {
 				// TODO: use toast
-				alert(error)
+				toast.error(error)
 			})
 	}
 

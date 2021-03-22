@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {toast} from 'react-toastify'
 import {signIn} from '../../services/auth/signIn'
 
 export default function LoginModal({setRegDisplayName}) {
@@ -22,7 +23,7 @@ export default function LoginModal({setRegDisplayName}) {
 			})
 			.catch((error) => {
 				// console.error('error in login modal')
-				alert(error)
+				toast.error(error)
 			})
 	}
 

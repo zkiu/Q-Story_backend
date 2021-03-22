@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, {useState} from 'react'
 import {fb} from '../../firebase/firebase'
 import {useHistory} from 'react-router-dom'
+import {toast} from 'react-toastify'
 
 export default function LoginModal() {
 	const [projects, setProjects] = useState([])
@@ -26,8 +27,7 @@ export default function LoginModal() {
 				setProjects(data)
 			})
 			.catch((err) => {
-				console.error(err)
-				alert('An error occurred while retrieving the project list')
+				toast.error('An error occurred while retrieving the project list')
 			})
 	}
 
