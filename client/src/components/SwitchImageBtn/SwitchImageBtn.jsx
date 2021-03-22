@@ -1,4 +1,3 @@
-// import axios from 'axios'
 import {FcSwitchCamera} from 'react-icons/fc'
 
 import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
@@ -26,7 +25,7 @@ export default function SwitchImageBtn({
 					temp[imageIndex] = {
 						...temp[imageIndex],
 						...card,
-						// TODO: use spread operator for data obj as well?
+						// Below are the properties of each card
 						// imageID: data.imageID,
 						// imgSmall: data.imgSmall,
 						// imgMed: data.imgMed,
@@ -38,24 +37,6 @@ export default function SwitchImageBtn({
 					setCards(temp)
 				}
 			})
-
-			// axios
-			// 	.get('http://localhost:8080/image')
-			// .then(({data}) => {
-			// 	temp[imageIndex] = {
-			// 		...temp[imageIndex],
-			// 		...data,
-			// 		// TODO: use spread operator for data obj as well?
-			// 		// imageID: data.imageID,
-			// 		// imgSmall: data.imgSmall,
-			// 		// imgMed: data.imgMed,
-			// 		// imgLag: data.imgLag,
-			// 		// width: data.width,
-			// 		// height: data.height,
-			// 	}
-
-			// 	setCards(temp)
-			// })
 			.catch((err) => {
 				if (err.response.status === 429) {
 					toast.dark(

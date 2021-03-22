@@ -11,7 +11,6 @@ export default function SignOutBtn({setRegDisplayName}) {
 		history.push('/')
 		signOut()
 			.then((result) => {
-				// TODO: add toast
 				toast.info('You have been signed out')
 			})
 			.catch((error) => {

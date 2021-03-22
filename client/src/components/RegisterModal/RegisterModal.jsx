@@ -36,13 +36,11 @@ export default function RegisterModal({setRegDisplayName}) {
 		// console.log(regData)
 		registerUser(registrationInfo)
 			.then((message) => {
-				// TODO: use toast
 				toast(message.message)
 				// -- this remove() is required since bootstrap creates this div but this component is removed in the virtual dom once the user is signed in WITHOUT removing the modal-backdrop div created by Bootstrap
 				document.querySelector('.modal-backdrop').remove()
 			})
 			.catch((error) => {
-				// TODO: use toast
 				toast.error(error)
 			})
 	}

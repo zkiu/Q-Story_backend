@@ -12,7 +12,7 @@ export default function TheaterBtn({title, cards, projectid}) {
 	const handleClick = (e) => {
 		e.preventDefault()
 		if (projectid == null) {
-			toast.dark('You must save the project first.')
+			toast.dark('🛑 You must save this project first.')
 		} else {
 			const tempTitle = title || '<Untitled Project>'
 			let data = {
