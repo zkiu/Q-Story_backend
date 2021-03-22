@@ -28,12 +28,18 @@
 		width: 500px;
 		// margin: 2rem auto;
 	}
+	.imgContainer {
+		margin: 0 auto;
+		width: fit-content;
+		padding: 2rem 0;
+	}
 
 	.profile-container {
 		// display: flex;
 		justify-content: center;
 		width: 500px;
 		margin: 0 auto;
+		padding: 2rem 0 2rem 0;
 
 		&-link {
 			display: flex;

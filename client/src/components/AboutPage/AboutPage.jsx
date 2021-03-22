@@ -1,4 +1,5 @@
 import {FaGithubAlt, FaLinkedin} from 'react-icons/fa'
+import toolstack from '../../assets/images/toolstack.png'
 
 export default function AboutPage() {
 	return (
@@ -22,7 +23,9 @@ export default function AboutPage() {
 				</div>
 
 				<h2 className="">The Tools</h2>
-
+				<div className="imgContainer">
+					<img src={toolstack} alt="Fullstack icons" />
+				</div>
 				<h2 className="">The Coder</h2>
 				<div className="profile-container">
 					<div className="profile-text">
