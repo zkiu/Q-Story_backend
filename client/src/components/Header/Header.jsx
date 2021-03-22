@@ -24,6 +24,25 @@ export default function Header() {
 				</div>
 
 				{!isLoading && userInfo ? (
+					<CurrentUserComp
+						userInfo={userInfo}
+						regDisplayName={regDisplayName}
+					/>
+				) : (
+					<div></div>
+				)}
+
+				<div className="authContainer">
+					{!isLoading && userInfo ? (
+						<SignOutBtn setRegDisplayName={setRegDisplayName} />
+					) : (
+						<>
+							<LoginModal setRegDisplayName={setRegDisplayName} />
+							<RegisterModal setRegDisplayName={setRegDisplayName} />
+						</>
+					)}
+				</div>
+				{/* {!isLoading && userInfo ? (
 					<>
 						<CurrentUserComp
 							userInfo={userInfo}
@@ -38,7 +57,7 @@ export default function Header() {
 						<LoginModal setRegDisplayName={setRegDisplayName} />
 						<RegisterModal setRegDisplayName={setRegDisplayName} />
 					</div>
-				)}
+				)} */}
 			</div>
 		</header>
 	)

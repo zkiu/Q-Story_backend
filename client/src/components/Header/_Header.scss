@@ -1,24 +1,26 @@
 header {
 	background-color: $dark;
 	width: 100%;
+	min-height: 8rem;
 	display: grid;
 	place-items: center;
-	padding: 1.5rem 0;
+	padding: 0rem 0;
 	position: relative;
 
 	.container {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: 1fr 3fr 1fr;
+		place-items: center;
+		// display: flex;
+		// align-items: center;
+		// justify-content: space-between;
 		max-width: $width-desk;
 	}
 	.logo {
 		@include font-logo;
 		font-size: 3.2rem;
 		width: 9rem;
-		z-index: 999;
-
-		// text-decoration: underline;
+		justify-self: start;
 		background-clip: text;
 		background: -webkit-gradient(
 			linear,
@@ -54,19 +56,25 @@ header {
 			left: 0;
 		}
 	}
-	.logoContainer:hover {
-		cursor: pointer;
-		.hover {
-			&:before,
-			&:after {
-				width: 100%;
-				opacity: 0.5;
+	.logoContainer {
+		justify-self: start;
+		&:hover {
+			cursor: pointer;
+			.hover {
+				&:before,
+				&:after {
+					width: 100%;
+					opacity: 0.5;
+				}
 			}
 		}
 	}
+
 	.authContainer {
 		display: flex;
 		align-items: center;
-		z-index: 999;
+		justify-self: end;
+
+		// z-index: 999;
 	}
 }
