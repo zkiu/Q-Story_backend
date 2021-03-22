@@ -16,9 +16,9 @@ export default function AboutPage() {
 							literacy, to zen out, or just for creating silly stories.
 						</p>
 						<p>
-							In building Q-Story, I tried to make the App simple, intuitive,
-							and fun. I put emphasis in keeping this App casual, so that family
-							and friends can pick it up during short breaks.
+							The majority of this app was coded in 2 weeks starting March 8,
+							2021. In building Q-Story, I tried to make the App simple,
+							intuitive, and fun.
 						</p>
 						<p>I hope that you have a lot of fun using this App.</p>
 					</div>
