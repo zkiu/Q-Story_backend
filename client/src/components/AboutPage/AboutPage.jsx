@@ -10,8 +10,8 @@ export default function AboutPage() {
 				<div className="profile-container">
 					<div className="profile-text">
 						<p>
-							I didn’t originally set out to build an educational App. However
-							as ideas came together, it became something fun to implement.
+							This is a web app to help with creative writing, to promote
+							literacy, to zen out, or just for creating silly stories.
 						</p>
 						<p>
 							In building Q-Story, I tried to make the App simple, intuitive,
