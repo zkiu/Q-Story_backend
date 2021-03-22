@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-import {ToastContainer, Flip} from 'react-toastify'
+import ToastComp from './ToastComp/ToastComp'
 
 import Header from './Header/Header'
 import HomePage from './HomePage/HomePage'
@@ -31,18 +31,7 @@ export default function App() {
 					</Route>
 				</Switch>
 			</Router>
-			<ToastContainer
-				position="bottom-right"
-				autoClose={3000}
-				hideProgressBar={false}
-				newestOnTop={false}
-				closeOnClick
-				rtl={false}
-				pauseOnFocusLoss
-				draggable
-				pauseOnHover
-				transition={Flip}
-			/>
+			<ToastComp />
 		</main>
 	)
 }

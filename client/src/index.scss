@@ -8,7 +8,7 @@
 @import './partials/modal';
 
 // from modules
-@import 'react-toastify/dist/ReactToastify.min.css';
+@import './components/ToastComp/ToastComp';
 
 // Component Specifics
 @import './components/App.scss';
