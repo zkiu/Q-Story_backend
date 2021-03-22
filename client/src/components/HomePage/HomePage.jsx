@@ -17,6 +17,9 @@ import ResetBtn from '../ResetBtn/ResetBtn'
 import EditCardComp from '../EditCardComp/EditCardComp'
 import TheaterBtn from '../TheaterBtn/TheaterBtn'
 
+//incase backend is down on initial load, load these default data
+import backupData from '../../assets/data/data.json'
+
 export default function HomePage() {
 	const [cards, setCards] = useState([])
 	const [title, setTitle] = useState('')
@@ -45,9 +48,16 @@ export default function HomePage() {
 				.catch((err) => {
 					if (err.response.status === 429) {
 						toast.dark(
-							'The 3rd party API limit for images have been reached. The developer (Kiu) will need money to subscribed to a paid tier of the API to increase image availability.'
+							'The 3rd party API limit for images have been reached 😢. You can still load previously saved projects.\nFor new images, try again later.'
 						)
-						toast.error(err.response.data)
+						// load default data when status error 429 is encountered
+						const tempCards = backupData.map((item) => {
+							item.paragraph = ''
+							return item
+						})
+						setCards(tempCards)
+						setTitle('')
+						setImageIndex(0)
 					} else {
 						toast.error('An error occurred while requesting an image: ', err)
 					}
@@ -101,7 +111,6 @@ export default function HomePage() {
 			</div>
 			<h5 className="apiheading">Photos provided by Pexels.com</h5>
 			{/* ******************************************** */}
-			{/* <div className="DnDContainer"> */}
 			{cards && (
 				<DnDComp
 					cards={cards}
@@ -109,8 +118,6 @@ export default function HomePage() {
 					setImageIndex={setImageIndex}
 				/>
 			)}
-			{/* </div> */}
-
 			{/* ******************************************** */}
 			<div className="guideContainer">
 				<span className="guideLabel">Start . . . </span>
@@ -122,24 +129,6 @@ export default function HomePage() {
 			</div>
 			{/* ******************************************** */}
 			<div className="majorEditContainer">
-				{/* <div className="optionsContainer">
-					{userInfo ? (
-						<>
-							<SaveBtn cards={cards} title={title} projectid={projectid} />
-							<ListModal />
-							<NewBtn
-								setCards={setCards}
-								setTitle={setTitle}
-								setImageIndex={setImageIndex}
-							/>
-						</>
-					) : (
-						<p className="message">Login/ Register to save your project.</p>
-					)}
-
-					<AboutBtn />
-				</div> */}
-				{/* ******************************************** */}
 				<section className="editCardContainer">
 					<EditCardComp
 						cards={cards}
@@ -148,7 +137,6 @@ export default function HomePage() {
 						setImageIndex={setImageIndex}
 					/>
 				</section>
-
 				{/* ******************************************** */}
 				<div className="btnContainer">
 					<div className="optionsContainer">
@@ -165,8 +153,6 @@ export default function HomePage() {
 						) : (
 							<p className="message">Login/ Register to save your project.</p>
 						)}
-
-						{/* <AboutBtn /> */}
 					</div>
 					<AboutBtn />
 					<TheaterBtn cards={cards} title={title} projectid={projectid} />
@@ -175,5 +161,3 @@ export default function HomePage() {
 		</section>
 	)
 }
-
-// TODO: check no imageID duplicate when loading a new picture from API
