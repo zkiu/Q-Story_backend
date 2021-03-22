@@ -4,6 +4,7 @@ import axios from 'axios'
 import {MdTheaters} from 'react-icons/md'
 import {IconContext} from 'react-icons'
 import {useHistory} from 'react-router-dom'
+import {toast} from 'react-toastify'
 
 export default function TheaterBtn({title, cards, projectid}) {
 	let history = useHistory()
@@ -11,7 +12,7 @@ export default function TheaterBtn({title, cards, projectid}) {
 	const handleClick = (e) => {
 		e.preventDefault()
 		if (projectid == null) {
-			alert('You must save the project first.')
+			toast.warning('You must save the project first.')
 		} else {
 			const tempTitle = title || '<Untitled Project>'
 			let data = {

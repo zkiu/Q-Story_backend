@@ -7,6 +7,9 @@
 @import './partials/btn';
 @import './partials/modal';
 
+// from modules
+@import 'react-toastify/dist/ReactToastify.min.css';
+
 // Component Specifics
 @import './components/App.scss';
 // header
