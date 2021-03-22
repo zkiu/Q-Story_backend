@@ -14,13 +14,6 @@
 		font-weight: 700;
 		text-align: right;
 	}
-
-	.DnDContainer {
-		// display: grid;
-		// grid-template-columns: calc($width-desk - 60px) 60px;
-		// height: 10rem;
-		background-color: red;
-	}
 	//****************************************************
 	.guideContainer {
 		display: flex;
@@ -55,6 +48,7 @@
 	}
 	.message {
 		font-size: 1.8rem;
+		border: 1px dotted $medium;
 		color: $heavy;
 		text-align: center;
 	}
