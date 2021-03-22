@@ -17,13 +17,13 @@ const saveProject = async (userID, projectID = null, reqData) => {
 			// return docRef.id
 			return {
 				projectID: docRef.id,
-				message: 'project saved',
+				message: '🎉 project saved',
 			}
 		} else {
 			const docRef = await projectColRef
 				.doc(projectID)
 				.set({dateCreated, title, cards})
-			return {projectID, message: 'project saved'}
+			return {projectID, message: '🎉 project saved'}
 		}
 	} catch (error) {
 		throw error
