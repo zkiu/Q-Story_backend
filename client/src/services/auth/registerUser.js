@@ -11,7 +11,7 @@ export const registerUser = async ({displayName, email, password}) => {
 		await createUserDoc(id, displayName, email)
 
 		return {
-			message: 'Registration completed. You are now automatically signed in',
+			message: 'Registration completed 🥳. You are now automatically signed in',
 		}
 	} catch (error) {
 		throw error
