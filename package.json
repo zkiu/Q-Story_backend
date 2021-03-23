@@ -2,6 +2,7 @@
 	"name": "deploying-to-heroku",
 	"version": "1.0.0",
 	"scripts": {
-		"server": "npm start --prefix server"
+		"server": "npm start --prefix server",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server"
 	}
 }
