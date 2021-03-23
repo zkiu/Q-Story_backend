@@ -1,8 +1,24 @@
 {
-	"name": "deploying-to-heroku",
+	"name": "q-story_server",
 	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
 	"scripts": {
-		"server": "npm start --prefix server",
-		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix server"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node index.js",
+		"dev": "nodemon index.js"
+	},
+	"engines": {
+		"node": "14.x"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@google-cloud/firestore": "^4.9.7",
+		"axios": "^0.21.1",
+		"cors": "^2.8.5",
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"firebase-admin": "^9.5.0"
 	}
 }
