@@ -2,8 +2,6 @@
 	"name": "deploying-to-heroku",
 	"version": "1.0.0",
 	"scripts": {
-		"server": "npm start --prefix server",
-		"client": "npm start --prefix client",
-		"build": "npm run build --prefix client"
+		"server": "npm start --prefix server"
 	}
 }
