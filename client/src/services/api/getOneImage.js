@@ -9,7 +9,7 @@ export const getOneImage = async () => {
 		imageID: data.imageID,
 		imgSmall: data.imgSmall,
 		imgMed: data.imgMed,
-		imgLag: data.imgLag,
+		imgLg: data.imgLg,
 		width: data.width,
 		height: data.height,
 	}

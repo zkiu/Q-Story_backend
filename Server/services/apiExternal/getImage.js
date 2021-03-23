@@ -30,7 +30,7 @@ const getImage = async (count = 1) => {
 						imageID: photo.id,
 						imgSmall: photo.src.tiny,
 						imgMed: photo.src.medium,
-						imgLag: photo.src.large,
+						imgLg: photo.src.large,
 						width: photo.width,
 						height: photo.height,
 					}
@@ -61,39 +61,9 @@ const getImage = async (count = 1) => {
 					console.log('Error', err.message)
 					throw err
 				}
-				// console.log(err.config)
 			})
 	)
 }
-
-// ! error catching if using async/await from https://gist.github.com/fgilio/230ccd514e9381fafa51608fcf137253
-// try {
-// 	const response = await axios.get('https://your.site/api/v1/bla/ble/bli')
-// 	// Success 🎉
-// 	console.log(response)
-// } catch (error) {
-// 	// Error 😨
-// 	if (error.response) {
-// 		/*
-// 		 * The request was made and the server responded with a
-// 		 * status code that falls out of the range of 2xx
-// 		 */
-// 		console.log(error.response.data)
-// 		console.log(error.response.status)
-// 		console.log(error.response.headers)
-// 	} else if (error.request) {
-// 		/*
-// 		 * The request was made but no response was received, `error.request`
-// 		 * is an instance of XMLHttpRequest in the browser and an instance
-// 		 * of http.ClientRequest in Node.js
-// 		 */
-// 		console.log(error.request)
-// 	} else {
-// 		// Something happened in setting up the request and triggered an Error
-// 		console.log('Error', error.message)
-// 	}
-// 	console.log(error)
-// }
 
 // ! API for PIXABAY
 // const getImage = async (count = 1) => {
@@ -119,7 +89,7 @@ const getImage = async (count = 1) => {
 // 					imageID: photo.id,
 // 					imgSmall: photo.previewURL,
 // 					imgMed: photo.webformatURL,
-// 					imgLag: photo.largeImageURL,
+// 					imgLg: photo.largeImageURL,
 // 					width: photo.imageWidth,
 // 					height: photo.imageHeight,
 // 				}

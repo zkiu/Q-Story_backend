@@ -29,7 +29,7 @@ export default function SwitchImageBtn({
 						// imageID: data.imageID,
 						// imgSmall: data.imgSmall,
 						// imgMed: data.imgMed,
-						// imgLag: data.imgLag,
+						// imgLg: data.imgLg,
 						// width: data.width,
 						// height: data.height,
 					}

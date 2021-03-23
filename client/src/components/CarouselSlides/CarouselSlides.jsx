@@ -8,7 +8,7 @@ export default function CarouselSlides({cards}) {
 				<div className="slideCard">
 					{/* *************************************** */}
 					{/* <img
-						src={card.imgLag}
+						src={card.imgLg}
 						className={
 							card.width >= card.height ? 'd-block w-100' : 'd-block h-100'
 						}
