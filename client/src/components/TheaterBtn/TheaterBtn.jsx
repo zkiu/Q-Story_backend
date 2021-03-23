@@ -1,4 +1,5 @@
 import {fb} from '../../firebase/firebase'
+import {API_URL} from '../../services/envConfig'
 import axios from 'axios'
 
 import {MdTheaters} from 'react-icons/md'
@@ -26,13 +27,9 @@ export default function TheaterBtn({title, cards, projectid}) {
 					.then((token) => {
 						// if a project id is provided, overwrite the existing document
 						if (projectid != null) {
-							return axios.post(
-								`http://localhost:8080/project/${projectid}`,
-								data,
-								{
-									headers: {token},
-								}
-							)
+							return axios.post(`${API_URL}/project/${projectid}`, data, {
+								headers: {token},
+							})
 						}
 					})
 					.then(({data}) => {

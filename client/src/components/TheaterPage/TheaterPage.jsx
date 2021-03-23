@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import {useParams, Link} from 'react-router-dom'
 import axios from 'axios'
 import {fb} from '../../firebase/firebase'
+import {API_URL} from '../../services/envConfig'
 
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
 import CarouselComp from '../CarouselComp/CarouselComp'
@@ -18,7 +19,7 @@ export default function TheaterPage() {
 			fb.auth()
 				.currentUser?.getIdToken()
 				.then((token) => {
-					return axios.get(`http://localhost:8080/project/${projectid}`, {
+					return axios.get(`${API_URL}/project/${projectid}`, {
 						headers: {token},
 					})
 				})

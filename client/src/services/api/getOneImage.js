@@ -1,7 +1,8 @@
 import axios from 'axios'
+import {API_URL} from '../../services/envConfig'
 
 export const getOneImage = async () => {
-	const {data} = await axios.get('http://localhost:8080/image')
+	const {data} = await axios.get(`${API_URL}/image`)
 	return {
 		paragraph: '',
 		imageID: data.imageID,

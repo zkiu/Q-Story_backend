@@ -1,5 +1,7 @@
 import axios from 'axios'
 import React, {useState} from 'react'
+
+import {API_URL} from '../../services/envConfig'
 import {fb} from '../../firebase/firebase'
 import {useHistory} from 'react-router-dom'
 import {toast} from 'react-toastify'
@@ -21,7 +23,7 @@ export default function LoginModal() {
 		fb.auth()
 			.currentUser.getIdToken()
 			.then((token) => {
-				return axios.get(`http://localhost:8080/project/projectlist`, {
+				return axios.get(`${API_URL}/project/projectlist`, {
 					headers: {token},
 				})
 			})

@@ -1,6 +1,8 @@
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 import {toast} from 'react-toastify'
+
+import {API_URL} from '../../services/envConfig'
 import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
 
 export default function NewBtn({setCards, setTitle, setImageIndex}) {
@@ -12,7 +14,7 @@ export default function NewBtn({setCards, setTitle, setImageIndex}) {
 		setImageIndex(0)
 		history.push('/')
 		axios
-			.get('http://localhost:8080/image/6')
+			.get(`${API_URL}/image/6`)
 			.then((response) => {
 				const {newCards} = checkDuplicateImageId(response.data)
 				const tempCards = newCards.map((item) => {

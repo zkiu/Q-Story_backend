@@ -1,4 +1,6 @@
 import {fb} from '../../firebase/firebase'
+import {API_URL} from '../../services/envConfig'
+
 import axios from 'axios'
 import {useHistory} from 'react-router-dom'
 import {toast} from 'react-toastify'
@@ -21,16 +23,12 @@ export default function SaveBtn({title, cards, projectid}) {
 				.then((token) => {
 					// if a project id is provided, overwrite the existing document
 					if (projectid != null) {
-						return axios.post(
-							`http://localhost:8080/project/${projectid}`,
-							data,
-							{
-								headers: {token},
-							}
-						)
+						return axios.post(`${API_URL}/project/${projectid}`, data, {
+							headers: {token},
+						})
 					} else {
 						// else created a new project document
-						return axios.post('http://localhost:8080/project/', data, {
+						return axios.post(`${API_URL}/project/`, data, {
 							headers: {token},
 						})
 					}

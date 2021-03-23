@@ -3,6 +3,7 @@ import {useParams, useHistory} from 'react-router-dom'
 import axios from 'axios'
 import {toast} from 'react-toastify'
 
+import {API_URL} from '../../services/envConfig'
 import {fb} from '../../firebase/firebase'
 import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
 import {useLoginStatus} from '../../services/auth/useLoginStatus'
@@ -34,7 +35,7 @@ export default function HomePage() {
 		if (!isLoading && projectid == null) {
 			// console.log('1st effect on homepage (regardless of log status)')
 			axios
-				.get('http://localhost:8080/image/6')
+				.get(`${API_URL}/image/6`)
 				.then((response) => {
 					const {newCards} = checkDuplicateImageId(response.data)
 					const tempCards = newCards.map((item) => {
@@ -88,7 +89,7 @@ export default function HomePage() {
 			fb.auth()
 				.currentUser.getIdToken()
 				.then((token) => {
-					return axios.get(`http://localhost:8080/project/${projectid}`, {
+					return axios.get(`${API_URL}/project/${projectid}`, {
 						headers: {token},
 					})
 				})
