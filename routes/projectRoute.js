@@ -34,7 +34,8 @@ projectRoute.get('/:projid', async (req, res) => {
 	}
 })
 
-projectRoute.delete('/:projid', (req, res) => {
+// -- delete one project doc
+projectRoute.delete('/:projid', async (req, res) => {
 	const projectID = req.params.projid
 	try {
 		const userID = await checkUserAuth(req)
