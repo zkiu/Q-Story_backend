@@ -50,7 +50,7 @@ export default function SaveBtn({title, cards, projectid}) {
 	return (
 		<>
 			<button type="button" className="mybtn mybtn--top" onClick={handleClick}>
-				{projectid != null ? 'Save Changes' : 'Save Project'}
+				{projectid != null ? 'Update Project' : 'Save Project'}
 			</button>
 		</>
 	)
