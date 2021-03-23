@@ -17,7 +17,6 @@ export default function EditCardComp({
 
 		setCards(temp)
 	}
-	// const cardForm =
 	return (
 		<>
 			{cards[imageIndex] != null && (
@@ -27,13 +26,7 @@ export default function EditCardComp({
 						style={{
 							backgroundImage: `url('${cards[imageIndex].imgMed}')`,
 						}}
-					>
-						{/* <img
-							className="editcardImg"
-							src={cards[imageIndex].imgMed}
-							alt=""
-						/> */}
-					</div>
+					></div>
 					<div className="editCardContainer">
 						<div className="inputGroup">
 							<label className="cardParagraph--label" htmlFor="cardParagraph">

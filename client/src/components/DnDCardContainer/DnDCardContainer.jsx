@@ -1,10 +1,8 @@
 import {Draggable} from 'react-beautiful-dnd'
-
 import DnDCard from '../DnDCard/DnDCard'
 
 export default function DnDCardContainer({card, index, setImageIndex}) {
 	const handleSelect = (e, index) => {
-		// console.log(index)
 		setImageIndex(index)
 	}
 	return (
@@ -26,7 +24,6 @@ export default function DnDCardContainer({card, index, setImageIndex}) {
 					{...provided.draggableProps}
 					{...provided.dragHandleProps}
 				>
-					{/* {card.content} */}
 					<DnDCard card={card} />
 				</li>
 			)}

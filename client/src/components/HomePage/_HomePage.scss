@@ -1,11 +1,8 @@
 .HomePage {
-	// position: relative;
 	margin: 0 auto;
 	max-width: $width-desk;
 
 	.headingContainer {
-		// display: flex;
-		// justify-content: space-between;
 		margin-top: 2rem;
 	}
 
@@ -33,12 +30,10 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		// background-color: $light;
 		border: 2px dotted $medium;
 		border-radius: 1rem;
 		padding: 1rem;
 		width: 15rem;
-		// text-shadow: 2px 2px 4px $medium;
 	}
 	//****************************************************
 	.majorEditContainer {
@@ -60,7 +55,6 @@
 	}
 
 	.btnContainer {
-		// background-color: red;
 		display: grid;
 		place-items: center;
 	}

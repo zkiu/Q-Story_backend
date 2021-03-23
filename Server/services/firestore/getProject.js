@@ -11,8 +11,6 @@ const getProject = async (userID, projectID) => {
 	if (!doc.exists) {
 		throw new Error('Project was not found.')
 	}
-
-	// return doc.data()
 	return {
 		dateCreated: doc.data().dateCreated,
 		title: doc.data().title,

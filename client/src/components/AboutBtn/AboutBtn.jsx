@@ -1,22 +1,3 @@
-// export default function AboutBtn() {
-// 	let history = useHistory()
-
-// 	const handleClick = (e) => {
-// 		history.push('/about')
-// 	}
-// 	return (
-// 		<>
-// 			<button
-// 				type="button"
-// 				className="mybtn mybtn--bottom"
-// 				onClick={handleClick}
-// 			>
-// 				About Page
-// 			</button>
-// 		</>
-// 	)
-// }
-
 import {TiInfoLarge} from 'react-icons/ti'
 import {IconContext} from 'react-icons'
 import {useHistory} from 'react-router-dom'

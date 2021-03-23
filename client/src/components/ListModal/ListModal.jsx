@@ -4,7 +4,7 @@ import {fb} from '../../firebase/firebase'
 import {useHistory} from 'react-router-dom'
 import {toast} from 'react-toastify'
 
-// TODO: Need to add delete btn on each li
+// TODO: Need to add delete btn on each project <li>. The endpoint is available (but the endpoint code for delete need a slight updated)
 
 export default function LoginModal() {
 	const [projects, setProjects] = useState([])

@@ -1,16 +1,8 @@
 .welcome-message {
-	// width: $width-desk;
-	// height: 11.5rem;
-	// position: absolute;
 	display: grid;
 	place-items: center;
-	// z-index: 0;
 	span {
 		font-size: 5.5rem;
 		color: $white;
-		// background-color: lightblue;
-		// border-radius: 10px/30px; /* horizontal radius / vertical radius */
-		// padding: 0.2rem 1rem;
-		// box-shadow: 2px 2px 10px black;
 	}
 }

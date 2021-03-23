@@ -11,9 +11,6 @@ header {
 		display: grid;
 		grid-template-columns: 1fr 3fr 1fr;
 		place-items: center;
-		// display: flex;
-		// align-items: center;
-		// justify-content: space-between;
 		max-width: $width-desk;
 	}
 	.logo {
@@ -37,7 +34,6 @@ header {
 		width: -moz-fit-content;
 	}
 	.hover {
-		// for site logo
 		// idea from from codepen https://codepen.io/mxttsco/pen/KgodYm
 		transition: all 0.2s ease-in-out;
 		position: relative;
@@ -74,7 +70,5 @@ header {
 		display: flex;
 		align-items: center;
 		justify-self: end;
-
-		// z-index: 999;
 	}
 }

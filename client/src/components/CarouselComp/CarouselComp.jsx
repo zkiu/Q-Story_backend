@@ -1,6 +1,3 @@
-// import React, { useState, useEffect } from 'react'
-// import {useParams, Link} from 'react-router-dom'
-
 import CarouselIndicator from '../CarouselIndicator/CarouselIndicator'
 import CarouselSlides from '../CarouselSlides/CarouselSlides'
 
@@ -9,7 +6,6 @@ export default function CarouselComp({cards}) {
 		<section className="carousel">
 			<div
 				id="carouselExampleCaptions"
-				// className="carousel slide carousel-fade"
 				className="carousel"
 				data-bs-ride="carousel"
 			>

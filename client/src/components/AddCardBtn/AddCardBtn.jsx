@@ -7,8 +7,6 @@ import {getOneImage} from '../../services/api/getOneImage'
 export default function AddCardBtn({cards, setCards}) {
 	const handleClick = (e) => {
 		e.preventDefault()
-		// const tempCards = [...cards]
-		// const targetNumber = cards.length + 1
 
 		getOneImage()
 			.then((card) => {
@@ -21,12 +19,6 @@ export default function AddCardBtn({cards, setCards}) {
 					setCards(newCards)
 				}
 			})
-			// axios
-			// 	.get('http://localhost:8080/image')
-			// 	.then(({data}) => {
-			// 		tempCards.push(data)
-			// 		setCards(tempCards)
-			// 	})
 			.catch((err) => {
 				if (err?.response?.status === 429) {
 					toast.dark(

@@ -5,7 +5,6 @@ const getProjectList = require('../services/firestore/getProjectList')
 const getProject = require('../services/firestore/getProject')
 const deleteProject = require('../services/firestore/deleteProject')
 const saveProject = require('../services/firestore/saveProject')
-// const updateProject = require('../services/firestore/updateProject')
 const checkUserAuth = require('../services/auth/checkUserAuth')
 
 // -- get project list
@@ -35,6 +34,7 @@ projectRoute.get('/:projid', async (req, res) => {
 	}
 })
 
+// TODO: convert this to use checkUserAuth() and remove the userid param
 projectRoute.delete('/:userid/:projid', (req, res) => {
 	const projectID = req.params.projid
 	const userID = req.params.userid

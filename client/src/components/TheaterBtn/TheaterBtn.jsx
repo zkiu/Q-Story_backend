@@ -37,7 +37,6 @@ export default function TheaterBtn({title, cards, projectid}) {
 					})
 					.then(({data}) => {
 						toast(data.message)
-						// history.push(`/project/${data.projectID}`)
 						history.push(`/theater/${projectid}`)
 					})
 					.catch((err) => {
@@ -57,7 +56,6 @@ export default function TheaterBtn({title, cards, projectid}) {
 				</div>
 			</IconContext.Provider>
 			<span className="mybtn__round--text">
-				{/* <br /> */}
 				Theater
 				<br />
 				Mode

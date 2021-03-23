@@ -17,12 +17,10 @@ export default function LoginModal({setRegDisplayName}) {
 		setRegDisplayName('')
 		signIn(loginUser.email, loginUser.password)
 			.then((userID) => {
-				// console.info(userID)
 				// -- this remove() is required since bootstrap creates this div but this component is removed in the virtual dom once the user is signed in WITHOUT removing the modal-backdrop div created by Bootstrap
 				document.querySelector('.modal-backdrop').remove()
 			})
 			.catch((error) => {
-				// console.error('error in login modal')
 				toast.error(error)
 			})
 	}
@@ -62,7 +60,6 @@ export default function LoginModal({setRegDisplayName}) {
 						</div>
 						<form className="modal-body" onSubmit={handleSubmit}>
 							{/* modal body */}
-							{/* <div className="form-floating mb-3"> */}
 							<label htmlFor="floatingLoginEmail">Email address</label>
 							<input
 								type="email"
@@ -76,8 +73,6 @@ export default function LoginModal({setRegDisplayName}) {
 								value={loginUser.email}
 								onChange={handleChange}
 							/>
-							{/* </div> */}
-							{/* <div className="form-floating"> */}
 							<label htmlFor="floatingLoginPassword">Password</label>
 							<input
 								type="password"
@@ -90,7 +85,6 @@ export default function LoginModal({setRegDisplayName}) {
 								value={loginUser.password}
 								onChange={handleChange}
 							/>
-							{/* </div> */}
 							<div className="modal-footer ">
 								<button type="button" className="mybtn" data-bs-dismiss="modal">
 									Close

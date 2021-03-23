@@ -19,20 +19,3 @@ export const checkDuplicateImageId = (cards, secondSet = []) => {
 		cardDeficit: combinedSet.length - newSet.length,
 	}
 }
-
-// ! for testing
-// const cards = [
-// 	{imageID: 'Nancy', age: 15},
-// 	{imageID: 'Mike', age: 10},
-// 	{imageID: 'Matt', age: 13},
-// 	{imageID: 'Adam', age: 22},
-// 	{imageID: 'Jenny', age: 85},
-// ]
-// const secondSet = [
-// 	{imageID: 'Nancy', age: 2},
-// 	{imageID: 'Carl', age: 40},
-// 	{imageID: 'Carl', age: 40},
-// 	{imageID: 'Mike', age: 1},
-// ]
-
-// console.log(checkDuplicateImageId(cards, secondSet))

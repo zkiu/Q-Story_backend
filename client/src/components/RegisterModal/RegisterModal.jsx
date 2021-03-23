@@ -16,13 +16,10 @@ export default function RegisterModal({setRegDisplayName}) {
 			...regData,
 			[e.target.name]: e.target.value,
 		})
-
 		if (e.target.name === 'displayName') {
 			setRegDisplayName(e.target.value)
 		}
 	}
-
-	// function handleDisplayName(e) {}
 
 	function handleSubmit(e) {
 		e.preventDefault()
@@ -33,7 +30,6 @@ export default function RegisterModal({setRegDisplayName}) {
 			password: regData.password,
 		}
 
-		// console.log(regData)
 		registerUser(registrationInfo)
 			.then((message) => {
 				toast(message.message)
@@ -81,8 +77,6 @@ export default function RegisterModal({setRegDisplayName}) {
 						<form className="modal-body" onSubmit={handleSubmit}>
 							{/* modal body */}
 							{/* ********************************************************** */}
-
-							{/* <div className="form-floating mb-3"> */}
 							<label htmlFor="floatingRegName">Display Name:</label>
 							<input
 								type="text"
@@ -96,8 +90,6 @@ export default function RegisterModal({setRegDisplayName}) {
 								value={regData.displayName}
 								onChange={handleChange}
 							/>
-							{/* </div> */}
-							{/* <div className="form-floating mb-3"> */}
 							<label htmlFor="floatingRegEmail">Email:</label>
 							<input
 								type="email"
@@ -109,13 +101,7 @@ export default function RegisterModal({setRegDisplayName}) {
 								name="email"
 								value={regData.email}
 								onChange={handleChange}
-								// onChange={(e) => {
-								// 	handleChange(e)
-								// 	handleDisplayName(e)
-								// }}
 							/>
-							{/* </div> */}
-							{/* <div className="form-floating"> */}
 							<label htmlFor="floatingRegPassword">Password</label>
 							<input
 								type="password"
@@ -128,9 +114,7 @@ export default function RegisterModal({setRegDisplayName}) {
 								value={regData.password}
 								onChange={handleChange}
 							/>
-							{/* </div> */}
 							{/* ********************************************************** */}
-
 							<div className="modal-footer ">
 								<button type="button" className="mybtn" data-bs-dismiss="modal">
 									Close

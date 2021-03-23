@@ -12,25 +12,20 @@
 
 // Component Specifics
 @import './components/App.scss';
-// header
+// Header
 @import './components/Header/Header';
 @import './components/SignOutBtn/SignOutBtn';
 @import './components/CurrentUserComp/CurrentUserComp';
-// landing page
+// Home page
 @import './components/HomePage/HomePage';
-@import './components/DnDComp/DnDComp';
 @import './components/DnDCardList/DnDCardList';
 @import './components/DnDCardContainer/DnDCardContainer';
 @import './components/DnDCard/DnDCard';
 @import './components/TitleInput/TitleInput';
 @import './components/EditCardComp/EditCardComp';
-// @import './components/TheaterBtn/TheaterBtn';
-// @import './components/AddCardBtn/AddCardBtn';
-// @import './components/ResetBtn/ResetBtn';
 
 // Theater page
 @import './components/TheaterPage/TheaterPage';
-@import './components/CarouselComp/CarouselComp';
 @import './components/CarouselSlides/CarouselSlides';
 @import './components/CarouselIndicator/CarouselIndicator';
 
