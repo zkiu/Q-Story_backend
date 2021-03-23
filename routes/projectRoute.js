@@ -34,11 +34,10 @@ projectRoute.get('/:projid', async (req, res) => {
 	}
 })
 
-// TODO: convert this to use checkUserAuth() and remove the userid param
-projectRoute.delete('/:userid/:projid', (req, res) => {
+projectRoute.delete('/:projid', (req, res) => {
 	const projectID = req.params.projid
-	const userID = req.params.userid
 	try {
+		const userID = await checkUserAuth(req)
 		deleteProject(userID, projectID).then((response) => {
 			res.json(response)
 		})
