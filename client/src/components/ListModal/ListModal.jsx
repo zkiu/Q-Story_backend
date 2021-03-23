@@ -1,20 +1,36 @@
 import axios from 'axios'
 import React, {useState} from 'react'
-
 import {API_URL} from '../../services/envConfig'
 import {fb} from '../../firebase/firebase'
-import {useHistory} from 'react-router-dom'
+import {useHistory, useParams} from 'react-router-dom'
 import {toast} from 'react-toastify'
-
-// TODO: Need to add delete btn on each project <li>. The endpoint is available (but the endpoint code for delete need a slight updated)
+import {BsTrash} from 'react-icons/bs'
+import {deleteProject} from '../../services/api/deleteProject'
 
 export default function LoginModal() {
 	const [projects, setProjects] = useState([])
 	let history = useHistory()
+	let {projectid} = useParams()
 
 	function handleClick(e, projectID) {
 		e.preventDefault()
 		history.push(`/project/${projectID}`)
+	}
+
+	function handleDelete(e, projectID) {
+		e.preventDefault()
+		e.stopPropagation()
+		deleteProject(projectID).then((result) => {
+			toast.info(`🧹 Project has been deleted`)
+			setProjects(
+				projects.filter((project) => {
+					return project.id !== projectID
+				})
+			)
+			if (projectid === projectID) {
+				history.push(`/`)
+			}
+		})
 	}
 
 	const handleLoad = (e) => {
@@ -90,6 +106,12 @@ export default function LoginModal() {
 												Date Saved:{' '}
 												{new Date(project.dateCreated).toDateString()}
 											</span>
+											<BsTrash
+												className="icon"
+												onClick={(e) => {
+													handleDelete(e, project.id)
+												}}
+											/>
 										</li>
 									)
 								})
