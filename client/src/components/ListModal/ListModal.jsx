@@ -4,6 +4,8 @@ import {fb} from '../../firebase/firebase'
 import {useHistory} from 'react-router-dom'
 import {toast} from 'react-toastify'
 
+// TODO: Need to add delete btn on each li
+
 export default function LoginModal() {
 	const [projects, setProjects] = useState([])
 	let history = useHistory()

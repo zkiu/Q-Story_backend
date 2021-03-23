@@ -46,7 +46,7 @@ export default function HomePage() {
 					setImageIndex(0)
 				})
 				.catch((err) => {
-					if (err.response.status === 429) {
+					if (err?.response?.status === 429) {
 						toast.dark(
 							'The 3rd party API limit for images have been reached 😢. You can still load previously saved projects.\nFor new images, try again later.'
 						)

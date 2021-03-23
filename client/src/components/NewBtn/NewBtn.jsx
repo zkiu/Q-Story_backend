@@ -22,7 +22,7 @@ export default function NewBtn({setCards, setTitle, setImageIndex}) {
 				setCards(tempCards)
 			})
 			.catch((err) => {
-				if (err.response.status === 429) {
+				if (err?.response?.status === 429) {
 					toast.dark(
 						'The 3rd party API limit for images have been reached 😢. The developer (Kiu) will need money to subscribed to a paid tier of the API to increase image availability.'
 					)
