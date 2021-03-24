@@ -8,10 +8,10 @@ export default function SignOutBtn({setRegDisplayName}) {
 	function handleClick(e) {
 		e.preventDefault()
 		setRegDisplayName('')
-		history.push('/')
 		signOut()
 			.then((result) => {
 				toast.info('You have been signed out')
+				history.push('/')
 			})
 			.catch((error) => {
 				toast.error(error)
