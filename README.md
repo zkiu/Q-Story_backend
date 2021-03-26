@@ -109,3 +109,9 @@ Frontend -> Loads the image urls from the Pexels server.
 - Donations for hosting
 - UX/UI help to make the interface more appealing
 - Unique illustrations from Artists. You can sign your images, for accreditation.
+
+## Contact
+
+[Linked-In](https://www.linkedin.com/in/devkiu/)
+
+😉 I am also looking for work
