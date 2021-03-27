@@ -69,8 +69,11 @@ Each project document contains the following object:
 	cards: [array of card],
 	dateCreated,
 	title,
+	projectID [^1]
 }
 ```
+
+[^1]: This is an intentional duplicate of the project document uid. This will be used for the shareable feature that uses Firebase's collectionGroup().
 
 Each card in the array contains the following object:
 
