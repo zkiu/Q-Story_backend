@@ -48,6 +48,12 @@ You can find out more about project and myself on the About Page of the app.
   - Firestore - Provides a really easy to us NoSQL database.
 - The server is hosted on the free tier plan at Heroku. As such, initial access to the app is slow because the dyno could be sleeping 😥.
 
+### Registration
+
+This App only requires minimal user information to register and create an account. For example, email validation is not required. This was an intentional decision in the design.
+
+The content kept in the database (the stories and the associated pictures) are not confidential documents. This app tries to reduce any barriers to enjoy the content.
+
 ### Database
 
 The Firestore data is stored as such:
