@@ -11,9 +11,6 @@ export default function App() {
 		<main>
 			<Router>
 				<Switch>
-					{/* <Route exact path="/" component={HomePage} /> */}
-					{/* <Route exact path="/theater/:id" component={TheaterPage} />
-					<Route exact path="/about" component={AboutPage} /> */}
 					<Route exact path="/">
 						<Header />
 						<HomePage />

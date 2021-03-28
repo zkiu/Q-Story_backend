@@ -10,7 +10,6 @@ const getProjectFromSharedLink = async (projectID) => {
 	if (snapshot.empty) {
 		return null
 	}
-	// TODO: specify exactly what properties to return
 	return snapshot.docs[0].data()
 }
 
