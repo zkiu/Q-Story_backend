@@ -116,7 +116,8 @@ Frontend -> Loads the image urls from the Pexels server.
 
 ## Future scope
 
-- Donations to pay for a responsive server and hosting space.
+- Add a custom 404 page.
+- Gather donations to pay for a responsive server and hosting space.
 - Add card animations.
 - Instead of a server, migrate to using Google Functions. Netlify seems to offer something similar, which also happens to be called Functions.
 - Move away from a 3rd party image API -> instead host our own database of images (📢 call out to all the artist who wants to showcase their work. I am thinking of tilting the images/illustrations to be more youth centric.)
