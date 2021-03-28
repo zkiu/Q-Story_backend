@@ -23,9 +23,15 @@
 		display: grid;
 		place-items: center;
 	}
-	.exitBtn {
+	.btnContainer {
+		display: flex;
+		justify-content: space-between;
+	}
+	.theaterModeBtn {
+		cursor: pointer;
 		font-size: 6rem;
 		width: fit-content;
+		margin: 0 2rem 1rem;
 		color: $white;
 		transition: all 0.3s;
 		&:hover {
