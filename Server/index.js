@@ -1,5 +1,4 @@
 require('dotenv').config()
-// TODO: Need to make distinction for dev or prod for the PORT number, since heroku is dynamic port number
 const PORT = process.env.PORT || 8080
 
 const imageRoute = require('./routes/imageRoute')
@@ -11,7 +10,6 @@ const cors = require('cors')
 
 app.use(cors())
 app.use(express.json())
-app.use('/static', express.static('public'))
 
 app.use('/image', imageRoute)
 app.use('/project', projectRoute)

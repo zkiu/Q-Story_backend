@@ -2,7 +2,7 @@
 
 ## Latest Update:
 
-March 27, 2021:
+March 28, 2021:
 
 🔥 You can now share your stories via a link! Look for the share icon in the loading project modal and on the Theater Mode page! Recipients can watch your story in Theater Mode without logging-in 🤯!
 
@@ -10,7 +10,6 @@ March 27, 2021:
 
 <h2 align="center"><a  href="https://q-story.netlify.app/">Try App</a> or <a  href="https://www.loom.com/share/90ca60fd1b07494c9220f33981a71549">Watch Demo (3min video)</a></h2>
 <h2 align="center"></h2>
-<br/>
 
 ## Description
 
