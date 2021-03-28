@@ -8,19 +8,15 @@ const saveProject = async (userID, projectID = null, reqData) => {
 		.doc(userID)
 		.collection('projects')
 
+	let projectDocRef = null
+
 	try {
-		if (!projectID) {
-			const docRef = await projectColRef.add({dateCreated, title, cards})
-			return {
-				projectID: docRef.id,
-				message: '🎉 project saved',
-			}
-		} else {
-			const docRef = await projectColRef
-				.doc(projectID)
-				.set({dateCreated, title, cards})
-			return {projectID, message: '🎉 project saved'}
-		}
+		!projectID
+			? (projectDocRef = await projectColRef.add({}))
+			: (projectDocRef = projectColRef.doc(projectID))
+
+		projectDocRef.set({dateCreated, title, cards, projectID: projectDocRef.id})
+		return {projectID: projectDocRef.id, message: '🎉 project saved'}
 	} catch (error) {
 		throw error
 	}
