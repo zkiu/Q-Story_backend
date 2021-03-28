@@ -3,6 +3,7 @@ const projectRoute = express.Router()
 
 const getProjectList = require('../services/firestore/getProjectList')
 const getProject = require('../services/firestore/getProject')
+const getProjectFromSharedLink = require('../services/firestore/getProjectFromSharedLink')
 const deleteProject = require('../services/firestore/deleteProject')
 const saveProject = require('../services/firestore/saveProject')
 const checkUserAuth = require('../services/auth/checkUserAuth')
@@ -69,6 +70,19 @@ projectRoute.post('/:projid', async (req, res) => {
 		const userID = await checkUserAuth(req)
 		saveProject(userID, projectID, req.body).then((response) => {
 			// the response is in the form of {projectID: , message: }
+			res.json(response)
+		})
+	} catch (error) {
+		console.error(error)
+		res.status(400).json({error})
+	}
+})
+
+// -- get shareable link for Theater Mode
+projectRoute.get('/shareable/:projid', async (req, res) => {
+	const projectID = req.params.projid
+	try {
+		getProjectFromSharedLink(projectID).then((response) => {
 			res.json(response)
 		})
 	} catch (error) {

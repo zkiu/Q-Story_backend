@@ -15,6 +15,7 @@ const getProject = async (userID, projectID) => {
 		dateCreated: doc.data().dateCreated,
 		title: doc.data().title,
 		cards: doc.data().cards,
+		projectID: doc.data().projectID,
 	}
 }
 
