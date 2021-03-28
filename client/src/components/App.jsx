@@ -27,7 +27,10 @@ export default function App() {
 						<AboutPage />
 					</Route>
 					<Route exact path="/theater/:projectid">
-						<TheaterPage />
+						<TheaterPage sharedLink={false} />
+					</Route>
+					<Route exact path="/shareable/:projectid">
+						<TheaterPage sharedLink={true} />
 					</Route>
 				</Switch>
 			</Router>

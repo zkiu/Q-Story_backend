@@ -1,11 +1,14 @@
-import axios from 'axios'
 import React, {useState} from 'react'
-import {API_URL} from '../../services/envConfig'
-import {fb} from '../../firebase/firebase'
+import axios from 'axios'
 import {useHistory, useParams} from 'react-router-dom'
 import {toast} from 'react-toastify'
 import {BsTrash} from 'react-icons/bs'
+import {FaShareAltSquare} from 'react-icons/fa'
+
+import {API_URL} from '../../services/envConfig'
+import {fb} from '../../firebase/firebase'
 import {deleteProject} from '../../services/api/deleteProject'
+import {copyToClipboard} from '../../services/util/copyToClipboard'
 
 export default function LoginModal() {
 	const [projects, setProjects] = useState([])
@@ -100,10 +103,15 @@ export default function LoginModal() {
 												handleClick(e, project.id)
 											}}
 										>
+											<FaShareAltSquare
+												className="icon"
+												onClick={(e) => {
+													copyToClipboard(e, project.id)
+												}}
+											/>
 											<span>{project.title}</span>
-											<span>Num. of Cards: {project.cards.length}</span>
+											<span>Cards: {project.cards.length}</span>
 											<span>
-												Date Saved:{' '}
 												{new Date(project.dateCreated).toDateString()}
 											</span>
 											<BsTrash
