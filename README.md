@@ -1,10 +1,20 @@
-<h1 align="center">Q-Story: Little Inspirations</h1>
+## <h1 align="center">Q-Story: Little Inspirations</h1>
+
+## Latest Update:
+
+March 27, 2021:
+
+🔥 You can now share your stories via a link! Look for the share icon in the loading modal! Recipients can watch your story in Theater Mode without logging-in 🤯!
+
+---
 
 <h2 align="center"><a  href="https://q-story.netlify.app/">Try App</a> or <a  href="https://www.loom.com/share/90ca60fd1b07494c9220f33981a71549">Watch Demo (3min video)</a></h2>
 <h2 align="center"></h2>
 <br/>
 
 ## Description
+
+<br/>
 
 <p align="center">
 <img src="https://live.staticflickr.com/65535/51070234872_562cc4e443_b.jpg" width="80%"></p>
@@ -107,7 +117,6 @@ Frontend -> Loads the image urls from the Pexels server.
 ## Future scope
 
 - Donations to pay for a responsive server and hosting space.
-- Implementing the sharing of the Theater Mode output to others without logging-in requirements.
 - Add card animations.
 - Instead of a server, migrate to using Google Functions. Netlify seems to offer something similar, which also happens to be called Functions.
 - Move away from a 3rd party image API -> instead host our own database of images (📢 call out to all the artist who wants to showcase their work. I am thinking of tilting the images/illustrations to be more youth centric.)
@@ -123,4 +132,4 @@ Frontend -> Loads the image urls from the Pexels server.
 
 [Linked-In](https://www.linkedin.com/in/devkiu/)
 
-😉 I am also looking for work
+😉 I am also looking for work as a Web Dev (Front, Back, Fullstack)
