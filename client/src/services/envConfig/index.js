@@ -5,5 +5,5 @@ export const API_URL =
 
 export const CLIENT_URL =
 	process.env.NODE_ENV === 'production'
-		? 'https://q-story.netlify.app/'
+		? 'https://q-story.netlify.app'
 		: 'http://localhost:3000'
