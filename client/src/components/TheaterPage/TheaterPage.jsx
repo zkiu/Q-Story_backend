@@ -16,10 +16,17 @@ export default function TheaterPage({sharedLink}) {
 
 	useEffect(() => {
 		if (sharedLink) {
-			//`${API_URL}/project/shareable/${projectID}`
-			// return <h1>Arrived on shared link</h1>
-			console.log('shared link')
-		} else if (projectid !== 0 && !isLoading && userInfo) {
+			axios
+				.get(`${API_URL}/project/shareable/${projectid}`)
+				.then(({data}) => {
+					console.log(`Output for -> data`, data)
+					console.log(`${API_URL}/project/shareable/${projectid}`)
+					setCards(data.cards)
+				})
+				.catch((err) => {
+					toast.error('An error has occurred with the shared link.')
+				})
+		} else if (!isLoading && userInfo) {
 			fb.auth()
 				.currentUser?.getIdToken()
 				.then((token) => {
