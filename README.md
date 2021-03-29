@@ -9,7 +9,6 @@ March 28, 2021:
 ---
 
 <h2 align="center"><a  href="https://q-story.netlify.app/">Try App</a> or <a  href="https://www.loom.com/share/90ca60fd1b07494c9220f33981a71549">Watch Demo (3min video)</a></h2>
-<h2 align="center"></h2>
 
 ## Description
 
