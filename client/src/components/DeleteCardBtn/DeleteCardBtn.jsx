@@ -15,5 +15,9 @@ export default function DeleteCardBtn({
 		setCards(temp)
 	}
 	// TODO: add onTouchStart for touch service
-	return <BsTrash className="icon" onClick={handleClick} />
+	return (
+		<div className="cardIcon cardIcon--trash" onClick={handleClick}>
+			<BsTrash className="icon" />
+		</div>
+	)
 }

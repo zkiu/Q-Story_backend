@@ -49,5 +49,9 @@ export default function SwitchImageBtn({
 			})
 	}
 	// TODO: add onTouchStart for touch service
-	return <FcSwitchCamera className="icon" onClick={handleClick} />
+	return (
+		<div className="cardIcon cardIcon--switch" onClick={handleClick}>
+			<FcSwitchCamera className="icon" />
+		</div>
+	)
 }

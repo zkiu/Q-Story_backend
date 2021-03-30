@@ -43,22 +43,18 @@ export default function EditCardComp({
 						</div>
 
 						<div className="btnContainer">
-							<div className="cardIcon cardIcon--switch">
-								<SwitchImageBtn
-									cards={cards}
-									setCards={setCards}
-									imageIndex={imageIndex}
-									setImageIndex={setImageIndex}
-								/>
-							</div>
-							<div className="cardIcon cardIcon--trash">
-								<DeleteCardBtn
-									cards={cards}
-									setCards={setCards}
-									imageIndex={imageIndex}
-									setImageIndex={setImageIndex}
-								/>
-							</div>
+							<SwitchImageBtn
+								cards={cards}
+								setCards={setCards}
+								imageIndex={imageIndex}
+								setImageIndex={setImageIndex}
+							/>
+							<DeleteCardBtn
+								cards={cards}
+								setCards={setCards}
+								imageIndex={imageIndex}
+								setImageIndex={setImageIndex}
+							/>
 						</div>
 					</div>
 				</form>
