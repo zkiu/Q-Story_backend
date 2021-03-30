@@ -10,6 +10,7 @@ export default function AddCardBtn({cards, setCards}) {
 
 		getOneImage()
 			.then((card) => {
+				card.paragraph = ''
 				const {duplicateFound, newCards} = checkDuplicateImageId(cards, [card])
 
 				if (duplicateFound) {

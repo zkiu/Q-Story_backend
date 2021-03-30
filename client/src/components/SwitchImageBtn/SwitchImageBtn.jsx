@@ -32,8 +32,8 @@ export default function SwitchImageBtn({
 						// imgLg: data.imgLg,
 						// width: data.width,
 						// height: data.height,
+						// paragraph
 					}
-
 					setCards(temp)
 				}
 			})
