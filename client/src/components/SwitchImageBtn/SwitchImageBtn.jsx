@@ -1,4 +1,4 @@
-import {FcSwitchCamera} from 'react-icons/fc'
+import {IoCameraReverseOutline} from 'react-icons/io5'
 
 import {checkDuplicateImageId} from '../../services/util/checkDuplicateImageId'
 import {getOneImage} from '../../services/api/getOneImage'
@@ -51,7 +51,7 @@ export default function SwitchImageBtn({
 	// TODO: add onTouchStart for touch service
 	return (
 		<div className="cardIcon cardIcon--switch" onClick={handleClick}>
-			<FcSwitchCamera className="icon" />
+			<IoCameraReverseOutline className="icon" />
 		</div>
 	)
 }

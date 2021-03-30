@@ -58,6 +58,9 @@
 		&:hover {
 			background-color: $dark;
 		}
+		&:hover .icon {
+			color: $medium;
+		}
 		&--switch {
 			position: relative;
 			left: -55px;
