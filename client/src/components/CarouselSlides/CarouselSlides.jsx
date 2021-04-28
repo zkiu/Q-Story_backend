@@ -6,29 +6,15 @@ export default function CarouselSlides({cards}) {
 				key={index}
 			>
 				<div className="slideCard">
-					{/* *************************************** */}
-					{/* <img
-						src={card.imgLg}
-						className={
-							card.width >= card.height ? 'd-block w-100' : 'd-block h-100'
-						}
-						alt=""
-					/>
-					<div className="textContainer">
-						<p>{card.paragraph}</p>
-					</div> */}
 					<div
 						className="imageContainer"
 						style={{
 							backgroundImage: `url('${card.imgMed}')`,
 						}}
-					>
-						{/*  */}
-					</div>
+					></div>
 					<div className="textContainer">
 						<p className="carouselText">{card.paragraph}</p>
 					</div>
-					{/* *************************************** */}
 				</div>
 			</div>
 		)
