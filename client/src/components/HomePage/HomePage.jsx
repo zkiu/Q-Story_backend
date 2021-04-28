@@ -17,6 +17,7 @@ import AddCardBtn from '../AddCardBtn/AddCardBtn'
 import ResetBtn from '../ResetBtn/ResetBtn'
 import EditCardComp from '../EditCardComp/EditCardComp'
 import TheaterBtn from '../TheaterBtn/TheaterBtn'
+import LoaderComp from '../LoaderComp/LoaderComp'
 
 //incase backend is down on initial load, load these default data
 import backupData from '../../assets/data/data.json'
@@ -112,22 +113,26 @@ export default function HomePage() {
 			</div>
 			<h5 className="apiheading">Photos provided by Pexels.com</h5>
 			{/* ******************************************** */}
-			{cards && (
-				<DnDComp
-					cards={cards}
-					setCards={setCards}
-					setImageIndex={setImageIndex}
-				/>
+			{cards.length === 0 ? (
+				<LoaderComp />
+			) : (
+				<>
+					<DnDComp
+						cards={cards}
+						setCards={setCards}
+						setImageIndex={setImageIndex}
+					/>
+					{/* ******************************************** */}
+					<div className="guideContainer">
+						<span className="guideLabel">Start . . . </span>
+						<div className="toolContainer">
+							<AddCardBtn cards={cards} setCards={setCards} />
+							<ResetBtn setCards={setCards} setImageIndex={setImageIndex} />
+						</div>
+						<span className="guideLabel guideLabel--end">. . . End</span>
+					</div>
+				</>
 			)}
-			{/* ******************************************** */}
-			<div className="guideContainer">
-				<span className="guideLabel">Start . . . </span>
-				<div className="toolContainer">
-					<AddCardBtn cards={cards} setCards={setCards} />
-					<ResetBtn setCards={setCards} setImageIndex={setImageIndex} />
-				</div>
-				<span className="guideLabel guideLabel--end">. . . End</span>
-			</div>
 			{/* ******************************************** */}
 			<div className="majorEditContainer">
 				<section className="editCardContainer">
