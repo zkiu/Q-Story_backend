@@ -14,6 +14,12 @@ html {
 img {
 	max-width: 100%; // helps to make images responsive!
 }
+.imgLoading {
+	background-image: url('../assets/images/spinner.gif');
+	background-size: cover;
+	min-width: 25px;
+	min-height: 25px;
+}
 a {
 	display: block;
 	text-decoration: none;
