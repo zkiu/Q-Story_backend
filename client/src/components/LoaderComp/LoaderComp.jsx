@@ -4,7 +4,7 @@ export default function LoaderComp() {
 	const [message, setMessage] = useState('')
 
 	useEffect(() => {
-		setTimeout(() => {
+		let unsubscribe = setTimeout(() => {
 			setMessage(
 				<p>
 					Please be patient as we wake the Heroku dyno 🙇‍♂️
@@ -14,6 +14,9 @@ export default function LoaderComp() {
 				</p>
 			)
 		}, 2000)
+		return () => {
+			clearTimeout(unsubscribe)
+		}
 	}, [])
 
 	return (
