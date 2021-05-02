@@ -21,7 +21,11 @@ export default function LoginModal({setRegDisplayName}) {
 				document.querySelector('.modal-backdrop').remove()
 			})
 			.catch((error) => {
-				toast.error(error)
+				console.error(error)
+				// -- toast does not appear if we pass var error inside -> toast.error(error)
+				toast.error(
+					'😔 Error Signing it. Please double-check the entered information.'
+				)
 			})
 	}
 
