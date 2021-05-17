@@ -1,0 +1,11 @@
+---
+application:
+  name: "q-story-server"
+  project: "q-story"
+  organization: "QoveryCommunity"
+routers:
+- name: "main-q-story-server"
+  routes:
+  - application_name: "q-story-server"
+    paths:
+    - "/*"
