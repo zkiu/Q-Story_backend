@@ -24,7 +24,7 @@ export default function DnDCardContainer({card, index, setImageIndex}) {
 					{...provided.draggableProps}
 					{...provided.dragHandleProps}
 				>
-					<DnDCard card={card} />
+					<DnDCard card={card} index={index} />
 				</li>
 			)}
 		</Draggable>

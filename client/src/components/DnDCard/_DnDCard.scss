@@ -1,4 +1,25 @@
 .DnDCard {
+	position: relative;
+
+	.cardNumber {
+		position: absolute;
+		display: grid;
+		place-items: center;
+		height: 2.5rem;
+		width: 2.5rem;
+		// top and left value is based on the $grid + border thickness value from DnDCardContainer.scss
+		top: -0.9rem;
+		left: -0.9rem;
+		font-size: 1.4rem;
+		color: $dark;
+		background-color: $white;
+		border: 1px solid $dark;
+		border-radius: 10% 0% 50% 0%;
+
+		p {
+			all: initial;
+		}
+	}
 	img {
 	}
 
