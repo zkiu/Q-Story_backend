@@ -2,8 +2,10 @@
 
 ## Latest Update:
 
-March 28, 2021:
+May 17, 2021:
+🦄 Add animation to cards on hover + minor improvements. Adding animation/transition effect will be an ongoing effort.
 
+March 28, 2021:
 🔥 You can now share your stories via a link! Look for the share icon in the loading project modal and on the Theater Mode page! Recipients can watch your story in Theater Mode without logging-in 🤯!
 
 ---
