@@ -6,8 +6,18 @@ $grid: 0.8rem;
 	background-color: lightblue;
 	padding: $grid;
 	border-radius: 5px;
+
+	&:focus {
+		background-color: darken(lightblue, 20%);
+	}
+	&:active,
+	&:hover {
+		transform: rotateX(10deg) rotateY(20deg);
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19);
+		transition: all 0.3s;
+	}
 }
 .isDragged {
-	background-color: rgb(117, 165, 182);
 	box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19);
+	transform: none;
 }
