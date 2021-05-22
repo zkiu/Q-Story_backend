@@ -1,6 +1,7 @@
 .titleLabel {
 	font-size: 2.8rem;
 	margin-right: 2rem;
+	user-select: none;
 }
 .projectTitle {
 	background-color: $white;
@@ -8,4 +9,14 @@
 	width: 90%;
 	border: none;
 	text-shadow: 2px 2px 4px $light;
+	padding: 1rem;
+	&:focus,
+	&:active,
+	&:hover {
+		background-color: darken($light, 5%);
+		border-radius: 1rem;
+		border: 0.5rem dashed darken($light, 25%);
+		padding: 0.5rem;
+		color: white;
+	}
 }
