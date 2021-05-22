@@ -10,6 +10,7 @@
 		font-size: 1.4rem;
 		font-weight: 700;
 		text-align: right;
+		user-select: none;
 	}
 	//****************************************************
 	.guideContainer {
@@ -21,6 +22,7 @@
 		font-size: 2.4rem;
 		color: $heavy;
 		width: 25%;
+		user-select: none;
 
 		&--end {
 			text-align: right;
