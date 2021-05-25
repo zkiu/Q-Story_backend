@@ -1,4 +1,5 @@
 import {BsTrash} from 'react-icons/bs'
+import {toast} from 'react-toastify'
 
 export default function DeleteCardBtn({
 	cards,
@@ -8,8 +9,11 @@ export default function DeleteCardBtn({
 }) {
 	const handleClick = (e) => {
 		e.preventDefault()
+		if (cards.length === 1) {
+			toast.warning("🙅‍♀️ you can't remove the last card")
+			return
+		}
 		const temp = [...cards]
-
 		temp.splice(imageIndex, 1)
 		setImageIndex(null)
 		setCards(temp)
