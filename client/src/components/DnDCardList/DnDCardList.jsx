@@ -1,4 +1,5 @@
 import {Droppable} from 'react-beautiful-dnd'
+import {CSSTransition, TransitionGroup} from 'react-transition-group'
 
 import DnDCardContainer from '../DnDCardContainer/DnDCardContainer'
 
@@ -13,15 +14,26 @@ export default function DnDCardList({cards, setImageIndex}) {
 					ref={provided.innerRef}
 					{...provided.droppableProps}
 				>
-					{cards.map((card, index) => (
-						<DnDCardContainer
-							card={card}
-							index={index}
-							key={'' + card.imageID}
-							setImageIndex={setImageIndex}
-						/>
-					))}
-					{provided.placeholder}
+					<TransitionGroup component={null}>
+						{cards.map((card, index) => (
+							<CSSTransition
+								key={`card-${card.imageID}`}
+								timeout={{
+									enter: 500,
+									exit: 500,
+								}}
+								classNames="card-animation-"
+							>
+								<DnDCardContainer
+									card={card}
+									index={index}
+									key={'' + card.imageID}
+									setImageIndex={setImageIndex}
+								/>
+							</CSSTransition>
+						))}
+						{provided.placeholder}
+					</TransitionGroup>
 				</ul>
 			)}
 		</Droppable>
